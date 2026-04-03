@@ -27,14 +27,15 @@ export default function FAQ() {
             </span>
             <h2 className="marketing-title">FAQ</h2>
             <p className="marketing-copy">
-              Everything you need to know about prop firms, evaluations, and how
-              Calio helps you find the best fit.
+              Everything you need to know about virtual business numbers,
+              calling, texting, and how Calio keeps customer conversations
+              organized.
             </p>
             <div className="text-sm text-muted-foreground">
               <p>
                 Need more help?{" "}
                 <a href="/sign-in" className="text-primary underline">
-                  Create your account
+                  Get your number
                 </a>
               </p>
             </div>

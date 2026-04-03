@@ -6,7 +6,7 @@ import { stackServerApp } from "@/stack/server";
 import { Inter, Instrument_Serif, Noto_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'});
+const notoSans = Noto_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,17 +20,23 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Calio - Prop Firm Comparison",
+  title: "Calio | The Smarter Way to Handle Calls",
   description:
-    "Compare top prop firms, discover active offers, and sign in with Calio.",
+    "Get a virtual business number in minutes. Make calls, send texts, record conversations, and track every customer interaction from any device, anywhere in the world.",
   icons: {
     icon: "/icon",
   },
   openGraph: {
-    title: "Calio - Prop Firm Comparison",
+    title: "Calio | The Smarter Way to Handle Calls",
     description:
-      "Compare top prop firms, discover active offers, and sign in with Calio.",
+      "Get a virtual business number in minutes. Make calls, send texts, record conversations, and track every customer interaction from any device, anywhere in the world.",
     siteName: "Calio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Calio | The Smarter Way to Handle Calls",
+    description:
+      "Get a virtual business number in minutes. Make calls, send texts, record conversations, and track every customer interaction from any device, anywhere in the world.",
   },
 };
 
@@ -42,7 +48,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(inter.variable, instrumentSerif.variable, "font-sans", notoSans.variable)}
+      className={cn(
+        inter.variable,
+        instrumentSerif.variable,
+        "font-sans",
+        notoSans.variable,
+      )}
       suppressHydrationWarning
     >
       <body className="font-sans" suppressHydrationWarning>

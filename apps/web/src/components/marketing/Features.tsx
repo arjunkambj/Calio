@@ -5,40 +5,40 @@ import { motion } from "motion/react";
 
 const FEATURES = [
   {
-    icon: "solar:verified-check-bold-duotone",
-    title: "Verified Reviews",
+    icon: "solar:phone-calling-rounded-bold-duotone",
+    title: "Dedicated Business Calling",
     description:
-      "Every firm is vetted with real trader reviews, payout proof, and Trustpilot scores so you can trust the data.",
+      "Get a virtual number for your business and keep work conversations separate from your personal line.",
   },
   {
-    icon: "solar:chart-2-bold-duotone",
-    title: "Side-by-Side Comparison",
+    icon: "solar:chat-round-line-bold-duotone",
+    title: "Calls and Texts in One Place",
     description:
-      "Compare drawdown types, payout methods, platforms, and fees across 50+ prop firms in one table.",
+      "Handle voice and SMS from a single workspace so every customer conversation stays connected.",
   },
   {
-    icon: "solar:tag-price-bold-duotone",
-    title: "Exclusive Discounts",
+    icon: "solar:microphone-3-bold-duotone",
+    title: "Automatic Call Recording",
     description:
-      "Access partner discount codes sourced directly from firms — updated regularly so they always work.",
+      "Record important conversations so your team can review context, quality, and next steps when needed.",
   },
   {
-    icon: "solar:shield-check-bold-duotone",
-    title: "Transparent Rankings",
+    icon: "solar:notes-bold-duotone",
+    title: "Customer Interaction History",
     description:
-      "Rankings are based on objective criteria — payout speed, platform reliability, and trader satisfaction.",
+      "Track calls, texts, and recordings in one timeline so follow-ups are informed instead of guesswork.",
   },
   {
-    icon: "solar:bolt-circle-bold-duotone",
-    title: "Real-Time Updates",
+    icon: "solar:laptop-smartphone-bold-duotone",
+    title: "Work From Any Device",
     description:
-      "Firm data, discount codes, and reviews are updated continuously so you always have the latest information.",
+      "Stay reachable from desktop, laptop, or mobile without tying customer communication to one phone.",
   },
   {
     icon: "solar:users-group-rounded-bold-duotone",
-    title: "Community Driven",
+    title: "Built for Teams",
     description:
-      "Built by traders, for traders. Our rankings and reviews are shaped by real community feedback and experiences.",
+      "Give your team a shared system for business calls so handoffs, follow-ups, and accountability stay clear.",
   },
 ] as const;
 
@@ -60,11 +60,11 @@ export default function Features() {
             </span>
             <h2 className="marketing-title">
               Everything You Need{" "}
-              <span className="text-primary/70">To Choose Wisely</span>
+              <span className="text-primary/70">To Run Calls Smoothly</span>
             </h2>
             <p className="marketing-copy max-w-md">
-              Trusted tools and verified data to help you compare prop firms and
-              find the perfect fit.
+              Calio gives you one place to talk, text, review recordings, and
+              keep customer context attached to every conversation.
             </p>
           </motion.div>
 

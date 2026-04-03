@@ -5,7 +5,7 @@ const sections = [
   {
     title: "Explore",
     links: [
-      { name: "Compare Firms", href: "/#comparison-table" },
+      { name: "Capabilities", href: "/#capabilities" },
       { name: "Why Calio", href: "/#features" },
       { name: "FAQ", href: "/#faq" },
     ],
@@ -14,7 +14,7 @@ const sections = [
     title: "Account",
     links: [
       { name: "Sign In", href: "/sign-in" },
-      { name: "Get Started", href: "/sign-in" },
+      { name: "Get Your Number", href: "/sign-in" },
     ],
   },
 ];
@@ -29,8 +29,9 @@ export function Footer() {
               <Logo iconClassName="h-7 w-7" />
             </Link>
             <p className="max-w-xs text-sm leading-7 text-muted-foreground">
-              Calio helps traders compare prop firms, review active deals,
-              and jump into a clean auth-first experience.
+              Calio gives businesses a smarter way to handle calls with virtual
+              numbers, texting, recordings, and a clear history of every
+              customer interaction.
             </p>
           </div>
 
@@ -65,7 +66,7 @@ export function Footer() {
             href="/sign-in"
             className="text-xs text-muted-foreground transition-colors hover:text-foreground"
           >
-            Sign in to continue
+            Get started with Calio
           </Link>
         </div>
       </div>

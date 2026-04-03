@@ -16,8 +16,8 @@ import {
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Compare", href: "/#comparison-table" },
-  { label: "Why Calio", href: "/#features" },
+  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Features", href: "/#features" },
   { label: "FAQ", href: "/#faq" },
 ];
 
@@ -76,7 +76,7 @@ export default function Navbar() {
           <ThemeSwitch />
           <Button asChild className="rounded-full px-5">
             <Link href="/sign-in">
-              Get Started
+              Get Your Number
               <Icon icon="solar:arrow-right-linear" className="ml-1 h-4 w-4" />
             </Link>
           </Button>
@@ -101,7 +101,7 @@ export default function Navbar() {
               ))}
               <Button asChild className="mt-4 rounded-full">
                 <Link href="/sign-in" onClick={() => setIsMenuOpen(false)}>
-                  Get Started
+                  Get Your Number
                 </Link>
               </Button>
             </div>

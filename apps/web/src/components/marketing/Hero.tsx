@@ -6,14 +6,14 @@ import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 
 const trustBadges = [
-  "Firms You Can Trust",
-  "Real Trader Reviews",
-  "Exclusive Discounts",
+  "Virtual numbers in minutes",
+  "Calls and texts from any device",
+  "Recordings and customer history",
 ];
 
-const communityBenefits = [
-  "Regular Exclusive giveaways for community members",
-  "Rewards on every purchase",
+const businessBenefits = [
+  "Keep your personal number private while staying reachable for work.",
+  "See every call, text, and recording in one shared customer timeline.",
 ];
 
 export default function Hero() {
@@ -30,20 +30,20 @@ export default function Hero() {
             >
               <span className="marketing-kicker mb-6">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                Your Edge in the Prop Firm World.
+                Business Calling, Simplified.
               </span>
 
               <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
-                Compare the{" "}
+                The Smarter Way{" "}
                 <span className="font-serif italic font-medium text-primary">
-                  Best Prop Trading
+                  to Handle Calls
                 </span>{" "}
-                Firms
               </h1>
 
               <p className="marketing-copy mt-6 max-w-2xl">
-                Built for Traders: Compare Firms, Access Discounts, Earn
-                Rewards.
+                Get a virtual business number in minutes. Make calls, send
+                texts, record conversations, and track every customer
+                interaction from any device, anywhere in the world.
               </p>
             </motion.div>
 
@@ -58,13 +58,13 @@ export default function Hero() {
                 size="lg"
                 className="h-12 rounded-full px-8 text-base"
               >
-                <a href="#comparison-table">
-                  View Best Firms
+                <Link href="/sign-in">
+                  Get Your Number
                   <Icon
                     icon="solar:arrow-right-linear"
                     className="ml-2 h-4 w-4"
                   />
-                </a>
+                </Link>
               </Button>
               <Button
                 asChild
@@ -72,7 +72,7 @@ export default function Hero() {
                 size="lg"
                 className="h-12 rounded-full border-border bg-background/80 px-8 text-base"
               >
-                <Link href="/sign-in">Create Free Account</Link>
+                <a href="#capabilities">See How It Works</a>
               </Button>
             </motion.div>
           </div>
@@ -86,7 +86,7 @@ export default function Hero() {
             <div className="space-y-6 lg:pl-8">
               <div className="rounded-3xl border border-primary/15 bg-primary/6 p-5">
                 <div className="space-y-3">
-                  {communityBenefits.map((benefit) => (
+                  {businessBenefits.map((benefit) => (
                     <div key={benefit} className="flex items-start gap-3">
                       <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" />
                       <span className="text-sm leading-6 text-foreground/90">
