@@ -100,7 +100,7 @@ export default function SignInPage() {
             <Input
               type="email"
               placeholder="you@example.com"
-              className="pl-10"
+              className="pl-10 h-10"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -109,7 +109,7 @@ export default function SignInPage() {
 
           <Button
             type="submit"
-            className="w-full text-md"
+            className="w-full h-10"
             disabled={isEmailLoading}
           >
             {isEmailLoading ? <Spinner /> : null}
@@ -145,7 +145,7 @@ export default function SignInPage() {
           )}
           <Button
             variant="ghost"
-            size="sm"
+            className="h-10"
             disabled={isEmailLoading}
             onClick={() => void handleSendMagicLink()}
           >
@@ -174,7 +174,7 @@ export default function SignInPage() {
 
       <Button
         variant="secondary"
-        className="w-full text-md"
+        className="w-full h-10"
         disabled={isGoogleLoading}
         onClick={async () => {
           setIsGoogleLoading(true);

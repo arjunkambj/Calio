@@ -1,7 +1,6 @@
 import Hero from "@/components/marketing/Hero";
 import ComparisonTable from "@/components/marketing/ComparisonTable";
-import FeaturedStream from "@/components/marketing/FeaturedStream";
-import Features from "@/components/marketing/Features"
+import Features from "@/components/marketing/Features";
 import FAQ from "@/components/marketing/FAQ";
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
       <Hero />
       <ComparisonTable />
       <Features />
-      <FeaturedStream />
       <FAQ />
     </div>
   );
