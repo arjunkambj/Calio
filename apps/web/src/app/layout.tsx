@@ -3,7 +3,10 @@ import "../styles/globals.css";
 import Providers from "@/components/Providers";
 import { StackProvider, StackTheme } from "@stackframe/stack";
 import { stackServerApp } from "@/stack/server";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Inter, Instrument_Serif, Noto_Sans } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${instrumentSerif.variable}`}
+      className={cn(inter.variable, instrumentSerif.variable, "font-sans", notoSans.variable)}
       suppressHydrationWarning
     >
       <body className="font-sans" suppressHydrationWarning>
