@@ -75,6 +75,9 @@ importers:
       input-otp:
         specifier: ^1.4.2
         version: 1.4.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      lucide-react:
+        specifier: ^1.7.0
+        version: 1.7.0(react@19.2.0)
       motion:
         specifier: ^12.34.3
         version: 12.34.3(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -3926,6 +3929,11 @@ packages:
 
   lucide-react@0.508.0:
     resolution: {integrity: sha512-gcP16PnexqtOFrTtv98kVsGzTfnbPekzZiQfByi2S89xfk7E/4uKE1USZqccIp58v42LqkO7MuwpCqshwSrJCg==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  lucide-react@1.7.0:
+    resolution: {integrity: sha512-yI7BeItCLZJTXikmK4KNUGCKoGzSvbKlfCvw44bU4fXAL6v3gYS4uHD1jzsLkfwODYwI6Drw5Tu9Z5ulDe0TSg==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -9567,6 +9575,10 @@ snapshots:
       react: 19.2.0
 
   lucide-react@0.508.0(react@19.2.0):
+    dependencies:
+      react: 19.2.0
+
+  lucide-react@1.7.0(react@19.2.0):
     dependencies:
       react: 19.2.0
 
