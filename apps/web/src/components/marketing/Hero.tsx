@@ -1,5 +1,3 @@
-import { Icon } from "@iconify/react";
-
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -43,25 +41,19 @@ const Hero = ({ className }: HeroProps) => {
         <div className="container max-w-7xl">
           <ul className="grid h-44 w-full grid-cols-1 border-x md:h-36 lg:h-24 lg:grid-cols-3">
             <li className="flex h-full items-center justify-between gap-10 px-6 md:gap-3 lg:justify-center">
-              <div className="marketing-icon-box">
-                <Icon icon="lucide:zap" />
-              </div>
+              <div className="marketing-icon-box" />
               <p className="text-[0.95rem] font-medium text-foreground/70">
                 Setup in Minutes
               </p>
             </li>
             <li className="flex h-full items-center justify-between gap-10 border-t border-l px-6 md:gap-3 lg:justify-center lg:border-t-0">
-              <div className="marketing-icon-box">
-                <Icon icon="lucide:message-square-text" />
-              </div>
+              <div className="marketing-icon-box" />
               <p className="text-[0.95rem] font-medium text-foreground/70">
                 Calls and Texts in One Place
               </p>
             </li>
             <li className="col-span-1 flex h-full items-center justify-between gap-10 border-t border-l border-dashed px-6 md:col-span-2 md:justify-center md:gap-3 lg:col-span-1 lg:border-t-0">
-              <div className="marketing-icon-box">
-                <Icon icon="lucide:monitor-smartphone" />
-              </div>
+              <div className="marketing-icon-box" />
               <p className="text-[0.95rem] font-medium text-foreground/70">
                 Works Across Every Device
               </p>

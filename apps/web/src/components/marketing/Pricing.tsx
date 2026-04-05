@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 const pricingPlans = [
   {
-    icon: "lucide:rocket",
+    icon: "solar:rocket-bold",
     name: "Starter",
     price: {
       monthly: 5,
@@ -23,7 +23,7 @@ const pricingPlans = [
     ],
   },
   {
-    icon: "lucide:briefcase",
+    icon: "solar:briefcase-bold",
     name: "Growth",
     featured: true,
     price: {
@@ -39,7 +39,7 @@ const pricingPlans = [
     ],
   },
   {
-    icon: "lucide:building",
+    icon: "solar:buildings-bold",
     name: "Team",
     price: {
       monthly: 25,
@@ -125,7 +125,7 @@ const Pricing = ({ className }: PricingProps) => {
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <Icon
-                          icon="lucide:check"
+                          icon="solar:check-circle-bold"
                           className="mt-0.5 size-[1.05rem] shrink-0 text-foreground/40"
                         />
                         <span className="text-[0.92rem] leading-snug text-foreground/60">

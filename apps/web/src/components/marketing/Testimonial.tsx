@@ -1,4 +1,3 @@
-import { Icon } from "@iconify/react";
 import Image from "next/image";
 
 import { Card } from "@/components/ui/card";
@@ -68,9 +67,7 @@ const Testimonial = ({ className }: TestimonialProps) => {
               className="flex flex-col gap-5 rounded-none border border-foreground/8 bg-background p-6 shadow-none transition-shadow duration-200 hover:shadow-sm"
             >
               <div className="flex items-center gap-2.5 text-foreground/50">
-                <div className="marketing-icon-box !size-8">
-                  <Icon icon="lucide:building-2" className="size-4" />
-                </div>
+                <div className="marketing-icon-box !size-8" />
                 <span className="text-[0.7rem] font-bold uppercase tracking-[0.18em]">
                   {testimonial.company}
                 </span>

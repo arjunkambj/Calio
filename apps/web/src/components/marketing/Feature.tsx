@@ -8,25 +8,25 @@ const features = [
     title: "Virtual number, ready fast",
     description:
       "Claim a dedicated business line without the usual telecom setup delays, then start taking customer calls right away.",
-    icon: "lucide:zap",
+    icon: "solar:zap-bold",
   },
   {
     title: "Calls, texts, and context together",
     description:
       "Keep voice, SMS, notes, and recordings connected so every conversation stays in one timeline instead of scattered across tools.",
-    icon: "lucide:messages-square",
+    icon: "solar:chat-circle-bold",
   },
   {
     title: "Built for distributed teams",
     description:
       "Use Calio from desktop or mobile so your team can answer customers from the office, from home, or while traveling.",
-    icon: "lucide:globe",
+    icon: "solar:global-bold",
   },
   {
     title: "Recording and playback",
     description:
       "Capture important calls automatically so you can review conversations, train new team members, and never miss a detail.",
-    icon: "lucide:mic",
+    icon: "solar:microphone-bold",
   },
 ];
 
@@ -46,7 +46,7 @@ const Feature = ({ className }: FeatureProps) => {
                 className="relative isolate flex flex-col bg-background p-8 text-start transition-colors duration-200 hover:bg-foreground/[0.015] lg:p-10 lg:py-14"
               >
                 <div className="flex-1">
-                  <div className="marketing-icon-box mb-5">
+                  <div className="mb-5">
                     <Icon icon={item.icon} />
                   </div>
                   <h3 className="text-[1.08rem] font-semibold tracking-[-0.02em] text-foreground">
