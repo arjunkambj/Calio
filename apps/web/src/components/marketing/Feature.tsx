@@ -32,9 +32,9 @@ interface FeatureProps {
 
 const Feature = ({ className }: FeatureProps) => {
   return (
-    <section id="features" className={cn("w-full py-32", className)}>
+    <section id="features" className={cn("w-full", className)}>
       <div className="border-y">
-        <div className="container flex w-full flex-col gap-6 border-x py-4 lg:py-8">
+        <div className="container max-w-7xl flex w-full flex-col gap-6 border-x py-4 lg:py-8">
           <Badge
             variant="outline"
             className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
@@ -51,7 +51,7 @@ const Feature = ({ className }: FeatureProps) => {
           </p>
         </div>
       </div>
-      <div className="container w-full border-x lg:px-0!">
+      <div className="container max-w-7xl w-full border-x lg:px-0!">
         <div className="items-center">
           <div className="grid flex-1 bg-border max-lg:divide-y max-lg:border-x lg:grid-cols-3 lg:gap-px">
             {benefits.map((item, index) => (
@@ -79,7 +79,7 @@ const Feature = ({ className }: FeatureProps) => {
         </div>
       </div>
       <div className="h-8 w-full border-y md:h-12 lg:h-[112px]">
-        <div className="container h-full w-full border-x"></div>
+        <div className="container max-w-7xl h-full w-full border-x"></div>
       </div>
     </section>
   );

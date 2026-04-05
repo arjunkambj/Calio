@@ -16,9 +16,9 @@ interface FaqProps {
 
 const Faq = ({ className }: FaqProps) => {
   return (
-    <section id="faq" className={cn("py-32", className)}>
+    <section id="faq" className={cn(className)}>
       <div className="border-y">
-        <div className="container flex flex-col gap-6 border-x py-4 max-lg:border-x lg:py-8">
+        <div className="container max-w-7xl flex flex-col gap-6 border-x py-4 max-lg:border-x lg:py-8">
           <Badge
             variant="outline"
             className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
@@ -37,7 +37,7 @@ const Faq = ({ className }: FaqProps) => {
         </div>
       </div>
 
-      <div className="container">
+      <div className="container max-w-7xl">
         <div className="mx-auto max-w-3xl pt-8 pb-4 md:pb-8 lg:pt-[3.75rem] lg:pb-[50px]">
           <Accordion type="single" collapsible className="space-y-4">
             {FAQ_ITEMS.map((item, index) => (
@@ -58,7 +58,7 @@ const Faq = ({ className }: FaqProps) => {
         </div>
       </div>
       <div className="h-8 w-full border-y md:h-12 lg:h-[112px]">
-        <div className="container h-full w-full border-x"></div>
+        <div className="container max-w-7xl h-full w-full border-x"></div>
       </div>
     </section>
   );

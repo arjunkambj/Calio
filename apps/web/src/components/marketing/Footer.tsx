@@ -51,10 +51,8 @@ interface FooterProps {
 
 const Footer = ({ className }: FooterProps) => {
   return (
-    <section
-      className={cn("bg-background py-16 md:py-24 lg:py-32", className)}
-    >
-      <div className="container">
+    <section className={cn("bg-background", className)}>
+      <div className="container max-w-7xl">
         <footer>
           <div className="mb-16 rounded-2xl border border-border bg-card p-8 md:p-12 lg:p-16">
             <div className="flex flex-col items-center text-center">

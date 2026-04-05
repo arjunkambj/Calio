@@ -63,9 +63,9 @@ const Pricing = ({ className }: PricingProps) => {
   const [isMonthly] = useState(true);
 
   return (
-    <section id="pricing" className={cn("py-32", className)}>
+    <section id="pricing" className={cn(className)}>
       <div className="border-y">
-        <div className="container flex flex-col gap-6 border-x py-4 max-lg:border-x lg:py-8">
+        <div className="container max-w-7xl flex flex-col gap-6 border-x py-4 max-lg:border-x lg:py-8">
           <Badge
             variant="outline"
             className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
@@ -83,7 +83,7 @@ const Pricing = ({ className }: PricingProps) => {
         </div>
       </div>
 
-      <div className="container mt-10 lg:mt-14">
+      <div className="container max-w-7xl mt-10 lg:mt-14">
         <section className="grid border max-lg:divide-y lg:grid-cols-3 lg:divide-x">
           {pricingPlans.map((plan, index) => (
             <div key={index} className="flex flex-col justify-between p-6">
@@ -142,7 +142,7 @@ const Pricing = ({ className }: PricingProps) => {
       </div>
 
       <div className="mt-12 h-8 w-full border-y md:h-12 lg:h-[112px]">
-        <div className="container h-full w-full border-x"></div>
+        <div className="container max-w-7xl h-full w-full border-x"></div>
       </div>
     </section>
   );
