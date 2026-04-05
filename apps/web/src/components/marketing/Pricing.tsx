@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  BadgeCheck,
-  BadgeDollarSign,
-  Briefcase,
-  Building,
-  Rocket,
-} from "lucide-react";
+import { Icon } from "@iconify/react";
 import { useState } from "react";
 
 import { Badge } from "@/components/ui/badge";
@@ -15,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const pricingPlans = [
   {
-    icon: Rocket,
+    icon: "lucide:rocket",
     name: "Basic plan",
     price: {
       monthly: 19,
@@ -30,7 +24,7 @@ const pricingPlans = [
     ],
   },
   {
-    icon: Briefcase,
+    icon: "lucide:briefcase",
     name: "Business plan",
     price: {
       monthly: 29,
@@ -46,7 +40,7 @@ const pricingPlans = [
     ],
   },
   {
-    icon: Building,
+    icon: "lucide:building",
     name: "Enterprise plan",
     price: {
       monthly: 49,
@@ -63,11 +57,11 @@ const pricingPlans = [
   },
 ];
 
-interface Pricing20Props {
+interface PricingProps {
   className?: string;
 }
 
-const Pricing20 = ({ className }: Pricing20Props) => {
+const Pricing = ({ className }: PricingProps) => {
   const [isMonthly] = useState(true);
 
   return (
@@ -78,7 +72,7 @@ const Pricing20 = ({ className }: Pricing20Props) => {
             variant="outline"
             className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
           >
-            <BadgeDollarSign className="size-4" />
+            <Icon icon="lucide:badge-dollar-sign" className="size-4" />
             <span>Spenders Lounge</span>
           </Badge>
           <h2 className="text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
@@ -96,7 +90,7 @@ const Pricing20 = ({ className }: Pricing20Props) => {
             <div key={index} className="flex flex-col justify-between p-6">
               <div className="space-y-2 border-b pb-6">
                 <div className="flex items-center gap-2.5 text-muted-foreground">
-                  <plan.icon className="size-4" />
+                  <Icon icon={plan.icon} className="size-4" />
                   <h3 className="text-xl tracking-[-0.8px]">{plan.name}</h3>
                 </div>
 
@@ -124,7 +118,10 @@ const Pricing20 = ({ className }: Pricing20Props) => {
                 <ul className="mt-4 space-y-4">
                   {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-center gap-4">
-                      <BadgeCheck className="size-6 shrink-0 text-muted-foreground" />
+                      <Icon
+                        icon="lucide:badge-check"
+                        className="size-6 shrink-0 text-muted-foreground"
+                      />
                       <span className="tracking-[-0.32px] text-muted-foreground">
                         {feature}
                       </span>
@@ -151,4 +148,4 @@ const Pricing20 = ({ className }: Pricing20Props) => {
   );
 };
 
-export { Pricing20 };
+export { Pricing };

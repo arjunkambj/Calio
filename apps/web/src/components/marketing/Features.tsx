@@ -1,4 +1,4 @@
-import { PocketKnife } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -29,11 +29,11 @@ const DATA = [
       "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-3.svg",
   },
 ];
-interface Feature168Props {
+interface FeaturesProps {
   className?: string;
 }
 
-const Feature168 = ({ className }: Feature168Props) => {
+const Features = ({ className }: FeaturesProps) => {
   return (
     <section className={cn("py-32", className)}>
       <div className="border-y">
@@ -42,7 +42,7 @@ const Feature168 = ({ className }: Feature168Props) => {
             variant="outline"
             className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
           >
-            <PocketKnife className="size-4" />
+            <Icon icon="lucide:pen-tool" className="size-4" />
             <span>Features</span>
           </Badge>
           <h2 className="text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
@@ -89,4 +89,4 @@ const Feature168 = ({ className }: Feature168Props) => {
   );
 };
 
-export { Feature168 };
+export { Features };

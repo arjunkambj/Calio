@@ -1,4 +1,4 @@
-import { MessageCircleQuestion } from "lucide-react";
+import { Icon } from "@iconify/react";
 
 import {
   Accordion,
@@ -42,11 +42,11 @@ const DATA = [
   },
 ];
 
-interface Faq10Props {
+interface FaqProps {
   className?: string;
 }
 
-const Faq10 = ({ className }: Faq10Props) => {
+const Faq = ({ className }: FaqProps) => {
   return (
     <section className={cn("py-32", className)}>
       <div className="border-y">
@@ -55,7 +55,7 @@ const Faq10 = ({ className }: Faq10Props) => {
             variant="outline"
             className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
           >
-            <MessageCircleQuestion className="size-4" />
+            <Icon icon="lucide:message-circle-question" className="size-4" />
 
             <span>FAQ</span>
           </Badge>
@@ -96,4 +96,4 @@ const Faq10 = ({ className }: Faq10Props) => {
   );
 };
 
-export { Faq10 };
+export { Faq };

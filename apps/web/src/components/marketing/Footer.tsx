@@ -1,10 +1,4 @@
-import {
-  ArrowRight,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
-} from "lucide-react";
+import { Icon } from "@iconify/react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -44,17 +38,21 @@ const navigation = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: "lucide:facebook", href: "https://facebook.com", label: "Facebook" },
+  { icon: "lucide:twitter", href: "https://twitter.com", label: "Twitter" },
+  { icon: "lucide:linkedin", href: "https://linkedin.com", label: "LinkedIn" },
+  {
+    icon: "lucide:instagram",
+    href: "https://instagram.com",
+    label: "Instagram",
+  },
 ];
 
-interface Footer13Props {
+interface FooterProps {
   className?: string;
 }
 
-const Footer13 = ({ className }: Footer13Props) => {
+const Footer = ({ className }: FooterProps) => {
   return (
     <section
       className={cn(
@@ -81,7 +79,10 @@ const Footer13 = ({ className }: Footer13Props) => {
                 <Button asChild variant="secondary" size="lg" className="group">
                   <a href="/get-started" className="flex items-center gap-2">
                     Get started with 7 days free
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <Icon
+                      icon="lucide:arrow-right"
+                      className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                    />
                   </a>
                 </Button>
               </div>
@@ -155,9 +156,9 @@ const Footer13 = ({ className }: Footer13Props) => {
                     href={link.href}
                     className="text-primary-foreground/70 transition-colors hover:text-primary-foreground/100"
                   >
-                    <link.icon
-                      size={20}
-                      className="transition-transform hover:scale-110"
+                    <Icon
+                      icon={link.icon}
+                      className="size-5 transition-transform hover:scale-110"
                     />
                   </a>
                 ))}
@@ -170,4 +171,4 @@ const Footer13 = ({ className }: Footer13Props) => {
   );
 };
 
-export { Footer13 };
+export { Footer };

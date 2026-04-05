@@ -1,4 +1,4 @@
-import { Handshake } from "lucide-react";
+import { Icon } from "@iconify/react";
 import React from "react";
 
 import { Badge } from "@/components/ui/badge";
@@ -104,11 +104,11 @@ const testimonials = [
   },
 ];
 
-interface Testimonial21Props {
+interface TestimonialProps {
   className?: string;
 }
 
-const Testimonial21 = ({ className }: Testimonial21Props) => {
+const Testimonial = ({ className }: TestimonialProps) => {
   return (
     <section className={cn("py-32", className)}>
       <div className="border-y">
@@ -117,7 +117,7 @@ const Testimonial21 = ({ className }: Testimonial21Props) => {
             variant="outline"
             className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
           >
-            <Handshake className="size-4" />
+            <Icon icon="lucide:handshake" className="size-4" />
             <span>lovin' it</span>
           </Badge>
           <h2 className="text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
@@ -173,4 +173,4 @@ const Testimonial21 = ({ className }: Testimonial21Props) => {
   );
 };
 
-export { Testimonial21 };
+export { Testimonial };

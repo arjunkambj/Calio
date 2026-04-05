@@ -1,6 +1,6 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Icon } from "@iconify/react";
 import React, { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -30,12 +30,12 @@ const NAV_ITEMS = [
   { name: "Contact", link: "#" },
 ];
 
-interface Navbar17Props {
+interface NavbarProps {
   className?: string;
 }
 
-const Navbar17 = ({ className }: Navbar17Props) => {
-  const [activeItem, setActiveItem] = useState(NAV_ITEMS[0].name);
+const Navbar = ({ className }: NavbarProps) => {
+  const [activeItem, setActiveItem] = useState(NAV_ITEMS[0]?.name ?? "");
 
   const indicatorRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLUListElement>(null);
@@ -120,18 +120,20 @@ const Navbar17 = ({ className }: Navbar17Props) => {
   );
 };
 
-export { Navbar17 };
+export { Navbar };
 
 const AnimatedHamburger = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <div className="group relative size-full">
       <div className="absolute flex size-full items-center justify-center">
-        <Menu
+        <Icon
+          icon="lucide:menu"
           className={`absolute size-6 text-muted-foreground transition-all duration-300 group-hover:text-foreground ${
             isOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
           }`}
         />
-        <X
+        <Icon
+          icon="lucide:x"
           className={`absolute size-6 text-muted-foreground transition-all duration-300 group-hover:text-foreground ${
             isOpen ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"
           }`}

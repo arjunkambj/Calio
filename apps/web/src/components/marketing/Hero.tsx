@@ -1,4 +1,4 @@
-import { TrendingUp, Users, Zap } from "lucide-react";
+import { Icon } from "@iconify/react";
 import React from "react";
 
 import { ContainerTextFlip } from "@/components/ui/container-text-flip";
@@ -12,7 +12,7 @@ interface HeroProps {
 const Hero = ({ className }: HeroProps) => {
   return (
     <section className={cn("h-full w-screen overflow-hidden py-32", className)}>
-      <div className="container border-t border-b border-dashed">
+      <div className="container border-t border-b">
         <div className="relative flex w-full max-w-5xl flex-col justify-start border border-t-0 border-dashed px-5 py-12 md:items-center md:justify-center lg:mx-auto">
           <p className="flex items-center gap-2 gap-3 text-sm text-muted-foreground">
             <span className="inline-block size-2 rounded bg-green-500" />
@@ -42,7 +42,10 @@ const Hero = ({ className }: HeroProps) => {
         <ul className="mx-auto grid h-44 w-full max-w-5xl grid-cols-1 border border-b-0 border-dashed md:h-34 md:grid-cols-2 lg:h-24 lg:grid-cols-3">
           <li className="flex h-full items-center justify-between gap-10 px-5 md:gap-3 lg:justify-center">
             <div className="flex size-12 items-center justify-center rounded-lg bg-muted">
-              <Zap className="size-6 text-muted-foreground" />
+              <Icon
+                icon="lucide:zap"
+                className="size-6 text-muted-foreground"
+              />
             </div>
             <p className="text-lg text-muted-foreground">
               10x Faster Development
@@ -50,13 +53,19 @@ const Hero = ({ className }: HeroProps) => {
           </li>
           <li className="flex h-full items-center justify-between gap-10 border-t border-l border-dashed px-5 md:gap-3 lg:justify-center lg:border-t-0">
             <div className="flex size-12 items-center justify-center rounded-lg bg-muted">
-              <Users className="size-6 text-muted-foreground" />
+              <Icon
+                icon="lucide:users"
+                className="size-6 text-muted-foreground"
+              />
             </div>
             <p className="text-lg text-muted-foreground">10,000+ Developers</p>
           </li>
           <li className="col-span-1 flex h-full items-center justify-between gap-10 border-t border-l border-dashed px-5 md:col-span-2 md:justify-center md:gap-3 lg:col-span-1 lg:border-t-0">
             <div className="flex size-12 items-center justify-center rounded-lg bg-muted">
-              <TrendingUp className="size-6 text-muted-foreground" />
+              <Icon
+                icon="lucide:trending-up"
+                className="size-6 text-muted-foreground"
+              />
             </div>
             <p className="text-lg text-muted-foreground">
               25% Conversion Boost
