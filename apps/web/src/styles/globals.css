@@ -131,3 +131,11 @@
     @apply font-sans;
   }
 }
+
+@layer components {
+  .marketing-shell .container {
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+  }
+}

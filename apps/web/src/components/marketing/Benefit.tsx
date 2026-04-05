@@ -29,11 +29,11 @@ const DATA = [
       "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-3.svg",
   },
 ];
-interface FeaturesProps {
+interface BenefitsProps {
   className?: string;
 }
 
-const Features = ({ className }: FeaturesProps) => {
+const Benefits = ({ className }: BenefitsProps) => {
   return (
     <section className={cn("py-32", className)}>
       <div className="border-y">
@@ -89,4 +89,4 @@ const Features = ({ className }: FeaturesProps) => {
   );
 };
 
-export { Features };
+export { Benefits };
