@@ -1,8 +1,10 @@
 "use client";
 
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
+import Logo from "@/components/layout/Logo";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -17,10 +19,6 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 
-const NAV_LOGO = {
-  url: "#home",
-  title: "Calio",
-};
 const NAV_ITEMS = [
   { name: "Home", link: "#home" },
   { name: "Features", link: "#features" },
@@ -59,17 +57,11 @@ const Navbar = ({ className }: NavbarProps) => {
   }, [activeItem]);
 
   return (
-    <section className={cn("py-4", className)}>
-      <nav className="container flex items-center justify-between">
-        {/* Left WordMark */}
-        <a href={NAV_LOGO.url} className="flex items-center gap-2">
-          <span className="flex size-9 items-center justify-center rounded-full border text-sm font-semibold tracking-tight">
-            C
-          </span>
-          <span className="text-lg font-semibold tracking-tighter">
-            {NAV_LOGO.title}
-          </span>
-        </a>
+    <section className={cn(className)}>
+      <nav className="mx-auto py-2 border-x flex w-full items-center justify-between px-4 container lg:px-12">
+        <Link href="/" className="shrink-0">
+          <Logo />
+        </Link>
 
         <NavigationMenu className="hidden lg:block">
           <NavigationMenuList
@@ -77,22 +69,25 @@ const Navbar = ({ className }: NavbarProps) => {
             className="flex items-center gap-6 rounded-4xl px-8 py-3"
           >
             {NAV_ITEMS.map((item) => (
-              <React.Fragment key={item.name}>
-                <NavigationMenuItem>
-                  <NavigationMenuLink
+              <NavigationMenuItem key={item.name}>
+                <NavigationMenuLink
+                  asChild
+                  className={cn(
+                    "relative cursor-pointer text-sm font-medium",
+                    activeItem === item.name
+                      ? "bg-background hover:bg-background text-foreground"
+                      : "text-muted-foreground hover:bg-transparent",
+                  )}
+                >
+                  <Link
                     href={item.link}
                     data-nav-item={item.name}
                     onClick={() => setActiveItem(item.name)}
-                    className={`relative cursor-pointer text-sm font-medium hover:bg-transparent ${
-                      activeItem === item.name
-                        ? "text-foreground"
-                        : "text-muted-foreground"
-                    }`}
                   >
                     {item.name}
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              </React.Fragment>
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
             ))}
             {/* Active Indicator */}
             <div
@@ -108,13 +103,8 @@ const Navbar = ({ className }: NavbarProps) => {
         <MobileNav activeItem={activeItem} setActiveItem={setActiveItem} />
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Button
-            asChild
-            variant="outline"
-            size="sm"
-            className="h-10 py-2.5 text-sm font-normal"
-          >
-            <a href="#pricing">Get started</a>
+          <Button asChild size="lg">
+            <Link href="/sign-in">Get started</Link>
           </Button>
         </div>
       </nav>
@@ -170,9 +160,12 @@ const MobileNav = ({
           <ul className="w-full bg-background py-4 text-foreground">
             {NAV_ITEMS.map((navItem, idx) => (
               <li key={idx}>
-                <a
+                <Link
                   href={navItem.link}
-                  onClick={() => setActiveItem(navItem.name)}
+                  onClick={() => {
+                    setActiveItem(navItem.name);
+                    setIsOpen(false);
+                  }}
                   className={`flex items-center border-l-[3px] px-6 py-4 text-sm font-medium text-foreground transition-all duration-75 ${
                     activeItem === navItem.name
                       ? "border-foreground text-foreground"
@@ -180,12 +173,14 @@ const MobileNav = ({
                   }`}
                 >
                   {navItem.name}
-                </a>
+                </Link>
               </li>
             ))}
             <li className="flex flex-col px-7 py-2">
               <Button asChild variant="outline">
-                <a href="#pricing">Get started</a>
+                <Link href="/sign-in" onClick={() => setIsOpen(false)}>
+                  Get started
+                </Link>
               </Button>
             </li>
           </ul>

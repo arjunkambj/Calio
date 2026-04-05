@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,7 +26,7 @@ const navigation = [
     title: "Support",
     links: [
       { name: "FAQ", href: "#faq" },
-      { name: "Get started", href: "/get-started" },
+      { name: "Get started", href: "/sign-in" },
     ],
   },
   {
@@ -51,46 +52,43 @@ interface FooterProps {
 const Footer = ({ className }: FooterProps) => {
   return (
     <section
-      className={cn(
-        "bg-primary py-16 text-primary-foreground md:py-24 lg:py-32",
-        className,
-      )}
+      className={cn("bg-background py-16 md:py-24 lg:py-32", className)}
     >
       <div className="container">
         <footer>
-          <div className="mb-16 rounded-2xl bg-primary-foreground/5 p-8 backdrop-blur-sm md:p-12 lg:p-16">
+          <div className="mb-16 rounded-2xl border border-border bg-card p-8 md:p-12 lg:p-16">
             <div className="flex flex-col items-center text-center">
               <h2 className="max-w-[800px] text-4xl leading-tight font-semibold tracking-tight text-balance md:text-5xl lg:text-6xl">
                 Put your business number to work.
-                <span className="text-sand-600 relative inline-block">
+                <span className="text-foreground relative inline-block">
                   Stay reachable everywhere.
-                  <span className="bg-sand-600/30 absolute bottom-1 left-0 h-1 w-full rounded-full"></span>
+                  <span className="bg-muted absolute bottom-1 left-0 h-1 w-full rounded-full"></span>
                 </span>
               </h2>
-              <p className="mt-4 max-w-[600px] text-lg text-primary-foreground/80">
+              <p className="mt-4 max-w-[600px] text-lg text-muted-foreground">
                 Get a virtual line your team can answer from any device, with
                 texts, recordings, and conversation history all in one place.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button asChild variant="secondary" size="lg" className="group">
-                  <a href="/get-started" className="flex items-center gap-2">
+                  <Link href="/sign-in" className="flex items-center gap-2">
                     Get started with Calio
                     <Icon
                       icon="lucide:arrow-right"
                       className="h-4 w-4 transition-transform group-hover:translate-x-1"
                     />
-                  </a>
+                  </Link>
                 </Button>
               </div>
             </div>
           </div>
 
           {/* Newsletter Section */}
-          <div className="border-sand-600/20 mb-14 border-b pb-14">
+          <div className="mb-14 border-b border-border pb-14">
             <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
               <div>
                 <h3 className="mb-2 text-2xl font-medium">Stay connected</h3>
-                <p className="max-w-md text-primary-foreground/70">
+                <p className="max-w-md text-muted-foreground">
                   Get product updates, launch news, and practical ideas for
                   handling customer calls more efficiently.
                 </p>
@@ -100,7 +98,7 @@ const Footer = ({ className }: FooterProps) => {
                   <Input
                     type="email"
                     placeholder="Your email address"
-                    className="h-12 border-primary-foreground/20 bg-primary-foreground/10 pl-10"
+                    className="h-12 border-border bg-background pl-4"
                   />
                 </div>
                 <Button variant="secondary" type="submit" className="h-12 px-6">
@@ -111,19 +109,19 @@ const Footer = ({ className }: FooterProps) => {
           </div>
 
           {/* Navigation Section */}
-          <nav className="border-sand-600/20 grid grid-cols-2 gap-x-6 gap-y-10 border-b py-10 sm:grid-cols-4 lg:py-16">
+          <nav className="grid grid-cols-2 gap-x-6 gap-y-10 border-b border-border py-10 sm:grid-cols-4 lg:py-16">
             {navigation.map((section) => (
               <div key={section.title}>
                 <h3 className="mb-5 text-lg font-semibold">{section.title}</h3>
                 <ul className="space-y-4">
                   {section.links.map((link) => (
                     <li key={link.name}>
-                      <a
+                      <Link
                         href={link.href}
-                        className="inline-block text-primary-foreground/80 transition-colors duration-200 hover:text-primary-foreground"
+                        className="inline-block text-muted-foreground transition-colors duration-200 hover:text-foreground"
                       >
                         {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -134,16 +132,16 @@ const Footer = ({ className }: FooterProps) => {
           {/* Bottom Section */}
           <div className="mx-auto mt-4 py-8">
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-              <p className="font-medium text-primary-foreground/80">
+              <p className="font-medium text-muted-foreground">
                 © {new Date().getFullYear()} Calio. Business calls, organized.
               </p>
               <div className="flex items-center gap-6">
                 {socialLinks.map((link) => (
                   <a
                     aria-label={link.label}
-                    key={link.href}
+                    key={link.label}
                     href={link.href}
-                    className="text-primary-foreground/70 transition-colors hover:text-primary-foreground/100"
+                    className="text-muted-foreground transition-colors hover:text-foreground"
                   >
                     <Icon
                       icon={link.icon}
