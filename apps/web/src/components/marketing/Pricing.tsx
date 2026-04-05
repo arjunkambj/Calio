@@ -11,8 +11,8 @@ const pricingPlans = [
     icon: "lucide:rocket",
     name: "Starter",
     price: {
-      monthly: 19,
-      yearly: 190,
+      monthly: 5,
+      yearly: 50,
     },
     features: [
       "1 virtual business number",
@@ -27,8 +27,8 @@ const pricingPlans = [
     name: "Growth",
     featured: true,
     price: {
-      monthly: 39,
-      yearly: 390,
+      monthly: 15,
+      yearly: 150,
     },
     features: [
       "Up to 3 business numbers",
@@ -42,8 +42,8 @@ const pricingPlans = [
     icon: "lucide:building",
     name: "Team",
     price: {
-      monthly: 79,
-      yearly: 790,
+      monthly: 25,
+      yearly: 250,
     },
     features: [
       "Unlimited shared conversation history",

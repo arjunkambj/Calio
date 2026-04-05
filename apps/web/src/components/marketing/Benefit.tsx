@@ -49,7 +49,7 @@ const Benefits = ({ className }: BenefitsProps) => {
       </div>
       <div className="container max-w-7xl border-x lg:px-0!">
         <div className="items-center">
-          <div className="grid flex-1 lg:grid-cols-3 lg:gap-px">
+          <div className="grid flex-1 border-b bg-border max-lg:divide-y lg:grid-cols-3 lg:gap-px">
             {DATA.map((item, index) => (
               <div
                 key={index}
@@ -63,7 +63,7 @@ const Benefits = ({ className }: BenefitsProps) => {
                     {item.description}
                   </p>
                 </div>
-                <div className="border-b border-border">
+                <div>
                   <Image
                     src={item.image}
                     alt={item.title}
