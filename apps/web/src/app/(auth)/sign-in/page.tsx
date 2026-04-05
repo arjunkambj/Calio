@@ -24,8 +24,15 @@ export default function SignInPage() {
   const [isEmailLoading, setIsEmailLoading] = useState(false);
   const [isVerifying, setIsVerifying] = useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+  const [resendCooldown, setResendCooldown] = useState(0);
 
-  const handleSendMagicLink = async () => {
+  const handleSendMagicLink = async (
+    source: "initial" | "resend" = "initial",
+  ) => {
+    if (source === "resend" && resendCooldown > 0) {
+      return;
+    }
+
     if (!email) {
       toast.error("Please enter your email address.");
       return;
@@ -41,6 +48,7 @@ export default function SignInPage() {
         setNonce(result.data.nonce);
         setOtp("");
         setStep("otp");
+        setResendCooldown(20);
         toast.success("Verification code sent! Check your email.");
       }
     } catch {
@@ -49,6 +57,16 @@ export default function SignInPage() {
       setIsEmailLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (step !== "otp" || resendCooldown <= 0) return;
+
+    const timer = window.setTimeout(() => {
+      setResendCooldown((current) => Math.max(current - 1, 0));
+    }, 1000);
+
+    return () => window.clearTimeout(timer);
+  }, [step, resendCooldown]);
 
   useEffect(() => {
     if (otp.length !== 6 || isVerifying) return;
@@ -88,7 +106,7 @@ export default function SignInPage() {
           className="flex flex-col gap-4"
           onSubmit={(e) => {
             e.preventDefault();
-            void handleSendMagicLink();
+            void handleSendMagicLink("initial");
           }}
         >
           <div className="relative">
@@ -100,29 +118,20 @@ export default function SignInPage() {
             <Input
               type="email"
               placeholder="you@example.com"
-              className="pl-10 h-10"
+              className="pl-10"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
 
-          <Button
-            type="submit"
-            className="w-full h-10"
-            disabled={isEmailLoading}
-          >
+          <Button type="submit" className="w-full" disabled={isEmailLoading}>
             {isEmailLoading ? <Spinner /> : null}
             {isEmailLoading ? "Sending..." : "Continue with Email"}
           </Button>
         </form>
       ) : (
-        <div className="flex flex-col items-center gap-4 rounded-lg border p-6">
-          <Icon
-            icon="solar:lock-keyhole-bold-duotone"
-            width={48}
-            className="text-primary"
-          />
+        <div className="flex flex-col items-center gap-5 pt-1">
           <p className="text-center text-sm text-muted-foreground">
             Enter the 6-character code from your email
           </p>
@@ -131,6 +140,7 @@ export default function SignInPage() {
             value={otp}
             onChange={(value) => setOtp(value.toUpperCase())}
             disabled={isVerifying}
+            containerClassName="w-full justify-center"
           >
             <InputOTPGroup>
               {[0, 1, 2, 3, 4, 5].map((index) => (
@@ -138,31 +148,38 @@ export default function SignInPage() {
               ))}
             </InputOTPGroup>
           </InputOTP>
-          {isVerifying && (
+          {isVerifying ? (
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Spinner /> Verifying...
             </div>
-          )}
-          <Button
-            variant="ghost"
-            className="h-10"
-            disabled={isEmailLoading}
-            onClick={() => void handleSendMagicLink()}
-          >
-            {isEmailLoading ? <Spinner /> : null}
-            Resend code
-          </Button>
-          <button
-            type="button"
-            className="text-sm text-muted-foreground hover:text-foreground"
-            onClick={() => {
-              setStep("email");
-              setOtp("");
-              setNonce("");
-            }}
-          >
-            Use a different email
-          </button>
+          ) : null}
+          <div className="flex flex-col items-center gap-2 text-sm">
+            <p className="text-xs text-muted-foreground/80">
+              {resendCooldown > 0
+                ? `Resend available in ${resendCooldown}s`
+                : "Didn't get the code?"}
+            </p>
+            <button
+              type="button"
+              className="text-muted-foreground transition-colors hover:text-foreground disabled:opacity-50"
+              disabled={isEmailLoading || resendCooldown > 0}
+              onClick={() => void handleSendMagicLink("resend")}
+            >
+              {isEmailLoading ? "Sending..." : "Resend code"}
+            </button>
+            <button
+              type="button"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+              onClick={() => {
+                setStep("email");
+                setOtp("");
+                setNonce("");
+                setResendCooldown(0);
+              }}
+            >
+              Use a different email
+            </button>
+          </div>
         </div>
       )}
 
@@ -174,7 +191,7 @@ export default function SignInPage() {
 
       <Button
         variant="secondary"
-        className="w-full h-10"
+        className="w-full"
         disabled={isGoogleLoading}
         onClick={async () => {
           setIsGoogleLoading(true);

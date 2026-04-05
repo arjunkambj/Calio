@@ -1,3 +1,5 @@
+import { useId } from "react";
+
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -13,6 +15,8 @@ export default function Logo({
   wordmarkClassName,
   withWordmark = true,
 }: LogoProps) {
+  const gradientId = useId();
+
   return (
     <span className={cn("inline-flex items-center gap-2", className)}>
       <svg
@@ -21,7 +25,7 @@ export default function Logo({
         className={cn("h-8 w-8 shrink-0 text-primary", iconClassName)}
       >
         <defs>
-          <linearGradient id="pg-logo-gradient" x1="4" y1="4" x2="36" y2="36">
+          <linearGradient id={gradientId} x1="4" y1="4" x2="36" y2="36">
             <stop offset="0%" stopColor="currentColor" stopOpacity="1" />
             <stop offset="100%" stopColor="currentColor" stopOpacity="0.78" />
           </linearGradient>
@@ -33,7 +37,7 @@ export default function Logo({
           width="37.5"
           height="37.5"
           rx="11"
-          fill="url(#pg-logo-gradient)"
+          fill={`url(#${gradientId})`}
         />
         <rect
           x="1.25"
@@ -48,15 +52,20 @@ export default function Logo({
         />
 
         <path
-          d="M14 10H23.2C27.6 10 31 13.34 31 17.6C31 21.85 27.6 25.2 23.2 25.2H18.2V30H14V10ZM18.2 14V21.2H22.6C24.8 21.2 26.4 19.72 26.4 17.6C26.4 15.48 24.8 14 22.6 14H18.2Z"
-          fill="#F7FBFF"
+          d="M26.4 13.6C24.86 12.06 22.77 11.2 20.46 11.2C15.54 11.2 11.66 15.14 11.66 20C11.66 24.86 15.54 28.8 20.46 28.8C22.77 28.8 24.86 27.94 26.4 26.4"
+          fill="none"
+          stroke="#F7FBFF"
+          strokeWidth="4.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
-        <circle
-          cx="29.15"
-          cy="10.85"
-          r="1.3"
-          fill="#FFFFFF"
-          fillOpacity="0.78"
+        <path
+          d="M25.55 15.15H28.2"
+          fill="none"
+          stroke="#F7FBFF"
+          strokeOpacity="0.92"
+          strokeWidth="3.2"
+          strokeLinecap="round"
         />
       </svg>
 
