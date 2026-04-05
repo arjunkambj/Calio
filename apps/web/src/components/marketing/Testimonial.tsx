@@ -1,7 +1,6 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 
-import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -49,16 +48,10 @@ const Testimonial = ({ className }: TestimonialProps) => {
   return (
     <section className={cn(className)}>
       <div className="border-y">
-        <div className="container max-w-7xl flex flex-col gap-6 border-x py-4 max-lg:border-x lg:py-8">
-          <Badge
-            variant="outline"
-            className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
-          >
-            <Icon icon="lucide:handshake" className="size-4" />
-            <span>Customer stories</span>
-          </Badge>
-          <h2 className="text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
-            Teams use Calio to stay reachable and accountable
+        <div className="container max-w-7xl flex flex-col gap-6 border-x px-5 py-4 max-lg:border-x lg:px-8 lg:py-8">
+          <p className="marketing-section-kicker">Customer stories</p>
+          <h2 className="marketing-section-heading">
+            Teams stay reachable with Calio
           </h2>
           <p className="max-w-[600px] tracking-[-0.32px] text-muted-foreground">
             Built for businesses that need every call, text, and follow-up to

@@ -54,7 +54,7 @@ const Footer = ({ className }: FooterProps) => {
     <section className={cn("bg-background", className)}>
       <div className="container max-w-7xl">
         <footer>
-          <div className="mb-16 rounded-2xl border border-border bg-card p-8 md:p-12 lg:p-16">
+          <div className="mb-16 rounded-2xl border border-border mt-16 bg-card p-8 md:p-12 lg:p-16">
             <div className="flex flex-col items-center text-center">
               <h2 className="max-w-[800px] text-4xl leading-tight font-semibold tracking-tight text-balance md:text-5xl lg:text-6xl">
                 Put your business number to work.

@@ -148,4 +148,12 @@
     max-width: none;
     margin-inline: auto;
   }
+
+  .marketing-section-kicker {
+    @apply text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground;
+  }
+
+  .marketing-section-heading {
+    @apply max-w-4xl text-2xl leading-tight tracking-[-0.04em] md:text-4xl lg:text-5xl;
+  }
 }

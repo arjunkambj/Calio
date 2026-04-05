@@ -1,8 +1,6 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 const benefits = [
@@ -34,16 +32,10 @@ const Feature = ({ className }: FeatureProps) => {
   return (
     <section id="features" className={cn("w-full", className)}>
       <div className="border-y">
-        <div className="container max-w-7xl flex w-full flex-col gap-6 border-x py-4 lg:py-8">
-          <Badge
-            variant="outline"
-            className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
-          >
-            <Icon icon="lucide:star" className="size-4" />
-            <span>Why Calio</span>
-          </Badge>
-          <h2 className="text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
-            Business communication that stays organized
+        <div className="container max-w-7xl flex w-full flex-col gap-6 border-x px-5 py-4 lg:px-8 lg:py-8">
+          <p className="marketing-section-kicker">Why Calio</p>
+          <h2 className="marketing-section-heading">
+            Keep business calls organized
           </h2>
           <p className="max-w-[600px] tracking-[-0.32px] text-muted-foreground">
             Calio gives you the tools to stay reachable, keep clean records,

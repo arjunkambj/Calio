@@ -1,7 +1,5 @@
-import { Icon } from "@iconify/react";
 import Image from "next/image";
 
-import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 const DATA = [
@@ -38,16 +36,10 @@ const Benefits = ({ className }: BenefitsProps) => {
   return (
     <section className={cn(className)}>
       <div className="border-y">
-        <div className="container max-w-7xl flex flex-col gap-6 border-x py-4 max-lg:border-x lg:py-8">
-          <Badge
-            variant="outline"
-            className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
-          >
-            <Icon icon="lucide:pen-tool" className="size-4" />
-            <span>Core workflows</span>
-          </Badge>
-          <h2 className="text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
-            Built for real customer conversations
+        <div className="container max-w-7xl flex flex-col gap-6 border-x px-5 py-4 max-lg:border-x lg:px-8 lg:py-8">
+          <p className="marketing-section-kicker">Core workflows</p>
+          <h2 className="marketing-section-heading">
+            Built for customer conversations
           </h2>
           <p className="max-w-[600px] tracking-[-0.32px] text-muted-foreground">
             From first ring to follow-up, Calio helps your team stay responsive

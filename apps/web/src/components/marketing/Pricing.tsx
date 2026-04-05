@@ -3,7 +3,6 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -65,16 +64,10 @@ const Pricing = ({ className }: PricingProps) => {
   return (
     <section id="pricing" className={cn(className)}>
       <div className="border-y">
-        <div className="container max-w-7xl flex flex-col gap-6 border-x py-4 max-lg:border-x lg:py-8">
-          <Badge
-            variant="outline"
-            className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
-          >
-            <Icon icon="lucide:badge-dollar-sign" className="size-4" />
-            <span>Pricing</span>
-          </Badge>
-          <h2 className="text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
-            Plans that grow with your business
+        <div className="container max-w-7xl flex flex-col gap-6 border-x px-5 py-4 max-lg:border-x lg:px-8 lg:py-8">
+          <p className="marketing-section-kicker">Pricing</p>
+          <h2 className="marketing-section-heading">
+            Pricing for growing teams
           </h2>
           <p className="max-w-[600px] tracking-[-0.32px] text-muted-foreground">
             Start with one business line, then expand into a shared customer
@@ -83,11 +76,11 @@ const Pricing = ({ className }: PricingProps) => {
         </div>
       </div>
 
-      <div className="container max-w-7xl mt-10 lg:mt-14">
+      <div className="container max-w-7xl">
         <section className="grid border max-lg:divide-y lg:grid-cols-3 lg:divide-x">
           {pricingPlans.map((plan, index) => (
-            <div key={index} className="flex flex-col justify-between p-6">
-              <div className="space-y-2 border-b pb-6">
+            <div key={index} className="flex flex-col justify-between">
+              <div className="space-y-2 border-b px-6  pt-6 pb-16">
                 <div className="flex items-center gap-2.5 text-muted-foreground">
                   <Icon icon={plan.icon} className="size-4" />
                   <h3 className="text-xl tracking-[-0.8px]">{plan.name}</h3>
@@ -110,7 +103,7 @@ const Pricing = ({ className }: PricingProps) => {
                 </>
               </div>
 
-              <div className="pt-6">
+              <div className="p-6">
                 <h4 className="text-muted-foreground-subtle">
                   Features Included
                 </h4>
@@ -132,7 +125,7 @@ const Pricing = ({ className }: PricingProps) => {
               <Button
                 asChild
                 variant={index === 1 ? "default" : "secondary"}
-                className="mt-12"
+                className="mt-12 mb-6 mx-6"
               >
                 <a href="/get-started">Get started</a>
               </Button>
@@ -141,7 +134,7 @@ const Pricing = ({ className }: PricingProps) => {
         </section>
       </div>
 
-      <div className="mt-12 h-8 w-full border-y md:h-12 lg:h-[112px]">
+      <div className="h-8 w-full border-y md:h-12 lg:h-[112px]">
         <div className="container max-w-7xl h-full w-full border-x"></div>
       </div>
     </section>
