@@ -47,58 +47,62 @@ interface TestimonialProps {
 const Testimonial = ({ className }: TestimonialProps) => {
   return (
     <section className={cn(className)}>
-      <div className="border-y">
-        <div className="container max-w-7xl flex flex-col gap-6 border-x px-5 py-4 max-lg:border-x lg:px-8 lg:py-8">
+      <div className="border-b">
+        <div className="container max-w-7xl flex flex-col gap-5 border-x px-5 py-5 max-lg:border-x lg:px-8 lg:py-8">
           <p className="marketing-section-kicker">Customer stories</p>
           <h2 className="marketing-section-heading">
             Teams stay reachable with Calio
           </h2>
-          <p className="max-w-[600px] tracking-[-0.32px] text-muted-foreground">
+          <p className="marketing-section-desc">
             Built for businesses that need every call, text, and follow-up to
             stay visible.
           </p>
         </div>
       </div>
 
-      <div className="container max-w-7xl mt-10 grid gap-8 md:mt-14 lg:grid-cols-3">
-        {testimonials.map((testimonial, index) => (
-          <Card
-            key={index}
-            className="flex flex-col gap-6 rounded-md bg-background p-6 shadow-sm"
-          >
-            <div className="flex items-center gap-3 text-muted-foreground">
-              <div className="flex size-10 items-center justify-center rounded-full bg-muted">
-                <Icon icon="lucide:building-2" className="size-5" />
+      <div className="border-b">
+        <div className="container max-w-7xl grid gap-6 border-x px-5 py-5 lg:grid-cols-3 lg:px-8 lg:py-8">
+          {testimonials.map((testimonial, index) => (
+            <Card
+              key={index}
+              className="flex flex-col gap-5 rounded-none border border-foreground/8 bg-background p-6 shadow-none transition-shadow duration-200 hover:shadow-sm"
+            >
+              <div className="flex items-center gap-2.5 text-foreground/50">
+                <div className="marketing-icon-box !size-8">
+                  <Icon icon="lucide:building-2" className="size-4" />
+                </div>
+                <span className="text-[0.7rem] font-bold uppercase tracking-[0.18em]">
+                  {testimonial.company}
+                </span>
               </div>
-              <span className="text-sm font-medium uppercase tracking-[0.18em]">
-                {testimonial.company}
-              </span>
-            </div>
 
-            <blockquote className="text-muted-foreground-subtle text-lg font-normal italic">{`“${testimonial.quote}”`}</blockquote>
+              <blockquote className="text-[1.02rem] leading-relaxed text-foreground/65 italic">
+                &ldquo;{testimonial.quote}&rdquo;
+              </blockquote>
 
-            <div className="mt-auto flex items-center gap-4">
-              <Image
-                src={testimonial.author.image}
-                alt={`${testimonial.author.name}'s profile picture`}
-                width={48}
-                height={48}
-                className="rounded-full object-cover"
-              />
-              <div>
-                <p className="text-lg tracking-[-0.36px]">
-                  {testimonial.author.name}
-                </p>
-                <p className="text-muted-foreground">
-                  {testimonial.author.role}
-                </p>
+              <div className="mt-auto flex items-center gap-3.5 border-t border-foreground/6 pt-5">
+                <Image
+                  src={testimonial.author.image}
+                  alt={`${testimonial.author.name}'s profile picture`}
+                  width={40}
+                  height={40}
+                  className="rounded-full object-cover"
+                />
+                <div>
+                  <p className="text-[0.92rem] font-medium tracking-[-0.01em]">
+                    {testimonial.author.name}
+                  </p>
+                  <p className="text-[0.82rem] text-foreground/45">
+                    {testimonial.author.role}
+                  </p>
+                </div>
               </div>
-            </div>
-          </Card>
-        ))}
+            </Card>
+          ))}
+        </div>
       </div>
 
-      <div className="mt-12 h-8 w-full border-y md:h-12 lg:h-[112px]">
+      <div className="h-8 w-full border-b md:h-12 lg:h-[112px]">
         <div className="container max-w-7xl h-full w-full border-x"></div>
       </div>
     </section>

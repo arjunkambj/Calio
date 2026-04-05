@@ -58,7 +58,7 @@ const Navbar = ({ className }: NavbarProps) => {
 
   return (
     <section className={cn(className)}>
-      <nav className="mx-auto border-x flex w-full items-center justify-between px-4 container max-w-7xl lg:px-12">
+      <nav className="mx-auto border-x flex w-full items-center justify-between px-4 container max-w-7xl lg:px-8">
         <Link href="/" className="shrink-0">
           <Logo />
         </Link>
@@ -66,17 +66,17 @@ const Navbar = ({ className }: NavbarProps) => {
         <NavigationMenu className="hidden lg:block">
           <NavigationMenuList
             ref={menuRef}
-            className="flex items-center gap-6 rounded-4xl px-8 py-3"
+            className="relative flex items-center gap-4 rounded-4xl px-4 py-2"
           >
             {NAV_ITEMS.map((item) => (
               <NavigationMenuItem key={item.name}>
                 <NavigationMenuLink
                   asChild
                   className={cn(
-                    "relative cursor-pointer text-sm font-medium",
+                    "relative cursor-pointer rounded-none p-2 text-[0.82rem] font-medium transition-colors duration-150 hover:bg-transparent focus:bg-transparent data-[active=true]:bg-transparent",
                     activeItem === item.name
-                      ? "bg-background hover:bg-background text-foreground"
-                      : "text-muted-foreground hover:bg-transparent",
+                      ? "text-foreground"
+                      : "text-foreground/45 hover:text-foreground/70",
                   )}
                 >
                   <Link
@@ -92,9 +92,9 @@ const Navbar = ({ className }: NavbarProps) => {
             {/* Active Indicator */}
             <div
               ref={indicatorRef}
-              className="absolute bottom-2 flex h-1 items-center justify-center px-2 transition-all duration-300"
+              className="absolute bottom-1 flex h-1 items-center justify-center px-2 transition-all duration-300"
             >
-              <div className="h-0.5 w-full rounded-t-none bg-foreground transition-all duration-300" />
+              <div className="h-[2px] w-full rounded-t-none bg-foreground/70 transition-all duration-300" />
             </div>
           </NavigationMenuList>
         </NavigationMenu>
@@ -103,7 +103,10 @@ const Navbar = ({ className }: NavbarProps) => {
         <MobileNav activeItem={activeItem} setActiveItem={setActiveItem} />
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Button asChild>
+          <Button
+            asChild
+            className="h-9 rounded-lg px-5 text-[0.85rem] font-semibold"
+          >
             <Link href="/sign-in">Get started</Link>
           </Button>
         </div>
@@ -120,13 +123,13 @@ const AnimatedHamburger = ({ isOpen }: { isOpen: boolean }) => {
       <div className="absolute flex size-full items-center justify-center">
         <Icon
           icon="lucide:menu"
-          className={`absolute size-6 text-muted-foreground transition-all duration-300 group-hover:text-foreground ${
+          className={`absolute size-5 text-foreground/50 transition-all duration-300 group-hover:text-foreground ${
             isOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
           }`}
         />
         <Icon
           icon="lucide:x"
-          className={`absolute size-6 text-muted-foreground transition-all duration-300 group-hover:text-foreground ${
+          className={`absolute size-5 text-foreground/50 transition-all duration-300 group-hover:text-foreground ${
             isOpen ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"
           }`}
         />
@@ -155,9 +158,9 @@ const MobileNav = ({
 
         <PopoverContent
           align="end"
-          className="relative top-4 -right-4 block w-[calc(100vw-32px)] overflow-hidden rounded-xl p-0 sm:top-auto sm:right-auto sm:w-80 lg:hidden"
+          className="relative top-4 -right-4 block w-[calc(100vw-32px)] overflow-hidden rounded-xl border border-foreground/8 p-0 sm:top-auto sm:right-auto sm:w-80 lg:hidden"
         >
-          <ul className="w-full bg-background py-4 text-foreground">
+          <ul className="w-full bg-background py-3 text-foreground">
             {NAV_ITEMS.map((navItem, idx) => (
               <li key={idx}>
                 <Link
@@ -166,18 +169,21 @@ const MobileNav = ({
                     setActiveItem(navItem.name);
                     setIsOpen(false);
                   }}
-                  className={`flex items-center border-l-[3px] px-6 py-4 text-sm font-medium text-foreground transition-all duration-75 ${
+                  className={`flex items-center border-l-2 px-6 py-2.5 text-[0.9rem] font-medium transition-all duration-75 ${
                     activeItem === navItem.name
                       ? "border-foreground text-foreground"
-                      : "border-transparent text-muted-foreground hover:text-foreground"
+                      : "border-transparent text-foreground/45 hover:text-foreground"
                   }`}
                 >
                   {navItem.name}
                 </Link>
               </li>
             ))}
-            <li className="flex flex-col px-7 py-2">
-              <Button asChild variant="outline">
+            <li className="flex flex-col px-5 py-2">
+              <Button
+                asChild
+                className="h-10 rounded-lg text-[0.85rem] font-semibold"
+              >
                 <Link href="/sign-in" onClick={() => setIsOpen(false)}>
                   Get started
                 </Link>

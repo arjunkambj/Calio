@@ -1,6 +1,5 @@
 import { Icon } from "@iconify/react";
 
-import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -14,73 +13,56 @@ const Hero = ({ className }: HeroProps) => {
       id="home"
       className={cn("h-full w-full overflow-hidden ", className)}
     >
-      <div className="w-full border-y">
+      <div className="w-full border-b">
         <div className="container max-w-7xl">
-          <div className="relative flex w-full flex-col justify-start border-x border-dashed px-5 py-12 md:items-center md:justify-center">
-            <p className="flex items-center gap-3 text-sm text-muted-foreground">
-              <span className="inline-block size-2 rounded bg-green-500" />
-              LIVE IN MINUTES
+          <div className="flex w-full flex-col items-center justify-center border-x px-5 py-20 md:py-28">
+            <div className="inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-foreground/[0.03] px-4 py-1.5">
+              <span className="inline-block size-2 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(34,197,94,0.5)]" />
+              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-foreground/60">
+                Live in minutes
+              </span>
+            </div>
+            <h1 className="mt-5 max-w-2xl text-center text-5xl font-semibold tracking-tighter leading-[1.08] md:text-6xl lg:text-[4.5rem]">
+              The Smarter Way to Handle Business Calls
+            </h1>
+            <p className="mt-6 max-w-xl text-center text-[1.08rem] leading-relaxed text-foreground/55 md:text-lg">
+              Get a virtual business number in minutes. Make calls, send texts,
+              record conversations, and track every customer interaction from
+              any device, anywhere in the world.
             </p>
-            <div className="mt-3 mb-7 w-full max-w-xl text-5xl font-medium font-semibold tracking-tighter md:mb-10 md:text-center md:text-6xl lg:relative lg:mb-0 lg:text-left lg:text-7xl">
-              <h1 className="relative z-10 inline md:mr-3">
-                The Smarter Way to <br className="block md:hidden" /> Handle
-                Business <br className="block md:hidden" />
-              </h1>
-              <ContainerTextFlip
-                className="absolute text-4xl font-medium font-semibold tracking-tighter md:bottom-4 md:left-1/2 md:-translate-x-1/2 md:text-5xl lg:-bottom-4 lg:left-auto lg:translate-x-0 lg:text-7xl"
-                words={["Calls", "Texts", "Follow-Ups", "Teams"]}
-              />
-            </div>
+            <Button
+              asChild
+              className="mt-8 h-12 rounded-lg px-8 text-[0.92rem] font-semibold"
+            >
+              <a href="#pricing">Get your business number</a>
+            </Button>
           </div>
         </div>
       </div>
       <div className="w-full border-b">
         <div className="container max-w-7xl">
-          <div className="flex w-full flex-col items-center justify-center border-x border-dashed py-20">
-            <div className="w-full max-w-2xl space-y-5 md:text-center">
-              <p className="px-5 text-muted-foreground lg:text-lg">
-                Get a virtual business number in minutes. Make calls, send
-                texts, record conversations, and track every customer
-                interaction from any device, anywhere in the world.
+          <ul className="grid h-44 w-full grid-cols-1 border-x md:h-36 lg:h-24 lg:grid-cols-3">
+            <li className="flex h-full items-center justify-between gap-10 px-6 md:gap-3 lg:justify-center">
+              <div className="marketing-icon-box">
+                <Icon icon="lucide:zap" />
+              </div>
+              <p className="text-[0.95rem] font-medium text-foreground/70">
+                Setup in Minutes
               </p>
-              <Button asChild className="mx-5 h-12 rounded-lg">
-                <a href="#pricing">Get your business number</a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="w-full border-b">
-        <div className="container max-w-7xl">
-          <ul className="grid h-44 w-full grid-cols-1 border-x border-dashed md:h-34 md:grid-cols-2 lg:h-24 lg:grid-cols-3">
-            <li className="flex h-full items-center justify-between gap-10 px-5 md:gap-3 lg:justify-center">
-              <div className="flex size-12 items-center justify-center rounded-lg bg-muted">
-                <Icon
-                  icon="lucide:zap"
-                  className="size-6 text-muted-foreground"
-                />
-              </div>
-              <p className="text-lg text-muted-foreground">Setup in Minutes</p>
             </li>
-            <li className="flex h-full items-center justify-between gap-10 border-t border-l border-dashed px-5 md:gap-3 lg:justify-center lg:border-t-0">
-              <div className="flex size-12 items-center justify-center rounded-lg bg-muted">
-                <Icon
-                  icon="lucide:message-square-text"
-                  className="size-6 text-muted-foreground"
-                />
+            <li className="flex h-full items-center justify-between gap-10 border-t border-l px-6 md:gap-3 lg:justify-center lg:border-t-0">
+              <div className="marketing-icon-box">
+                <Icon icon="lucide:message-square-text" />
               </div>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-[0.95rem] font-medium text-foreground/70">
                 Calls and Texts in One Place
               </p>
             </li>
-            <li className="col-span-1 flex h-full items-center justify-between gap-10 border-t border-l border-dashed px-5 md:col-span-2 md:justify-center md:gap-3 lg:col-span-1 lg:border-t-0">
-              <div className="flex size-12 items-center justify-center rounded-lg bg-muted">
-                <Icon
-                  icon="lucide:monitor-smartphone"
-                  className="size-6 text-muted-foreground"
-                />
+            <li className="col-span-1 flex h-full items-center justify-between gap-10 border-t border-l border-dashed px-6 md:col-span-2 md:justify-center md:gap-3 lg:col-span-1 lg:border-t-0">
+              <div className="marketing-icon-box">
+                <Icon icon="lucide:monitor-smartphone" />
               </div>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-[0.95rem] font-medium text-foreground/70">
                 Works Across Every Device
               </p>
             </li>

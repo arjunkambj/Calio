@@ -25,6 +25,7 @@ const pricingPlans = [
   {
     icon: "lucide:briefcase",
     name: "Growth",
+    featured: true,
     price: {
       monthly: 39,
       yearly: 390,
@@ -63,78 +64,92 @@ const Pricing = ({ className }: PricingProps) => {
 
   return (
     <section id="pricing" className={cn(className)}>
-      <div className="border-y">
-        <div className="container max-w-7xl flex flex-col gap-6 border-x px-5 py-4 max-lg:border-x lg:px-8 lg:py-8">
-          <p className="marketing-section-kicker">Pricing</p>
-          <h2 className="marketing-section-heading">
-            Pricing for growing teams
-          </h2>
-          <p className="max-w-[600px] tracking-[-0.32px] text-muted-foreground">
-            Start with one business line, then expand into a shared customer
-            communication workspace as your team grows.
-          </p>
+      <div className="border-b">
+        <div className="container max-w-7xl border-x">
+          <div className="flex flex-col gap-5 px-5 py-5 lg:px-8 lg:py-8">
+            <p className="marketing-section-kicker">Pricing</p>
+            <h2 className="marketing-section-heading">
+              Pricing for growing teams
+            </h2>
+            <p className="marketing-section-desc">
+              Start with one business line, then expand into a shared customer
+              communication workspace as your team grows.
+            </p>
+          </div>
+          <section className="grid border-t max-lg:divide-y lg:grid-cols-3 lg:divide-x">
+            {pricingPlans.map((plan, index) => (
+              <div
+                key={index}
+                className={cn(
+                  "flex flex-col justify-between transition-colors duration-200",
+                  plan.featured && "bg-foreground/[0.02]",
+                )}
+              >
+                <div className="space-y-2.5 border-b px-6 pt-5 pb-12">
+                  <div className="flex items-center gap-2.5">
+                    <div className="marketing-icon-box !size-8">
+                      <Icon icon={plan.icon} className="size-4" />
+                    </div>
+                    <h3 className="text-[1.1rem] font-semibold tracking-[-0.02em]">
+                      {plan.name}
+                    </h3>
+                    {plan.featured && (
+                      <span className="ml-auto rounded-full border border-foreground/15 bg-foreground/[0.04] px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-foreground/60">
+                        Popular
+                      </span>
+                    )}
+                  </div>
+
+                  <>
+                    <div className="flex items-baseline font-medium">
+                      <span className="text-[3.25rem] leading-[1.1] font-semibold tracking-[-0.04em]">
+                        ${isMonthly ? plan.price.monthly : plan.price.yearly}
+                      </span>
+                      <span className="ml-1 text-[1.05rem] text-foreground/40">
+                        {isMonthly ? "/mo" : "/yr"}
+                      </span>
+                    </div>
+                    <p className="text-[0.88rem] text-foreground/45">
+                      {isMonthly
+                        ? `or $${plan.price.yearly} yearly`
+                        : `or $${plan.price.monthly}/mo monthly`}
+                    </p>
+                  </>
+                </div>
+
+                <div className="px-6 pb-6 pt-4">
+                  <h4 className="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-foreground/40">
+                    Features Included
+                  </h4>
+                  <ul className="mt-4 space-y-3.5">
+                    {plan.features.map((feature, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <Icon
+                          icon="lucide:check"
+                          className="mt-0.5 size-[1.05rem] shrink-0 text-foreground/40"
+                        />
+                        <span className="text-[0.92rem] leading-snug text-foreground/60">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Button
+                  asChild
+                  variant={plan.featured ? "default" : "secondary"}
+                  className="mt-auto mb-6 mx-6 h-11 text-[0.88rem]"
+                >
+                  <a href="/get-started">Get started</a>
+                </Button>
+              </div>
+            ))}
+          </section>
         </div>
       </div>
 
-      <div className="container max-w-7xl">
-        <section className="grid border max-lg:divide-y lg:grid-cols-3 lg:divide-x">
-          {pricingPlans.map((plan, index) => (
-            <div key={index} className="flex flex-col justify-between">
-              <div className="space-y-2 border-b px-6  pt-6 pb-16">
-                <div className="flex items-center gap-2.5 text-muted-foreground">
-                  <Icon icon={plan.icon} className="size-4" />
-                  <h3 className="text-xl tracking-[-0.8px]">{plan.name}</h3>
-                </div>
-
-                <>
-                  <div className="flex items-baseline font-medium">
-                    <span className="text-[3.5rem] leading-[120%] tracking-[-3.92px]">
-                      ${isMonthly ? plan.price.monthly : plan.price.yearly}
-                    </span>
-                    <span className="text-muted-foreground-subtle text-2xl tracking-[-0.96px]">
-                      {isMonthly ? "/mo" : "/yr"}
-                    </span>
-                  </div>
-                  <p className="text-muted-foreground">
-                    {isMonthly
-                      ? `or $${plan.price.yearly} yearly`
-                      : `or $${plan.price.monthly}/mo monthly`}
-                  </p>
-                </>
-              </div>
-
-              <div className="p-6">
-                <h4 className="text-muted-foreground-subtle">
-                  Features Included
-                </h4>
-                <ul className="mt-4 space-y-4">
-                  {plan.features.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-4">
-                      <Icon
-                        icon="lucide:badge-check"
-                        className="size-6 shrink-0 text-muted-foreground"
-                      />
-                      <span className="tracking-[-0.32px] text-muted-foreground">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <Button
-                asChild
-                variant={index === 1 ? "default" : "secondary"}
-                className="mt-12 mb-6 mx-6"
-              >
-                <a href="/get-started">Get started</a>
-              </Button>
-            </div>
-          ))}
-        </section>
-      </div>
-
-      <div className="h-8 w-full border-y md:h-12 lg:h-[112px]">
+      <div className="h-8 w-full border-b md:h-12 lg:h-[112px]">
         <div className="container max-w-7xl h-full w-full border-x"></div>
       </div>
     </section>

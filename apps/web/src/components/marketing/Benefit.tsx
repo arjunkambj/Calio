@@ -35,13 +35,13 @@ interface BenefitsProps {
 const Benefits = ({ className }: BenefitsProps) => {
   return (
     <section className={cn(className)}>
-      <div className="border-y">
-        <div className="container max-w-7xl flex flex-col gap-6 border-x px-5 py-4 max-lg:border-x lg:px-8 lg:py-8">
+      <div className="border-b">
+        <div className="container max-w-7xl flex flex-col gap-5 border-x px-5 py-5 max-lg:border-x lg:px-8 lg:py-8">
           <p className="marketing-section-kicker">Core workflows</p>
           <h2 className="marketing-section-heading">
             Built for customer conversations
           </h2>
-          <p className="max-w-[600px] tracking-[-0.32px] text-muted-foreground">
+          <p className="marketing-section-desc">
             From first ring to follow-up, Calio helps your team stay responsive
             and accountable.
           </p>
@@ -49,27 +49,27 @@ const Benefits = ({ className }: BenefitsProps) => {
       </div>
       <div className="container max-w-7xl border-x lg:px-0!">
         <div className="items-center">
-          <div className="grid flex-1 bg-border max-lg:divide-y max-lg:border-x lg:grid-cols-3 lg:gap-px">
+          <div className="grid flex-1 lg:grid-cols-3 lg:gap-px">
             {DATA.map((item, index) => (
               <div
                 key={index}
-                className="relative isolate flex flex-col bg-background pt-5 text-start lg:pt-20"
+                className="relative isolate flex flex-col bg-background pb-5 text-start lg:pb-14"
               >
-                <div className="flex-1 border-b border-border">
-                  <h3 className="mt-2 px-4 text-lg font-semibold tracking-tight lg:px-8">
+                <div className="flex-1 border-b pt-8 border-border">
+                  <h3 className="mt-2 px-5 text-[1.1rem] font-semibold tracking-[-0.02em] text-foreground lg:px-8">
                     {item.title}
                   </h3>
-                  <p className="px-4 pt-2 pb-6 text-muted-foreground lg:px-8">
+                  <p className="px-5 pt-2 pb-6 text-[0.95rem] leading-relaxed text-foreground/55 lg:px-8">
                     {item.description}
                   </p>
                 </div>
-                <div className="bg-muted">
+                <div className="border-b border-border">
                   <Image
                     src={item.image}
                     alt={item.title}
                     width={480}
                     height={320}
-                    className="h-auto w-full p-12 dark:invert"
+                    className="h-auto w-full p-10 opacity-80 dark:invert"
                   />
                 </div>
               </div>
@@ -77,7 +77,7 @@ const Benefits = ({ className }: BenefitsProps) => {
           </div>
         </div>
       </div>
-      <div className="h-8 w-full border-y md:h-12 lg:h-[112px]">
+      <div className="h-8 w-full border-b md:h-12 lg:h-[112px]">
         <div className="container max-w-7xl h-full w-full border-x"></div>
       </div>
     </section>

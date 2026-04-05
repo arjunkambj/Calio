@@ -3,7 +3,7 @@
 import { Icon } from "@iconify/react";
 import { cn } from "@/lib/utils";
 
-const benefits = [
+const features = [
   {
     title: "Virtual number, ready fast",
     description:
@@ -22,6 +22,12 @@ const benefits = [
       "Use Calio from desktop or mobile so your team can answer customers from the office, from home, or while traveling.",
     icon: "lucide:globe",
   },
+  {
+    title: "Recording and playback",
+    description:
+      "Capture important calls automatically so you can review conversations, train new team members, and never miss a detail.",
+    icon: "lucide:mic",
+  },
 ];
 
 interface FeatureProps {
@@ -31,37 +37,22 @@ interface FeatureProps {
 const Feature = ({ className }: FeatureProps) => {
   return (
     <section id="features" className={cn("w-full", className)}>
-      <div className="border-y">
-        <div className="container max-w-7xl flex w-full flex-col gap-6 border-x px-5 py-4 lg:px-8 lg:py-8">
-          <p className="marketing-section-kicker">Why Calio</p>
-          <h2 className="marketing-section-heading">
-            Keep business calls organized
-          </h2>
-          <p className="max-w-[600px] tracking-[-0.32px] text-muted-foreground">
-            Calio gives you the tools to stay reachable, keep clean records,
-            and respond faster without being tied to a single device.
-          </p>
-        </div>
-      </div>
-      <div className="container max-w-7xl w-full border-x lg:px-0!">
-        <div className="items-center">
-          <div className="grid flex-1 bg-border max-lg:divide-y max-lg:border-x lg:grid-cols-3 lg:gap-px">
-            {benefits.map((item, index) => (
+      <div className="border-b">
+        <div className="container max-w-7xl w-full border-x lg:px-0!">
+          <div className="grid bg-border max-lg:divide-y lg:grid-cols-2 lg:gap-px">
+            {features.map((item, index) => (
               <div
                 key={index}
-                className="relative isolate flex flex-col bg-background p-10 text-start lg:pt-20"
+                className="relative isolate flex flex-col bg-background p-8 text-start transition-colors duration-200 hover:bg-foreground/[0.015] lg:p-10 lg:py-14"
               >
                 <div className="flex-1">
-                  <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-muted">
-                    <Icon
-                      icon={item.icon}
-                      className="size-6 text-muted-foreground"
-                    />
+                  <div className="marketing-icon-box mb-5">
+                    <Icon icon={item.icon} />
                   </div>
-                  <h3 className="text-lg font-semibold tracking-tight">
+                  <h3 className="text-[1.08rem] font-semibold tracking-[-0.02em] text-foreground">
                     {item.title}
                   </h3>
-                  <p className="pt-2 text-muted-foreground">
+                  <p className="mt-2.5 max-w-md text-[0.95rem] leading-relaxed text-foreground/55">
                     {item.description}
                   </p>
                 </div>
@@ -70,7 +61,7 @@ const Feature = ({ className }: FeatureProps) => {
           </div>
         </div>
       </div>
-      <div className="h-8 w-full border-y md:h-12 lg:h-[112px]">
+      <div className="h-8 w-full border-b md:h-12 lg:h-[112px]">
         <div className="container max-w-7xl h-full w-full border-x"></div>
       </div>
     </section>
