@@ -42,14 +42,14 @@ const Footer = ({ className }: FooterProps) => {
       <div className="border-b">
         <div className="container max-w-7xl border-x px-5 py-16 md:py-20 lg:px-8">
           <div className="flex flex-col items-center text-center">
-            <h2 className="max-w-[680px] text-[2.25rem] leading-[1.08] font-bold tracking-[-0.03em] md:text-5xl lg:text-[3.25rem]">
+            <h2 className="text-[2.25rem] leading-[1.08] font-bold tracking-[-0.03em] md:text-5xl lg:text-[3.25rem]">
               Put your business number to work.{" "}
               <span className="relative inline-block">
                 Stay reachable everywhere.
-                <span className="absolute bottom-0 left-0 h-[3px] w-full rounded-full bg-foreground/15"></span>
+                <span className="absolute bottom-0 left-0  w-full rounded-full bg-foreground/15"></span>
               </span>
             </h2>
-            <p className="mt-4 max-w-[500px] text-[1rem] leading-relaxed text-foreground/50">
+            <p className="mt-4  text-[1rem] leading-relaxed text-foreground/50">
               Get a virtual line your team can answer from any device, with
               texts, recordings, and conversation history all in one place.
             </p>

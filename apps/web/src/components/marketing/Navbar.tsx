@@ -94,7 +94,7 @@ const Navbar = ({ className }: NavbarProps) => {
               ref={indicatorRef}
               className="absolute bottom-1 flex h-1 items-center justify-center px-2 transition-all duration-300"
             >
-              <div className="h-[2px] w-full rounded-t-none bg-foreground/70 transition-all duration-300" />
+              <div className="w-full rounded-t-none bg-foreground/70 transition-all duration-300" />
             </div>
           </NavigationMenuList>
         </NavigationMenu>
@@ -148,7 +148,7 @@ const MobileNav = ({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="block flex h-full items-center lg:hidden">
+    <div className="flex h-full items-center lg:hidden">
       <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
           <Button variant="ghost" size="icon">

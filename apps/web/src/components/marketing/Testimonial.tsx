@@ -67,7 +67,7 @@ const Testimonial = ({ className }: TestimonialProps) => {
               className="flex flex-col gap-5 rounded-none border border-foreground/8 bg-background p-6 shadow-none transition-shadow duration-200 hover:shadow-sm"
             >
               <div className="flex items-center gap-2.5 text-foreground/50">
-                <div className="marketing-icon-box !size-8" />
+                <div className="marketing-icon-box" />
                 <span className="text-[0.7rem] font-bold uppercase tracking-[0.18em]">
                   {testimonial.company}
                 </span>
@@ -99,7 +99,7 @@ const Testimonial = ({ className }: TestimonialProps) => {
         </div>
       </div>
 
-      <div className="h-8 w-full border-b md:h-12 lg:h-[112px]">
+      <div className="h-8 w-full border-b md:h-12">
         <div className="container max-w-7xl h-full w-full border-x"></div>
       </div>
     </section>

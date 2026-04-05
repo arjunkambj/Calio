@@ -82,19 +82,19 @@ const Pricing = ({ className }: PricingProps) => {
                 key={index}
                 className={cn(
                   "flex flex-col justify-between transition-colors duration-200",
-                  plan.featured && "bg-foreground/[0.02]",
+                  plan.featured && "bg-foreground/02",
                 )}
               >
                 <div className="space-y-2.5 border-b px-6 pt-5 pb-12">
                   <div className="flex items-center gap-2.5">
-                    <div className="marketing-icon-box !size-8">
+                    <div className="marketing-icon-box">
                       <Icon icon={plan.icon} className="size-4" />
                     </div>
                     <h3 className="text-[1.1rem] font-semibold tracking-[-0.02em]">
                       {plan.name}
                     </h3>
                     {plan.featured && (
-                      <span className="ml-auto rounded-full border border-foreground/15 bg-foreground/[0.04] px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-foreground/60">
+                      <span className="ml-auto rounded-full border border-foreground/15 px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-foreground/60">
                         Popular
                       </span>
                     )}
@@ -149,7 +149,7 @@ const Pricing = ({ className }: PricingProps) => {
         </div>
       </div>
 
-      <div className="h-8 w-full border-b md:h-12 lg:h-[112px]">
+      <div className="h-8 w-full border-b md:h-12">
         <div className="container max-w-7xl h-full w-full border-x"></div>
       </div>
     </section>

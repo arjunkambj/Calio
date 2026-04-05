@@ -43,7 +43,7 @@ const Feature = ({ className }: FeatureProps) => {
             {features.map((item, index) => (
               <div
                 key={index}
-                className="relative isolate flex flex-col bg-background p-8 text-start transition-colors duration-200 hover:bg-foreground/[0.015] lg:p-10 lg:py-14"
+                className="relative isolate flex flex-col bg-background p-8 text-start transition-colors duration-200 lg:p-10 lg:py-14"
               >
                 <div className="flex-1">
                   <div className="mb-5">
@@ -61,7 +61,7 @@ const Feature = ({ className }: FeatureProps) => {
           </div>
         </div>
       </div>
-      <div className="h-8 w-full border-b md:h-12 lg:h-[112px]">
+      <div className="h-8 w-full border-b md:h-12">
         <div className="container max-w-7xl h-full w-full border-x"></div>
       </div>
     </section>
