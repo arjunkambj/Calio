@@ -7,40 +7,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
+import { FAQ_ITEMS } from "@/constants/landing-page";
 import { cn } from "@/lib/utils";
-
-const DATA = [
-  {
-    question: "Is there a free version?",
-    answer:
-      "Yes! We offer a Free Plan with essential features. You can upgrade anytime for advanced tools and integrations.",
-  },
-  {
-    question: "What apps can I integrate?",
-    answer:
-      "Our platform supports integration with various popular apps and services. The specific integrations available depend on your plan level.",
-  },
-  {
-    question: "How does the AI work?",
-    answer:
-      "Our AI technology uses advanced machine learning algorithms to analyze and process your data, providing intelligent insights and automation capabilities.",
-  },
-  {
-    question: "Can I use this with a team?",
-    answer:
-      "Absolutely! Our platform is designed for both individual and team use. You can easily collaborate and share resources with team members.",
-  },
-  {
-    question: "Is my data safe?",
-    answer:
-      "We take data security seriously. All data is encrypted and stored securely following industry best practices and compliance standards.",
-  },
-  {
-    question: "How do I manage my subscription?",
-    answer:
-      "You can manage your subscription easily through your account dashboard, where you can upgrade, downgrade, or modify your plan settings.",
-  },
-];
 
 interface FaqProps {
   className?: string;
@@ -48,7 +16,7 @@ interface FaqProps {
 
 const Faq = ({ className }: FaqProps) => {
   return (
-    <section className={cn("py-32", className)}>
+    <section id="faq" className={cn("py-32", className)}>
       <div className="border-y">
         <div className="container flex flex-col gap-6 border-x py-4 max-lg:border-x lg:py-8">
           <Badge
@@ -60,11 +28,11 @@ const Faq = ({ className }: FaqProps) => {
             <span>FAQ</span>
           </Badge>
           <h2 className="text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
-            Everything You Need to Know
+            Common questions, answered clearly
           </h2>
           <p className="max-w-[600px] tracking-[-0.32px] text-muted-foreground">
-            Looking for quick answers? Check out our{" "}
-            <span className="underline">FAQ section</span>.
+            Learn how Calio helps teams stay reachable, organized, and ready to
+            respond from anywhere.
           </p>
         </div>
       </div>
@@ -72,7 +40,7 @@ const Faq = ({ className }: FaqProps) => {
       <div className="container">
         <div className="mx-auto max-w-3xl pt-8 pb-4 md:pb-8 lg:pt-[3.75rem] lg:pb-[50px]">
           <Accordion type="single" collapsible className="space-y-4">
-            {DATA.map((item, index) => (
+            {FAQ_ITEMS.map((item, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}

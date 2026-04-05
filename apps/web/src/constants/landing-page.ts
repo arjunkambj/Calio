@@ -7,7 +7,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "How quickly can I get a virtual business number?",
     answer:
-      "You can get started in minutes. Calio is designed to make number setup fast, so you can claim a business line and begin handling customer conversations without a long telecom onboarding process.",
+      "You can get started in minutes. Calio is designed to make setup fast, so you can claim a business line and begin handling customer conversations without a long telecom onboarding process.",
   },
   {
     question: "Can I make and receive calls from any device?",
@@ -15,7 +15,7 @@ export const FAQ_ITEMS: FAQItem[] = [
       "Yes. Calio is built so you can manage business communication from desktop, laptop, or mobile, which makes it practical for remote teams and owners who are constantly moving.",
   },
   {
-    question: "Does Calio support text messaging?",
+    question: "Can I send business texts from the same number?",
     answer:
       "Yes. You can send and receive texts from your business number so calls and SMS stay together in the same workflow instead of being split across separate tools or devices.",
   },
@@ -27,7 +27,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "Can my team share the same business number and history?",
     answer:
-      "That is the point of the platform. Calio helps teams track customer interactions in one place so handoffs are cleaner and everyone has access to the same conversation history.",
+      "Yes. Calio helps teams track customer interactions in one place so handoffs are cleaner and everyone has access to the same conversation history.",
   },
   {
     question: "Is Calio useful for remote or global teams?",

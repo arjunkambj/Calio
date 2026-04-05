@@ -1,29 +1,30 @@
 import { Icon } from "@iconify/react";
+import Image from "next/image";
 
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 const DATA = [
   {
-    title: "Unified Scheduling",
+    title: "Record every important call",
     description:
-      "Keep all your appointments and events in sync with seamless cross-platform calendar connectivity.",
+      "Capture conversations for training, quality review, and follow-ups so your team never relies on memory alone.",
     icon: "CircleHelp",
     image:
       "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg",
   },
   {
-    title: "Insightful Performance",
+    title: "See the full customer timeline",
     description:
-      "Get clear, real-time analytics tracking your progress, key milestones, focus hours, and completed tasks.",
+      "Track calls, texts, and notes in one place so anyone stepping in has the context they need before replying.",
     icon: "Volume2",
     image:
       "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-2.svg",
   },
   {
-    title: "Effortless Tool Integrations",
+    title: "Keep your team aligned anywhere",
     description:
-      "Link your favorite apps and services to streamline work without switching between platforms.",
+      "Route business conversations through one shared number and history, even when your team is remote or on the move.",
     icon: "Lightbulb",
     image:
       "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-3.svg",
@@ -43,14 +44,14 @@ const Benefits = ({ className }: BenefitsProps) => {
             className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
           >
             <Icon icon="lucide:pen-tool" className="size-4" />
-            <span>Features</span>
+            <span>Core workflows</span>
           </Badge>
           <h2 className="text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
-            Smart productivity with AI
+            Built for real customer conversations
           </h2>
           <p className="max-w-[600px] tracking-[-0.32px] text-muted-foreground">
-            Unlock smarter productivity with features that help you manage
-            tasks, time, and focus—seamlessly.
+            From first ring to follow-up, Calio helps your team stay responsive
+            and accountable.
           </p>
         </div>
       </div>
@@ -71,10 +72,12 @@ const Benefits = ({ className }: BenefitsProps) => {
                   </p>
                 </div>
                 <div className="bg-muted">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
-                    className="p-12 dark:invert"
+                    width={480}
+                    height={320}
+                    className="h-auto w-full p-12 dark:invert"
                   />
                 </div>
               </div>

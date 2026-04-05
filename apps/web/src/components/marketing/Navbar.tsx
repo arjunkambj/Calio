@@ -18,16 +18,14 @@ import {
 import { cn } from "@/lib/utils";
 
 const NAV_LOGO = {
-  url: "https://www.shadcnblocks.com",
-  src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg",
-  alt: "logo",
-  title: "Shadcnblocks.com",
+  url: "#home",
+  title: "Calio",
 };
 const NAV_ITEMS = [
-  { name: "Home", link: "#" },
-  { name: "About", link: "#" },
-  { name: "Pricing", link: "#" },
-  { name: "Contact", link: "#" },
+  { name: "Home", link: "#home" },
+  { name: "Features", link: "#features" },
+  { name: "Pricing", link: "#pricing" },
+  { name: "FAQ", link: "#faq" },
 ];
 
 interface NavbarProps {
@@ -65,7 +63,9 @@ const Navbar = ({ className }: NavbarProps) => {
       <nav className="container flex items-center justify-between">
         {/* Left WordMark */}
         <a href={NAV_LOGO.url} className="flex items-center gap-2">
-          <img src={NAV_LOGO.src} className="max-h-8 w-8" alt={NAV_LOGO.alt} />
+          <span className="flex size-9 items-center justify-center rounded-full border text-sm font-semibold tracking-tight">
+            C
+          </span>
           <span className="text-lg font-semibold tracking-tighter">
             {NAV_LOGO.title}
           </span>
@@ -80,6 +80,7 @@ const Navbar = ({ className }: NavbarProps) => {
               <React.Fragment key={item.name}>
                 <NavigationMenuItem>
                   <NavigationMenuLink
+                    href={item.link}
                     data-nav-item={item.name}
                     onClick={() => setActiveItem(item.name)}
                     className={`relative cursor-pointer text-sm font-medium hover:bg-transparent ${
@@ -108,11 +109,12 @@ const Navbar = ({ className }: NavbarProps) => {
 
         <div className="hidden items-center gap-2 lg:flex">
           <Button
+            asChild
             variant="outline"
             size="sm"
             className="h-10 py-2.5 text-sm font-normal"
           >
-            Sign Up
+            <a href="#pricing">Get started</a>
           </Button>
         </div>
       </nav>
@@ -182,7 +184,9 @@ const MobileNav = ({
               </li>
             ))}
             <li className="flex flex-col px-7 py-2">
-              <Button variant="outline">Sign Up</Button>
+              <Button asChild variant="outline">
+                <a href="#pricing">Get started</a>
+              </Button>
             </li>
           </ul>
         </PopoverContent>

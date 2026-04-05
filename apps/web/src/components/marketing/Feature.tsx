@@ -7,22 +7,22 @@ import { cn } from "@/lib/utils";
 
 const benefits = [
   {
-    title: "10x Faster Development",
+    title: "Virtual number, ready fast",
     description:
-      "Build and deploy your products in a fraction of the time with our streamlined workflow tools.",
+      "Claim a dedicated business line without the usual telecom setup delays, then start taking customer calls right away.",
     icon: "lucide:zap",
   },
   {
-    title: "10,000+ Developers",
+    title: "Calls, texts, and context together",
     description:
-      "Join a thriving community of developers already building the future.",
-    icon: "lucide:users",
+      "Keep voice, SMS, notes, and recordings connected so every conversation stays in one timeline instead of scattered across tools.",
+    icon: "lucide:messages-square",
   },
   {
-    title: "25% Conversion Boost",
+    title: "Built for distributed teams",
     description:
-      "Watch your conversion rates soar with our optimized user experience patterns.",
-    icon: "lucide:trending-up",
+      "Use Calio from desktop or mobile so your team can answer customers from the office, from home, or while traveling.",
+    icon: "lucide:globe",
   },
 ];
 
@@ -32,7 +32,7 @@ interface FeatureProps {
 
 const Feature = ({ className }: FeatureProps) => {
   return (
-    <section className={cn("w-full py-32", className)}>
+    <section id="features" className={cn("w-full py-32", className)}>
       <div className="border-y">
         <div className="container flex w-full flex-col gap-6 border-x py-4 lg:py-8">
           <Badge
@@ -40,14 +40,14 @@ const Feature = ({ className }: FeatureProps) => {
             className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
           >
             <Icon icon="lucide:star" className="size-4" />
-            <span>Benefits</span>
+            <span>Why Calio</span>
           </Badge>
           <h2 className="text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
-            Everything you need to succeed
+            Business communication that stays organized
           </h2>
           <p className="max-w-[600px] tracking-[-0.32px] text-muted-foreground">
-            Powerful features designed to help you build faster, scale better,
-            and ship with confidence.
+            Calio gives you the tools to stay reachable, keep clean records,
+            and respond faster without being tied to a single device.
           </p>
         </div>
       </div>

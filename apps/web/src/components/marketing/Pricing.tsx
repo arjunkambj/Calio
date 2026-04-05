@@ -10,49 +10,47 @@ import { cn } from "@/lib/utils";
 const pricingPlans = [
   {
     icon: "lucide:rocket",
-    name: "Basic plan",
+    name: "Starter",
     price: {
       monthly: 19,
-      yearly: 199,
+      yearly: 190,
     },
     features: [
-      "Basic task management tools",
-      "Calendar sync with limited integrations",
-      "Access to 1 dashboard for tracking tasks",
-      "Limited AI suggestions and insights",
-      "Basic support and community access",
+      "1 virtual business number",
+      "Call and text from any device",
+      "Conversation history in one inbox",
+      "Call recordings and playback",
+      "Email support",
     ],
   },
   {
     icon: "lucide:briefcase",
-    name: "Business plan",
+    name: "Growth",
     price: {
-      monthly: 29,
-      yearly: 299,
+      monthly: 39,
+      yearly: 390,
     },
     features: [
-      "All Free Plan features, plus:",
-      "Unlimited task lists",
-      "Advanced calendar sync",
-      "AI-driven insights",
-      "Access to custom dashboards",
-      "Priority email support",
+      "Up to 3 business numbers",
+      "Shared team inbox and handoffs",
+      "Searchable recordings and notes",
+      "Role-based access for teammates",
+      "Priority support",
     ],
   },
   {
     icon: "lucide:building",
-    name: "Enterprise plan",
+    name: "Team",
     price: {
-      monthly: 49,
-      yearly: 499,
+      monthly: 79,
+      yearly: 790,
     },
     features: [
-      "All Pro Plan features, plus:",
-      "Dedicated account manager",
-      "Custom integrations",
-      "Real-time collaboration",
-      "Role-based permissions",
-      "24/7 priority support",
+      "Unlimited shared conversation history",
+      "Advanced call recording controls",
+      "Custom onboarding for larger teams",
+      "Priority routing and escalations",
+      "Dedicated success support",
     ],
   },
 ];
@@ -65,7 +63,7 @@ const Pricing = ({ className }: PricingProps) => {
   const [isMonthly] = useState(true);
 
   return (
-    <section className={cn("py-32", className)}>
+    <section id="pricing" className={cn("py-32", className)}>
       <div className="border-y">
         <div className="container flex flex-col gap-6 border-x py-4 max-lg:border-x lg:py-8">
           <Badge
@@ -73,13 +71,14 @@ const Pricing = ({ className }: PricingProps) => {
             className="w-fit gap-1 bg-card px-3 text-sm font-normal tracking-tight shadow-sm"
           >
             <Icon icon="lucide:badge-dollar-sign" className="size-4" />
-            <span>Spenders Lounge</span>
+            <span>Pricing</span>
           </Badge>
           <h2 className="text-3xl leading-tight tracking-tight md:text-4xl lg:text-6xl">
-            Pricing for everyone
+            Plans that grow with your business
           </h2>
           <p className="max-w-[600px] tracking-[-0.32px] text-muted-foreground">
-            Choose the Plan that Fits Your Productivity Need
+            Start with one business line, then expand into a shared customer
+            communication workspace as your team grows.
           </p>
         </div>
       </div>
@@ -131,10 +130,11 @@ const Pricing = ({ className }: PricingProps) => {
               </div>
 
               <Button
+                asChild
                 variant={index === 1 ? "default" : "secondary"}
                 className="mt-12"
               >
-                Get started
+                <a href="/get-started">Get started</a>
               </Button>
             </div>
           ))}

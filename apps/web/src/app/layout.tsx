@@ -20,21 +20,21 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Calio | The Smarter Way to Handle Calls",
+  title: "Calio | The Smarter Way to Handle Business Calls",
   description:
     "Get a virtual business number in minutes. Make calls, send texts, record conversations, and track every customer interaction from any device, anywhere in the world.",
   icons: {
     icon: "/icon",
   },
   openGraph: {
-    title: "Calio | The Smarter Way to Handle Calls",
+    title: "Calio | The Smarter Way to Handle Business Calls",
     description:
       "Get a virtual business number in minutes. Make calls, send texts, record conversations, and track every customer interaction from any device, anywhere in the world.",
     siteName: "Calio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Calio | The Smarter Way to Handle Calls",
+    title: "Calio | The Smarter Way to Handle Business Calls",
     description:
       "Get a virtual business number in minutes. Make calls, send texts, record conversations, and track every customer interaction from any device, anywhere in the world.",
   },

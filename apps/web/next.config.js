@@ -22,6 +22,11 @@ const nextConfig = {
         hostname: "pfxwiiakjmpwa0d2.public.blob.vercel-storage.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "deifkwefumgah.cloudfront.net",
+        pathname: "/**",
+      },
     ],
   },
 };

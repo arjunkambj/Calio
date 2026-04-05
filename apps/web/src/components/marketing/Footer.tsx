@@ -8,24 +8,24 @@ const navigation = [
   {
     title: "Product",
     links: [
-      { name: "Home", href: "#" },
-      { name: "Feature1", href: "#" },
-      { name: "Feature2", href: "#" },
-      { name: "Feature3", href: "#" },
+      { name: "Home", href: "#home" },
+      { name: "Features", href: "#features" },
+      { name: "Pricing", href: "#pricing" },
+      { name: "FAQ", href: "#faq" },
     ],
   },
   {
     title: "Company",
     links: [
-      { name: "About", href: "#" },
-      { name: "Pricing", href: "#" },
+      { name: "About Calio", href: "#features" },
+      { name: "Contact sales", href: "#pricing" },
     ],
   },
   {
     title: "Support",
     links: [
-      { name: "FAQ", href: "#" },
-      { name: "Contact", href: "#" },
+      { name: "FAQ", href: "#faq" },
+      { name: "Get started", href: "/get-started" },
     ],
   },
   {
@@ -38,14 +38,10 @@ const navigation = [
 ];
 
 const socialLinks = [
-  { icon: "lucide:facebook", href: "https://facebook.com", label: "Facebook" },
-  { icon: "lucide:twitter", href: "https://twitter.com", label: "Twitter" },
-  { icon: "lucide:linkedin", href: "https://linkedin.com", label: "LinkedIn" },
-  {
-    icon: "lucide:instagram",
-    href: "https://instagram.com",
-    label: "Instagram",
-  },
+  { icon: "lucide:facebook", href: "#", label: "Facebook" },
+  { icon: "lucide:twitter", href: "#", label: "Twitter" },
+  { icon: "lucide:linkedin", href: "#", label: "LinkedIn" },
+  { icon: "lucide:instagram", href: "#", label: "Instagram" },
 ];
 
 interface FooterProps {
@@ -65,20 +61,20 @@ const Footer = ({ className }: FooterProps) => {
           <div className="mb-16 rounded-2xl bg-primary-foreground/5 p-8 backdrop-blur-sm md:p-12 lg:p-16">
             <div className="flex flex-col items-center text-center">
               <h2 className="max-w-[800px] text-4xl leading-tight font-semibold tracking-tight text-balance md:text-5xl lg:text-6xl">
-                Start your free trial today.
+                Put your business number to work.
                 <span className="text-sand-600 relative inline-block">
-                  Your future won&apos;t wait.
+                  Stay reachable everywhere.
                   <span className="bg-sand-600/30 absolute bottom-1 left-0 h-1 w-full rounded-full"></span>
                 </span>
               </h2>
               <p className="mt-4 max-w-[600px] text-lg text-primary-foreground/80">
-                Join thousands of users already leveraging our platform to
-                achieve more.
+                Get a virtual line your team can answer from any device, with
+                texts, recordings, and conversation history all in one place.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button asChild variant="secondary" size="lg" className="group">
                   <a href="/get-started" className="flex items-center gap-2">
-                    Get started with 7 days free
+                    Get started with Calio
                     <Icon
                       icon="lucide:arrow-right"
                       className="h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -95,8 +91,8 @@ const Footer = ({ className }: FooterProps) => {
               <div>
                 <h3 className="mb-2 text-2xl font-medium">Stay connected</h3>
                 <p className="max-w-md text-primary-foreground/70">
-                  Subscribe to our newsletter for the latest updates, resources,
-                  and exclusive offers.
+                  Get product updates, launch news, and practical ideas for
+                  handling customer calls more efficiently.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row">
@@ -139,14 +135,7 @@ const Footer = ({ className }: FooterProps) => {
           <div className="mx-auto mt-4 py-8">
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <p className="font-medium text-primary-foreground/80">
-                © {new Date().getFullYear()} Streamline -{" "}
-                <a
-                  href="https://shadcnblocks.com"
-                  className="underline transition-colors hover:text-primary-foreground"
-                  target="_blank"
-                >
-                  Shadcnblocks.com
-                </a>
+                © {new Date().getFullYear()} Calio. Business calls, organized.
               </p>
               <div className="flex items-center gap-6">
                 {socialLinks.map((link) => (
