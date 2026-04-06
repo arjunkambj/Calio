@@ -94,7 +94,7 @@ const Pricing = ({ className }: PricingProps) => {
                       {plan.name}
                     </h3>
                     {plan.featured && (
-                      <span className="ml-auto rounded-full border border-foreground/15 bg-foreground/[0.04] px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-foreground/60">
+                      <span className="ml-auto rounded-full border border-foreground/15 bg-foreground/4 px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-foreground/60">
                         Popular
                       </span>
                     )}
