@@ -29,7 +29,10 @@ function AccordionItem({
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      className={cn("not-last:border-b data-open:bg-muted/50", className)}
+      className={cn(
+        "not-last:border-b hover:bg-muted dark:hover:bg-foreground/3 data-open:bg-muted/50",
+        className,
+      )}
       {...props}
     />
   );

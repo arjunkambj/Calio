@@ -66,7 +66,7 @@ const Pricing = ({ className }: PricingProps) => {
     <section id="pricing" className={cn(className)}>
       <div className="border-b">
         <div className="max-w-6xl mx-auto border-x">
-          <div className="flex flex-col gap-5 px-5 py-5 lg:px-8 lg:py-8">
+          <div className="flex flex-col gap-3 px-5 py-6 lg:px-8 lg:py-10">
             <p className="marketing-section-kicker">Pricing</p>
             <h2 className="marketing-section-heading">
               Pricing for growing teams

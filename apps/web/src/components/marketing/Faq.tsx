@@ -15,7 +15,7 @@ const Faq = ({ className }: FaqProps) => {
   return (
     <section id="faq" className={cn(className)}>
       <div className="border-b">
-        <div className="max-w-6xl mx-auto flex flex-col gap-5 border-x px-5 py-5 max-lg:border-x lg:px-8 lg:py-8">
+        <div className="max-w-6xl mx-auto flex flex-col gap-3 border-x px-5 py-6 max-lg:border-x lg:px-8 lg:py-10">
           <p className="marketing-section-kicker">FAQ</p>
           <h2 className="marketing-section-heading">Common questions</h2>
           <p className="marketing-section-desc">

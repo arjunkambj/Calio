@@ -33,13 +33,6 @@ const navigation: NavigationSection[] = [
     ],
   },
   {
-    title: "Contact",
-    links: [
-      { name: "Contact", href: "#contact" },
-      { name: "GitHub", href: "https://github.com" },
-    ],
-  },
-  {
     title: "Support",
     links: [
       {
@@ -53,7 +46,7 @@ const navigation: NavigationSection[] = [
 const legalLinks = [
   { name: "Privacy Policy", href: "#privacy" },
   { name: "Data Policy", href: "#data" },
-  { name: "DPA", href: "#dpa" },
+  { name: "Refund Policy", href: "#refund" },
   { name: "Terms of Service", href: "#terms" },
 ];
 
@@ -65,38 +58,47 @@ const Footer = ({ className }: FooterProps) => {
   return (
     <section className={cn("bg-background", className)}>
       {/* Footer Nav */}
-      <div className="border-b border-border/40">
-        <div className="max-w-6xl mx-auto border-x border-border/40 px-5 py-12 lg:px-8 lg:py-16">
-          <div className="grid gap-10 lg:grid-cols-4 lg:gap-8">
+      <div className="border-b">
+        <div className="max-w-6xl mx-auto border-x px-5 py-10 lg:px-8 lg:py-12">
+          <div className="grid gap-8 lg:grid-cols-4 lg:gap-6">
             {/* Logo & Description */}
             <div className="lg:col-span-1">
-              <div className="mb-4 flex items-center gap-2">
+              <div className="mb-2 flex items-center gap-2">
                 <span className="text-xl font-bold tracking-tight">Calio</span>
               </div>
-              <p className="text-[0.85rem] leading-relaxed text-foreground/50">
+              <p className="text-[0.8rem] leading-snug text-foreground/50 max-w-[200px]">
                 Privacy-first web analytics without compromising user data.
               </p>
             </div>
 
             {/* Navigation columns */}
-            <div className="col-span-3 grid grid-cols-2 gap-6 sm:grid-cols-4 lg:gap-12">
+            <div className="col-span-3 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:gap-x-8 lg:gap-y-4">
               {navigation.map((section) => (
                 <div key={section.title}>
-                  <h4 className="mb-4 text-[0.78rem] font-semibold text-foreground">
+                  <h4 className="mb-2.5 text-[0.78rem] font-semibold text-foreground">
                     {section.title}
                   </h4>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2">
                     {section.links.map((link) => (
                       <li key={link.name}>
-                        <Link
-                          href={link.href}
-                          className="inline-flex items-center gap-2 text-[0.85rem] text-foreground/60 transition-colors duration-150 hover:text-foreground"
-                        >
-                          {link.icon && (
-                            <Icon icon={link.icon} className="h-4 w-4" />
-                          )}
-                          {link.name}
-                        </Link>
+                        {link.name === "Contact" ? (
+                          <span className="inline-flex items-center gap-2 text-[0.85rem] text-foreground/60">
+                            {link.icon && (
+                              <Icon icon={link.icon} className="h-4 w-4" />
+                            )}
+                            {link.name}
+                          </span>
+                        ) : (
+                          <Link
+                            href={link.href}
+                            className="inline-flex items-center gap-2 text-[0.85rem] text-foreground/60 transition-colors duration-150 hover:text-foreground"
+                          >
+                            {link.icon && (
+                              <Icon icon={link.icon} className="h-4 w-4" />
+                            )}
+                            {link.name}
+                          </Link>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -109,7 +111,7 @@ const Footer = ({ className }: FooterProps) => {
 
       {/* Bottom Section */}
       <div>
-        <div className="max-w-6xl mx-auto border-x border-border/40 px-5 py-8 lg:px-8">
+        <div className="max-w-6xl mx-auto border-x px-5 py-8 lg:px-8">
           {/* Legal Links */}
           <div className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-2 text-[0.82rem] text-foreground/50">
             {legalLinks.map((link, index) => (
