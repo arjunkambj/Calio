@@ -124,10 +124,7 @@ const Pricing = ({ className }: PricingProps) => {
                   <ul className="mt-4 space-y-3.5">
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <Icon
-                          icon="solar:check-circle-bold"
-                          className="mt-0.5 size-[1rem] shrink-0 text-foreground/35"
-                        />
+                        <Icon icon="solar:check-circle-bold" width={24} />
                         <span className="text-[0.9rem] leading-snug text-foreground/55">
                           {feature}
                         </span>

@@ -46,7 +46,7 @@ const Footer = ({ className }: FooterProps) => {
               Put your business number to work.{" "}
               <span className="relative inline-block">
                 Stay reachable everywhere.
-                <span className="absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-foreground/20"></span>
+                <span className="absolute -bottom-1 left-0 h-4 w-full rounded-full bg-foreground/20"></span>
               </span>
             </h2>
             <p className="mt-4 max-w-lg text-[0.98rem] leading-relaxed text-foreground/45">
