@@ -13,8 +13,8 @@ const Hero = ({ className }: HeroProps) => {
       <div className="w-full border-b">
         <div className="container max-w-7xl">
           <div className="flex w-full flex-col items-center justify-center border-x px-5 py-20 md:py-28">
-            <div className="inline-flex items-center gap-2 rounded-full border border-foreground/10 px-4 py-1.5">
-              <span className="inline-block size-2 rounded-full bg-emerald-500" />
+            <div className="inline-flex items-center gap-2 rounded-full bg-foreground/3 px-4 py-1.5">
+              <span className="inline-block size-2 rounded-full bg-primary" />
               <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-foreground/60">
                 Live in minutes
               </span>

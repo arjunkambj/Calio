@@ -103,10 +103,7 @@ const Navbar = ({ className }: NavbarProps) => {
         <MobileNav activeItem={activeItem} setActiveItem={setActiveItem} />
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Button
-            asChild
-            className="h-9 rounded-lg px-5 text-[0.85rem] font-semibold"
-          >
+          <Button asChild>
             <Link href="/sign-in">Get started</Link>
           </Button>
         </div>

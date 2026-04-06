@@ -99,7 +99,7 @@ const Testimonial = ({ className }: TestimonialProps) => {
         </div>
       </div>
 
-      <div className="h-8 w-full border-b md:h-12">
+      <div className="h-8 w-full border-b md:h-12 lg:h-28">
         <div className="container max-w-7xl h-full w-full border-x"></div>
       </div>
     </section>
