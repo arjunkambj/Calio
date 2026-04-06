@@ -3,8 +3,8 @@
 import * as React from "react";
 import { OTPInput, OTPInputContext } from "input-otp";
 
+import { Icon } from "@iconify/react";
 import { cn } from "@/lib/utils";
-import { MinusIcon } from "@phosphor-icons/react";
 
 function InputOTP({
   className,
@@ -78,7 +78,7 @@ function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
       role="separator"
       {...props}
     >
-      <MinusIcon />
+      <Icon icon="solar:minus-circle-linear" />
     </div>
   );
 }

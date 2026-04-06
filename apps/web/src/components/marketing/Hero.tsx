@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Icon } from "@iconify/react";
+
 interface HeroProps {
   className?: string;
 }
@@ -11,7 +13,7 @@ const Hero = ({ className }: HeroProps) => {
       className={cn("h-full w-full overflow-hidden ", className)}
     >
       <div className="w-full border-b">
-        <div className="container max-w-7xl">
+        <div className="max-w-6xl mx-auto">
           <div className="flex w-full flex-col items-center justify-center border-x px-5 py-20 md:py-28">
             <div className="inline-flex items-center gap-2.5 rounded-full border border-foreground/8 bg-foreground/[0.025] px-4 py-1.5">
               <span className="inline-block size-1.5 rounded-full bg-primary" />
@@ -37,22 +39,31 @@ const Hero = ({ className }: HeroProps) => {
         </div>
       </div>
       <div className="w-full border-b">
-        <div className="container max-w-7xl">
+        <div className="max-w-6xl mx-auto">
           <ul className="grid h-44 w-full grid-cols-1 border-x md:h-36 lg:h-24 lg:grid-cols-3">
-            <li className="flex h-full items-center justify-between gap-10 px-6 md:gap-3 lg:justify-center">
-              <div className="marketing-icon-box" />
+            <li className="flex h-full items-center justify-between gap-4 px-6 md:gap-3 lg:justify-center">
+              <Icon
+                icon="solar:clock-circle-linear"
+                className="size-5 text-foreground/60"
+              />
               <p className="text-[0.9rem] font-medium text-foreground/65">
                 Setup in Minutes
               </p>
             </li>
-            <li className="flex h-full items-center justify-between gap-10 border-t border-l px-6 md:gap-3 lg:justify-center lg:border-t-0">
-              <div className="marketing-icon-box" />
+            <li className="flex h-full items-center justify-between gap-4 border-t border-l px-6 md:gap-3 lg:justify-center lg:border-t-0">
+              <Icon
+                icon="solar:chat-round-linear"
+                className="size-5 text-foreground/60"
+              />
               <p className="text-[0.9rem] font-medium text-foreground/65">
                 Calls and Texts in One Place
               </p>
             </li>
-            <li className="col-span-1 flex h-full items-center justify-between gap-10 border-t border-l border-dashed px-6 md:col-span-2 md:justify-center md:gap-3 lg:col-span-1 lg:border-t-0">
-              <div className="marketing-icon-box" />
+            <li className="col-span-1 flex h-full items-center justify-between gap-4 border-t border-l border-dashed px-6 md:col-span-2 md:justify-center md:gap-3 lg:col-span-1 lg:border-t-0">
+              <Icon
+                icon="solar:devices-linear"
+                className="size-5 text-foreground/60"
+              />
               <p className="text-[0.9rem] font-medium text-foreground/65">
                 Works Across Every Device
               </p>

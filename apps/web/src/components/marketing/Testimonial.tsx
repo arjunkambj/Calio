@@ -47,7 +47,7 @@ const Testimonial = ({ className }: TestimonialProps) => {
   return (
     <section className={cn(className)}>
       <div className="border-b">
-        <div className="container max-w-7xl flex flex-col gap-5 border-x px-5 py-5 max-lg:border-x lg:px-8 lg:py-8">
+        <div className="max-w-6xl mx-auto flex flex-col gap-5 border-x px-5 py-5 max-lg:border-x lg:px-8 lg:py-8">
           <p className="marketing-section-kicker">Customer stories</p>
           <h2 className="marketing-section-heading">
             Teams stay reachable with Calio
@@ -60,7 +60,7 @@ const Testimonial = ({ className }: TestimonialProps) => {
       </div>
 
       <div className="border-b">
-        <div className="container max-w-7xl grid gap-6 border-x px-5 py-5 lg:grid-cols-3 lg:px-8 lg:py-8">
+        <div className="max-w-6xl mx-auto grid gap-6 border-x px-5 py-5 lg:grid-cols-3 lg:px-8 lg:py-8">
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
@@ -100,7 +100,7 @@ const Testimonial = ({ className }: TestimonialProps) => {
       </div>
 
       <div className="h-8 w-full border-b md:h-12 lg:h-28">
-        <div className="container max-w-7xl h-full w-full border-x"></div>
+        <div className="max-w-6xl mx-auto h-full w-full border-x"></div>
       </div>
     </section>
   );

@@ -1,15 +1,15 @@
 "use client";
 
+import { Icon } from "@iconify/react";
 import { cn } from "@/lib/utils";
-import { SpinnerIcon } from "@phosphor-icons/react";
 
-function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
+function Spinner({ className }: { className?: string }) {
   return (
-    <SpinnerIcon
+    <Icon
+      icon="solar:loader-linear"
       role="status"
       aria-label="Loading"
       className={cn("size-4 animate-spin", className)}
-      {...props}
     />
   );
 }

@@ -15,7 +15,7 @@ const Faq = ({ className }: FaqProps) => {
   return (
     <section id="faq" className={cn(className)}>
       <div className="border-b">
-        <div className="container max-w-7xl flex flex-col gap-5 border-x px-5 py-5 max-lg:border-x lg:px-8 lg:py-8">
+        <div className="max-w-6xl mx-auto flex flex-col gap-5 border-x px-5 py-5 max-lg:border-x lg:px-8 lg:py-8">
           <p className="marketing-section-kicker">FAQ</p>
           <h2 className="marketing-section-heading">Common questions</h2>
           <p className="marketing-section-desc">
@@ -26,7 +26,7 @@ const Faq = ({ className }: FaqProps) => {
       </div>
 
       <div className="border-b">
-        <div className="container max-w-7xl border-x px-5 py-5 lg:px-8 lg:py-8">
+        <div className="max-w-6xl mx-auto border-x px-5 py-5 lg:px-8 lg:py-8">
           <div className="mx-auto max-w-3xl">
             <Accordion
               type="single"
@@ -54,7 +54,7 @@ const Faq = ({ className }: FaqProps) => {
         </div>
       </div>
       <div className="h-8 w-full border-b md:h-12 lg:h-28">
-        <div className="container max-w-7xl h-full w-full border-x"></div>
+        <div className="max-w-6xl mx-auto h-full w-full border-x"></div>
       </div>
     </section>
   );

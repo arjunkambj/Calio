@@ -10,14 +10,14 @@ interface AuthLayoutProps {
 export default function AuthLayout({ children }: AuthLayoutProps) {
   return (
     <div className="h-dvh bg-background p-4 lg:grid lg:grid-cols-2">
-      <aside className="relative hidden bg-secondary h-full rounded-3xl text-secondary-foreground lg:flex">
+      <aside className="relative hidden bg-foreground/3 h-full rounded-3xl text-foreground lg:flex">
         <div className="relative flex w-full flex-col justify-between p-8">
           <HomeLink />
           <div />
 
-          <footer className="flex items-center justify-between border-t border-secondary-foreground/10 pt-6">
-            <p className="text-sm text-secondary-foreground/56">Always on</p>
-            <div className="flex items-end gap-2 text-secondary-foreground/44"></div>
+          <footer className="flex items-center justify-between border-t border-foreground/10 pt-6">
+            <p className="text-sm text-foreground/56">Always on</p>
+            <div className="flex items-end gap-2 text-foreground/44"></div>
           </footer>
         </div>
       </aside>

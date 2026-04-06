@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 const pricingPlans = [
   {
-    icon: "solar:rocket-bold",
+    icon: "solar:star-linear",
     name: "Starter",
     price: {
       monthly: 5,
@@ -23,7 +23,7 @@ const pricingPlans = [
     ],
   },
   {
-    icon: "solar:briefcase-bold",
+    icon: "solar:bolt-linear",
     name: "Growth",
     featured: true,
     price: {
@@ -39,7 +39,7 @@ const pricingPlans = [
     ],
   },
   {
-    icon: "solar:buildings-bold",
+    icon: "solar:users-group-two-rounded-linear",
     name: "Team",
     price: {
       monthly: 25,
@@ -65,7 +65,7 @@ const Pricing = ({ className }: PricingProps) => {
   return (
     <section id="pricing" className={cn(className)}>
       <div className="border-b">
-        <div className="container max-w-7xl border-x">
+        <div className="max-w-6xl mx-auto border-x">
           <div className="flex flex-col gap-5 px-5 py-5 lg:px-8 lg:py-8">
             <p className="marketing-section-kicker">Pricing</p>
             <h2 className="marketing-section-heading">
@@ -87,9 +87,11 @@ const Pricing = ({ className }: PricingProps) => {
               >
                 <div className="space-y-2.5 border-b px-6 pt-5 pb-12">
                   <div className="flex items-center gap-2.5">
-                    <div className="marketing-icon-box size-8">
-                      <Icon icon={plan.icon} className="size-4" />
-                    </div>
+                    <Icon
+                      icon={plan.icon}
+                      width={20}
+                      className="text-foreground/60"
+                    />
                     <h3 className="text-[1.05rem] font-semibold tracking-[-0.02em]">
                       {plan.name}
                     </h3>
@@ -124,7 +126,11 @@ const Pricing = ({ className }: PricingProps) => {
                   <ul className="mt-4 space-y-3.5">
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <Icon icon="solar:check-circle-bold" width={24} />
+                        <Icon
+                          icon="lucide:check"
+                          width={18}
+                          className="mt-0.5 text-foreground/60"
+                        />
                         <span className="text-[0.9rem] leading-snug text-foreground/55">
                           {feature}
                         </span>
@@ -147,7 +153,7 @@ const Pricing = ({ className }: PricingProps) => {
       </div>
 
       <div className="h-8 w-full border-b md:h-12 lg:h-28">
-        <div className="container max-w-7xl h-full w-full border-x"></div>
+        <div className="max-w-6xl mx-auto h-full w-full border-x"></div>
       </div>
     </section>
   );

@@ -36,7 +36,7 @@ const Benefits = ({ className }: BenefitsProps) => {
   return (
     <section className={cn(className)}>
       <div className="border-b">
-        <div className="container max-w-7xl flex flex-col gap-5 border-x px-5 py-5 max-lg:border-x lg:px-8 lg:py-8">
+        <div className="max-w-6xl mx-auto flex flex-col gap-5 border-x px-5 py-5 max-lg:border-x lg:px-8 lg:py-8">
           <p className="marketing-section-kicker">Core workflows</p>
           <h2 className="marketing-section-heading">
             Built for customer conversations
@@ -47,7 +47,7 @@ const Benefits = ({ className }: BenefitsProps) => {
           </p>
         </div>
       </div>
-      <div className="container max-w-7xl border-x lg:px-0!">
+      <div className="max-w-6xl mx-auto border-x lg:px-0!">
         <div className="items-center">
           <div className="grid flex-1 border-b bg-border max-lg:divide-y lg:grid-cols-3 lg:gap-px">
             {DATA.map((item, index) => (
@@ -55,7 +55,7 @@ const Benefits = ({ className }: BenefitsProps) => {
                 key={index}
                 className="group relative isolate flex flex-col bg-background pb-5 text-start transition-all duration-300 lg:pb-14"
               >
-                <div className="flex-1 border-b border-border pt-8 transition-colors duration-300 group-hover:border-foreground/15">
+                <div className="flex-1 border-b border-border pt-8 transition-colors duration-300 group-hover:border-foreground">
                   <h3 className="mt-2 px-5 text-[1.05rem] font-semibold tracking-[-0.02em] text-foreground lg:px-8">
                     {item.title}
                   </h3>
@@ -78,7 +78,7 @@ const Benefits = ({ className }: BenefitsProps) => {
         </div>
       </div>
       <div className="h-8 w-full border-b md:h-12 lg:h-28">
-        <div className="container max-w-7xl h-full w-full border-x"></div>
+        <div className="max-w-6xl mx-auto h-full w-full border-x"></div>
       </div>
     </section>
   );

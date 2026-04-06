@@ -58,7 +58,7 @@ const Navbar = ({ className }: NavbarProps) => {
 
   return (
     <section className={cn(className)}>
-      <nav className="mx-auto border-x flex w-full items-center justify-between px-4 container max-w-7xl lg:px-8">
+      <nav className="mx-auto border-x flex w-full items-center justify-between px-4 py-3 max-w-6xl mx-auto lg:px-8">
         <Link href="/" className="shrink-0">
           <Logo />
         </Link>
@@ -66,7 +66,7 @@ const Navbar = ({ className }: NavbarProps) => {
         <NavigationMenu className="hidden lg:block">
           <NavigationMenuList
             ref={menuRef}
-            className="relative flex items-center gap-1 rounded-full px-3 py-1.5"
+            className="relative flex items-center gap-4 rounded-full px-3 py-1.5"
           >
             {NAV_ITEMS.map((item) => (
               <NavigationMenuItem key={item.name}>
@@ -76,7 +76,7 @@ const Navbar = ({ className }: NavbarProps) => {
                     "relative cursor-pointer rounded-full px-4 py-2 text-[0.82rem] font-medium transition-all duration-200 hover:bg-transparent focus:bg-transparent data-[active=true]:bg-transparent",
                     activeItem === item.name
                       ? "text-foreground"
-                      : "text-foreground/40 hover:text-foreground/70",
+                      : "text-foreground/90 hover:text-foreground",
                   )}
                 >
                   <Link
@@ -103,7 +103,7 @@ const Navbar = ({ className }: NavbarProps) => {
         <MobileNav activeItem={activeItem} setActiveItem={setActiveItem} />
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Button asChild className="rounded-full px-5">
+          <Button asChild className=" px-5">
             <Link href="/sign-in">Get started</Link>
           </Button>
         </div>
@@ -119,13 +119,13 @@ const AnimatedHamburger = ({ isOpen }: { isOpen: boolean }) => {
     <div className="group relative size-full">
       <div className="absolute flex size-full items-center justify-center">
         <Icon
-          icon="lucide:menu"
+          icon="solar:hamburger-menu-linear"
           className={`absolute size-5 text-foreground/50 transition-all duration-300 group-hover:text-foreground ${
             isOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
           }`}
         />
         <Icon
-          icon="lucide:x"
+          icon="solar:close-circle-linear"
           className={`absolute size-5 text-foreground/50 transition-all duration-300 group-hover:text-foreground ${
             isOpen ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"
           }`}
