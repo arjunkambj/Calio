@@ -58,7 +58,7 @@ const Navbar = ({ className }: NavbarProps) => {
 
   return (
     <section className={cn(className)}>
-      <nav className="mx-auto border-x flex w-full items-center justify-between px-4 py-3 max-w-6xl mx-auto lg:px-8">
+      <nav className="mx-auto border-x flex w-full items-center justify-between px-4 py-3 max-w-6xl lg:px-8">
         <Link href="/" className="shrink-0">
           <Logo />
         </Link>
