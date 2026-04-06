@@ -22,7 +22,7 @@ export function ThemeSwitch() {
       variant="ghost"
       size="icon"
       aria-label="Toggle theme"
-      className="text-muted-foreground hover:text-foreground transition-colors rounded-full"
+      className="text-muted-foreground hover:text-foreground transition-colors rounded-xl bg-muted dark:bg-foreground/8"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       <Icon

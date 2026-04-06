@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 import Logo from "@/components/layout/Logo";
+import { ThemeSwitch } from "@/components/layout/ThemeSwitch";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -103,7 +104,8 @@ const Navbar = ({ className }: NavbarProps) => {
         <MobileNav activeItem={activeItem} setActiveItem={setActiveItem} />
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Button asChild className=" px-5">
+          <ThemeSwitch />
+          <Button asChild className="px-5">
             <Link href="/sign-in">Get started</Link>
           </Button>
         </div>
