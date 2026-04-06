@@ -42,27 +42,27 @@ const Footer = ({ className }: FooterProps) => {
       <div className="border-b">
         <div className="container max-w-7xl border-x px-5 py-16 md:py-20 lg:px-8">
           <div className="flex flex-col items-center text-center">
-            <h2 className="max-w-2xl text-[2.25rem] leading-[1.08] font-bold tracking-[-0.03em] md:text-5xl lg:text-[3.25rem]">
+            <h2 className="max-w-2xl text-[2rem] leading-[1.08] font-bold tracking-[-0.035em] md:text-[2.5rem] lg:text-[2.85rem]">
               Put your business number to work.{" "}
               <span className="relative inline-block">
                 Stay reachable everywhere.
-                <span className="absolute bottom-0 left-0 h-px w-full rounded-full bg-foreground/15"></span>
+                <span className="absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-foreground/20"></span>
               </span>
             </h2>
-            <p className="mt-4 max-w-lg text-[1rem] leading-relaxed text-foreground/50">
+            <p className="mt-4 max-w-lg text-[0.98rem] leading-relaxed text-foreground/45">
               Get a virtual line your team can answer from any device, with
               texts, recordings, and conversation history all in one place.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Button
                 asChild
-                className="group h-11 rounded-lg px-7 text-[0.88rem] font-semibold"
+                className="group h-11 rounded-xl px-7 text-[0.88rem] font-semibold shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-px"
               >
                 <Link href="/sign-in" className="flex items-center gap-2">
                   Get started with Calio
                   <Icon
                     icon="lucide:arrow-right"
-                    className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                    className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
                   />
                 </Link>
               </Button>
@@ -116,7 +116,7 @@ const Footer = ({ className }: FooterProps) => {
       <div className="border-b">
         <div className="container max-w-7xl border-x px-5 py-6 lg:px-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-[0.8rem] text-foreground/35">
+            <p className="text-[0.78rem] text-foreground/30">
               &copy; {new Date().getFullYear()} Calio. Business calls,
               organized.
             </p>
@@ -126,9 +126,9 @@ const Footer = ({ className }: FooterProps) => {
                   aria-label={link.label}
                   key={link.label}
                   href={link.href}
-                  className="text-foreground/35 transition-colors duration-150 hover:text-foreground/65"
+                  className="text-foreground/30 transition-all duration-200 hover:text-foreground/60"
                 >
-                  <Icon icon={link.icon} className="size-[1.1rem]" />
+                  <Icon icon={link.icon} className="size-[1.05rem]" />
                 </a>
               ))}
             </div>

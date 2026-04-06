@@ -150,23 +150,27 @@
   }
 
   .marketing-section-kicker {
-    @apply text-[0.72rem] font-bold uppercase tracking-[0.22em] text-foreground/50;
+    @apply text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-foreground/40;
+    letter-spacing: 0.28em;
   }
 
   .marketing-section-heading {
-    @apply max-w-4xl text-3xl leading-[1.1] tracking-[-0.04em] font-semibold md:text-[2.75rem] lg:text-[3.25rem];
+    @apply max-w-4xl text-[2.4rem] leading-[1.08] tracking-[-0.035em] font-semibold md:text-[2.5rem] lg:text-[2.85rem];
+    letter-spacing: -0.035em;
   }
 
   .marketing-section-desc {
-    @apply max-w-[560px] text-[1.05rem] leading-relaxed tracking-[-0.01em] text-foreground/55;
+    @apply max-w-[520px] text-[1rem] leading-[1.65] tracking-[-0.005em] text-foreground/50;
+    letter-spacing: -0.005em;
   }
 
   .marketing-icon-box {
-    @apply flex size-11 items-center justify-center rounded-lg border border-foreground/8 bg-foreground/[0.04];
+    @apply flex size-10 items-center justify-center rounded-xl border border-foreground/10 bg-foreground/[0.035];
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.03);
   }
 
   .marketing-icon-box svg,
   .marketing-icon-box [data-icon] {
-    @apply size-[1.15rem] text-foreground/70;
+    @apply size-[1.1rem] text-foreground/60;
   }
 }

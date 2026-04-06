@@ -90,11 +90,11 @@ const Pricing = ({ className }: PricingProps) => {
                     <div className="marketing-icon-box size-8">
                       <Icon icon={plan.icon} className="size-4" />
                     </div>
-                    <h3 className="text-[1.1rem] font-semibold tracking-[-0.02em]">
+                    <h3 className="text-[1.05rem] font-semibold tracking-[-0.02em]">
                       {plan.name}
                     </h3>
                     {plan.featured && (
-                      <span className="ml-auto rounded-full border border-foreground/15 bg-foreground/4 px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-foreground/60">
+                      <span className="ml-auto rounded-full border border-foreground/12 bg-foreground/5 px-2.5 py-0.5 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-foreground/55">
                         Popular
                       </span>
                     )}
@@ -102,14 +102,14 @@ const Pricing = ({ className }: PricingProps) => {
 
                   <>
                     <div className="flex items-baseline font-medium">
-                      <span className="text-[3.25rem] leading-[1.1] font-semibold tracking-[-0.04em]">
+                      <span className="text-[3rem] leading-[1.1] font-semibold tracking-[-0.04em]">
                         ${isMonthly ? plan.price.monthly : plan.price.yearly}
                       </span>
-                      <span className="ml-1 text-[1.05rem] text-foreground/40">
+                      <span className="ml-1 text-[1rem] text-foreground/40">
                         {isMonthly ? "/mo" : "/yr"}
                       </span>
                     </div>
-                    <p className="text-[0.88rem] text-foreground/45">
+                    <p className="text-[0.85rem] text-foreground/45">
                       {isMonthly
                         ? `or $${plan.price.yearly} yearly`
                         : `or $${plan.price.monthly}/mo monthly`}
@@ -118,7 +118,7 @@ const Pricing = ({ className }: PricingProps) => {
                 </div>
 
                 <div className="px-6 pb-6 pt-4">
-                  <h4 className="text-[0.72rem] font-bold uppercase tracking-[0.16em] text-foreground/40">
+                  <h4 className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-foreground/40">
                     Features Included
                   </h4>
                   <ul className="mt-4 space-y-3.5">
@@ -126,9 +126,9 @@ const Pricing = ({ className }: PricingProps) => {
                       <li key={index} className="flex items-start gap-3">
                         <Icon
                           icon="solar:check-circle-bold"
-                          className="mt-0.5 size-[1.05rem] shrink-0 text-foreground/40"
+                          className="mt-0.5 size-[1rem] shrink-0 text-foreground/35"
                         />
-                        <span className="text-[0.92rem] leading-snug text-foreground/60">
+                        <span className="text-[0.9rem] leading-snug text-foreground/55">
                           {feature}
                         </span>
                       </li>
@@ -139,7 +139,7 @@ const Pricing = ({ className }: PricingProps) => {
                 <Button
                   asChild
                   variant={plan.featured ? "default" : "secondary"}
-                  className="mt-auto mb-6 mx-6 h-11 text-[0.88rem]"
+                  className="mt-auto mb-6 mx-6 h-11 rounded-xl text-[0.88rem]"
                 >
                   <a href="/get-started">Get started</a>
                 </Button>

@@ -43,16 +43,19 @@ const Feature = ({ className }: FeatureProps) => {
             {features.map((item, index) => (
               <div
                 key={index}
-                className="relative isolate flex flex-col bg-background p-8 text-start transition-colors duration-200 hover:bg-foreground/15 lg:p-10 lg:py-14"
+                className="group relative isolate flex flex-col bg-background p-8 text-start transition-all duration-300 hover:bg-foreground/[0.03] lg:p-10 lg:py-14"
               >
                 <div className="flex-1">
-                  <div className="mb-5">
-                    <Icon icon={item.icon} />
+                  <div className="mb-5 flex size-12 items-center justify-center rounded-xl border border-foreground/10 bg-foreground/[0.035] shadow-sm transition-transform duration-300 group-hover:scale-105 group-hover:border-foreground/15">
+                    <Icon
+                      icon={item.icon}
+                      className="size-5 text-foreground/65"
+                    />
                   </div>
-                  <h3 className="text-[1.08rem] font-semibold tracking-[-0.02em] text-foreground">
+                  <h3 className="text-[1.05rem] font-semibold tracking-[-0.02em] text-foreground">
                     {item.title}
                   </h3>
-                  <p className="mt-2.5 max-w-md text-[0.95rem] leading-relaxed text-foreground/55">
+                  <p className="mt-2.5 max-w-md text-[0.92rem] leading-relaxed text-foreground/50">
                     {item.description}
                   </p>
                 </div>

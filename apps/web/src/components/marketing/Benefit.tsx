@@ -53,23 +53,23 @@ const Benefits = ({ className }: BenefitsProps) => {
             {DATA.map((item, index) => (
               <div
                 key={index}
-                className="relative isolate flex flex-col bg-background pb-5 text-start lg:pb-14"
+                className="group relative isolate flex flex-col bg-background pb-5 text-start transition-all duration-300 lg:pb-14"
               >
-                <div className="flex-1 border-b pt-8 border-border">
-                  <h3 className="mt-2 px-5 text-[1.1rem] font-semibold tracking-[-0.02em] text-foreground lg:px-8">
+                <div className="flex-1 border-b border-border pt-8 transition-colors duration-300 group-hover:border-foreground/15">
+                  <h3 className="mt-2 px-5 text-[1.05rem] font-semibold tracking-[-0.02em] text-foreground lg:px-8">
                     {item.title}
                   </h3>
-                  <p className="px-5 pt-2 pb-6 text-[0.95rem] leading-relaxed text-foreground/55 lg:px-8">
+                  <p className="px-5 pt-2 pb-6 text-[0.92rem] leading-relaxed text-foreground/50 lg:px-8">
                     {item.description}
                   </p>
                 </div>
-                <div>
+                <div className="transition-transform duration-300 group-hover:scale-[1.02]">
                   <Image
                     src={item.image}
                     alt={item.title}
                     width={480}
                     height={320}
-                    className="h-auto w-full p-10 opacity-80 dark:invert"
+                    className="h-auto w-full p-8 opacity-70 dark:invert"
                   />
                 </div>
               </div>

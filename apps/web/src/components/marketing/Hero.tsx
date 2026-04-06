@@ -13,23 +13,23 @@ const Hero = ({ className }: HeroProps) => {
       <div className="w-full border-b">
         <div className="container max-w-7xl">
           <div className="flex w-full flex-col items-center justify-center border-x px-5 py-20 md:py-28">
-            <div className="inline-flex items-center gap-2 rounded-full bg-foreground/3 px-4 py-1.5">
-              <span className="inline-block size-2 rounded-full bg-primary" />
-              <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-foreground/60">
+            <div className="inline-flex items-center gap-2.5 rounded-full border border-foreground/8 bg-foreground/[0.025] px-4 py-1.5">
+              <span className="inline-block size-1.5 rounded-full bg-primary" />
+              <span className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-foreground/55">
                 Live in minutes
               </span>
             </div>
-            <h1 className="mt-5 max-w-2xl text-center text-5xl font-semibold tracking-tighter leading-[1.08] md:text-6xl lg:text-[4.5rem]">
+            <h1 className="mt-6 max-w-2xl text-center text-[2.75rem] font-semibold tracking-tight leading-[1.07] md:text-5xl lg:text-[4rem]">
               The Smarter Way to Handle Business Calls
             </h1>
-            <p className="mt-6 max-w-xl text-center text-[1.08rem] leading-relaxed text-foreground/55 md:text-lg">
+            <p className="mt-5 max-w-xl text-center text-[1.05rem] leading-relaxed text-foreground/50 md:text-base">
               Get a virtual business number in minutes. Make calls, send texts,
               record conversations, and track every customer interaction from
               any device, anywhere in the world.
             </p>
             <Button
               asChild
-              className="mt-8 h-12 rounded-lg px-8 text-[0.92rem] font-semibold"
+              className="mt-8 h-11 rounded-xl px-8 text-[0.9rem] font-semibold shadow-sm"
             >
               <a href="#pricing">Get your business number</a>
             </Button>
@@ -41,19 +41,19 @@ const Hero = ({ className }: HeroProps) => {
           <ul className="grid h-44 w-full grid-cols-1 border-x md:h-36 lg:h-24 lg:grid-cols-3">
             <li className="flex h-full items-center justify-between gap-10 px-6 md:gap-3 lg:justify-center">
               <div className="marketing-icon-box" />
-              <p className="text-[0.95rem] font-medium text-foreground/70">
+              <p className="text-[0.9rem] font-medium text-foreground/65">
                 Setup in Minutes
               </p>
             </li>
             <li className="flex h-full items-center justify-between gap-10 border-t border-l px-6 md:gap-3 lg:justify-center lg:border-t-0">
               <div className="marketing-icon-box" />
-              <p className="text-[0.95rem] font-medium text-foreground/70">
+              <p className="text-[0.9rem] font-medium text-foreground/65">
                 Calls and Texts in One Place
               </p>
             </li>
             <li className="col-span-1 flex h-full items-center justify-between gap-10 border-t border-l border-dashed px-6 md:col-span-2 md:justify-center md:gap-3 lg:col-span-1 lg:border-t-0">
               <div className="marketing-icon-box" />
-              <p className="text-[0.95rem] font-medium text-foreground/70">
+              <p className="text-[0.9rem] font-medium text-foreground/65">
                 Works Across Every Device
               </p>
             </li>

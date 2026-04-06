@@ -39,10 +39,12 @@ const Faq = ({ className }: FaqProps) => {
                   value={`item-${index}`}
                   className="border-b border-foreground/8 text-foreground data-[state=open]:pb-3"
                 >
-                  <AccordionTrigger className="py-5 text-start text-[0.98rem] font-medium tracking-[-0.01em] hover:no-underline">
-                    {item.question}
+                  <AccordionTrigger className="group py-5 text-start text-[0.95rem] font-medium tracking-[-0.01em] hover:no-underline">
+                    <span className="pr-3 transition-opacity duration-200 group-hover:opacity-70">
+                      {item.question}
+                    </span>
                   </AccordionTrigger>
-                  <AccordionContent className="text-[0.95rem] leading-relaxed tracking-[-0.01em] text-foreground/55">
+                  <AccordionContent className="text-[0.92rem] leading-relaxed tracking-[-0.005em] text-foreground/50">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>

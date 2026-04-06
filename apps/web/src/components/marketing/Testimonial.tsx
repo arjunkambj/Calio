@@ -64,16 +64,16 @@ const Testimonial = ({ className }: TestimonialProps) => {
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="flex flex-col gap-5 rounded-none border border-foreground/8 bg-background p-6 shadow-none transition-shadow duration-200 hover:shadow-sm"
+              className="group flex flex-col gap-5 rounded-none border border-foreground/8 bg-background p-6 shadow-none transition-all duration-300 hover:shadow-md hover:border-foreground/12"
             >
-              <div className="flex items-center gap-2.5 text-foreground/50">
+              <div className="flex items-center gap-2.5 text-foreground/45">
                 <div className="marketing-icon-box" />
-                <span className="text-[0.7rem] font-bold uppercase tracking-[0.18em]">
+                <span className="text-[0.68rem] font-semibold uppercase tracking-[0.2em]">
                   {testimonial.company}
                 </span>
               </div>
 
-              <blockquote className="text-[1.02rem] leading-relaxed text-foreground/65 italic">
+              <blockquote className="text-[1rem] leading-relaxed text-foreground/60 italic">
                 &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
 
@@ -83,13 +83,13 @@ const Testimonial = ({ className }: TestimonialProps) => {
                   alt={`${testimonial.author.name}'s profile picture`}
                   width={40}
                   height={40}
-                  className="rounded-full object-cover"
+                  className="rounded-full object-cover ring-2 ring-foreground/5"
                 />
                 <div>
-                  <p className="text-[0.92rem] font-medium tracking-[-0.01em]">
+                  <p className="text-[0.9rem] font-medium tracking-[-0.01em]">
                     {testimonial.author.name}
                   </p>
-                  <p className="text-[0.82rem] text-foreground/45">
+                  <p className="text-[0.8rem] text-foreground/40">
                     {testimonial.author.role}
                   </p>
                 </div>
