@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 const segments = [
   {
-    icon: "solar:shop-linear",
+    icon: "solar:chat-round-bold-duotone",
     title: "Small Business",
     size: "1 – 50 employees",
     description:
@@ -12,7 +12,7 @@ const segments = [
     href: "#pricing",
   },
   {
-    icon: "solar:buildings-linear",
+    icon: "solar:layers-bold-duotone",
     title: "Mid-Market",
     size: "50 – 500 employees",
     description:
@@ -21,7 +21,7 @@ const segments = [
     href: "#pricing",
   },
   {
-    icon: "solar:city-linear",
+    icon: "solar:global-bold-duotone",
     title: "Enterprise",
     size: "500+ employees",
     description:
@@ -41,7 +41,7 @@ const WhoItsFor = ({ className }: WhoItsForProps) => {
       <div className="border-b">
         <div className="max-w-6xl mx-auto flex flex-col gap-3 border-x px-5 py-6 lg:px-8 lg:py-10">
           <p className="marketing-section-kicker">Who it&apos;s for</p>
-          <h2 className="marketing-section-heading">Built for your stage</h2>
+          <h2 className="marketing-section-heading">Built For Your Stage</h2>
           <p className="marketing-section-desc">
             Whether you&apos;re a 5-person startup or a 5,000-person company,
             Calio fits how your team works.
@@ -55,10 +55,13 @@ const WhoItsFor = ({ className }: WhoItsForProps) => {
             {segments.map((segment, index) => (
               <div
                 key={index}
-                className="group relative isolate flex flex-col bg-background p-8 text-start transition-all duration-300 hover:bg-primary/5 lg:p-10 lg:py-12"
+                className="group relative isolate flex flex-col bg-card p-8 text-start transition-all duration-300 lg:p-10 lg:py-12"
               >
-                <div className="marketing-icon-box mb-5 transition-transform duration-300 group-hover:scale-110">
-                  <Icon icon={segment.icon} />
+                <div className="mb-5 text-primary">
+                  <Icon
+                    icon={segment.icon}
+                    className="size-7 transition-transform duration-300 ease-out group-hover:scale-110"
+                  />
                 </div>
                 <h3 className="text-[1.05rem] font-semibold tracking-[-0.02em] text-foreground">
                   {segment.title}

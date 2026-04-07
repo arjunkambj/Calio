@@ -5,4 +5,5 @@ export { Footer } from "./Footer";
 export { Navbar } from "./Navbar";
 export { Pricing } from "./Pricing";
 export { Testimonial } from "./Testimonial";
+export { TrustedBy } from "./TrustedBy";
 export { WhoItsFor } from "./WhoItsFor";

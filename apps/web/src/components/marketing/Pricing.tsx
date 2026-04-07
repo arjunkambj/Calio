@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const pricingPlans = [
   {
-    icon: "solar:phone-linear",
+    icon: "solar:phone-calling-bold-duotone",
     name: "Starter",
     price: {
       monthly: 5,
@@ -24,7 +24,7 @@ const pricingPlans = [
     ],
   },
   {
-    icon: "solar:bolt-linear",
+    icon: "solar:bolt-bold-duotone",
     name: "Growth",
     featured: true,
     price: {
@@ -40,7 +40,7 @@ const pricingPlans = [
     ],
   },
   {
-    icon: "solar:users-group-two-rounded-linear",
+    icon: "solar:users-group-two-rounded-bold-duotone",
     name: "Team",
     price: {
       monthly: 29,
@@ -122,7 +122,7 @@ const Pricing = ({ className }: PricingProps) => {
           <div className="flex flex-col gap-3 px-5 py-6 lg:px-8 lg:py-10">
             <p className="marketing-section-kicker">Pricing</p>
             <h2 className="marketing-section-heading">
-              Simple pricing, no surprises
+              Simple Pricing, No Surprises
             </h2>
             <p className="marketing-section-desc">
               Start with one number. Add more as your team grows. Cancel
@@ -135,26 +135,13 @@ const Pricing = ({ className }: PricingProps) => {
               <div
                 key={index}
                 className={cn(
-                  "flex flex-col justify-between transition-colors duration-200",
+                  "flex flex-col justify-between bg-card transition-colors duration-200",
                   plan.featured && "bg-primary/5",
                 )}
               >
                 <div className="space-y-2.5 border-b px-6 pt-5 pb-12">
                   <div className="flex items-center gap-2.5">
-                    <div
-                      className={cn(
-                        "flex size-8 items-center justify-center rounded-lg",
-                        plan.featured ? "bg-primary/10" : "bg-foreground/5",
-                      )}
-                    >
-                      <Icon
-                        icon={plan.icon}
-                        width={16}
-                        className={cn(
-                          plan.featured ? "text-primary" : "text-foreground/60",
-                        )}
-                      />
-                    </div>
+                    <Icon icon={plan.icon} className="size-6 text-primary" />
                     <h3 className="text-[1.05rem] font-semibold tracking-[-0.02em]">
                       {plan.name}
                     </h3>

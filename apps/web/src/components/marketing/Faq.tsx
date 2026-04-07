@@ -17,7 +17,7 @@ const Faq = ({ className }: FaqProps) => {
       <div className="border-b">
         <div className="max-w-6xl mx-auto flex flex-col gap-3 border-x px-5 py-6 lg:px-8 lg:py-10">
           <p className="marketing-section-kicker">FAQ</p>
-          <h2 className="marketing-section-heading">Common questions</h2>
+          <h2 className="marketing-section-heading">Common Questions</h2>
           <p className="marketing-section-desc">
             Quick answers. If you need more, reach us at support@calio.cc.
           </p>
@@ -30,13 +30,14 @@ const Faq = ({ className }: FaqProps) => {
             <Accordion
               type="single"
               collapsible
+              defaultValue="item-0"
               className="space-y-1 border-none"
             >
               {FAQ_ITEMS.map((item, index) => (
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="border-b border-foreground/8 text-foreground data-[state=open]:pb-3 data-[state=open]:border-primary/20 transition-colors duration-200"
+                  className="border-b border-foreground/8 text-foreground data-[state=open]:pb-3 data-[state=open]:border-primary/20 rounded-lg px-4 -mx-4 transition-all duration-200 hover:bg-primary/[0.03] hover:border-primary/15 data-[state=open]:bg-card"
                 >
                   <AccordionTrigger className="group py-5 text-start text-[0.95rem] font-medium tracking-[-0.01em] hover:no-underline">
                     <span className="pr-3 transition-colors duration-200 group-hover:text-primary">

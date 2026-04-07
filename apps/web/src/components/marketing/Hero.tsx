@@ -14,15 +14,12 @@ const Hero = ({ className }: HeroProps) => {
       id="home"
       className={cn("relative w-full overflow-hidden", className)}
     >
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[900px] rounded-full bg-primary/8 blur-3xl" />
-        <div className="absolute -top-20 right-0 h-[400px] w-[400px] rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 h-[300px] w-[500px] rounded-full bg-primary/4 blur-3xl" />
-      </div>
-
       <div className="relative w-full border-b">
         <div className="max-w-6xl mx-auto">
-          <div className="flex w-full flex-col items-center justify-center border-x px-5 py-20 md:py-28 lg:py-32">
+          <div className="flex w-full flex-col items-center justify-center border-x px-5 py-20 md:py-28 lg:py-32 relative">
+            <div className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_60%_70%_at_50%_50%,black,transparent)]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle,currentColor_1px,transparent_1px)] [background-size:24px_24px] text-foreground/[0.12]" />
+            </div>
             <div className="animate-fade-in-up inline-flex items-center gap-2.5 rounded-full bg-primary/8 px-4 py-1.5">
               <span className="inline-block size-1.5 rounded-full bg-primary animate-pulse-glow" />
               <span className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-primary">
@@ -31,12 +28,12 @@ const Hero = ({ className }: HeroProps) => {
             </div>
 
             <h1 className="animate-fade-in-up delay-100 mt-7 max-w-2xl text-center text-[2.75rem] font-semibold tracking-tight leading-[1.07] md:text-5xl lg:text-[4.2rem]">
-              A business phone number{" "}
-              <span className="text-primary">that works everywhere</span>
+              A Business Phone Number{" "}
+              <span className="text-primary">That Works Everywhere</span>
             </h1>
 
             <p className="animate-fade-in-up delay-200 mt-5 max-w-xl text-center text-[1.05rem] leading-relaxed text-foreground/55 md:text-base">
-              Get a virtual number in 50+ countries. Make calls, send texts,
+              Get a virtual number in 90+ countries. Make calls, send texts,
               record conversations. Your team answers from any device, anywhere.
             </p>
 
@@ -45,7 +42,7 @@ const Hero = ({ className }: HeroProps) => {
                 asChild
                 className="h-12 rounded-xl px-8 text-[0.9rem] font-semibold shadow-md shadow-primary/10"
               >
-                <a href="#pricing">Try it free</a>
+                <a href="#pricing">Get started</a>
               </Button>
               <Button
                 asChild
@@ -65,9 +62,12 @@ const Hero = ({ className }: HeroProps) => {
       <div className="relative w-full border-b">
         <div className="max-w-6xl mx-auto">
           <ul className="grid w-full grid-cols-1 border-x md:grid-cols-3">
-            <li className="animate-fade-in-up delay-400 group flex flex-col items-center justify-center gap-3 px-6 py-7 md:py-8">
-              <div className="marketing-icon-box transition-transform duration-300 group-hover:scale-110">
-                <Icon icon="solar:phone-calling-linear" />
+            <li className="animate-fade-in-up delay-400 group flex flex-col items-center justify-center gap-3 bg-card px-6 py-7 md:py-8">
+              <div className="text-primary">
+                <Icon
+                  icon="solar:phone-calling-bold-duotone"
+                  className="size-9 transition-transform duration-300 ease-out group-hover:scale-110"
+                />
               </div>
               <div className="text-center">
                 <p className="text-[0.9rem] font-semibold text-foreground/80">
@@ -78,9 +78,12 @@ const Hero = ({ className }: HeroProps) => {
                 </p>
               </div>
             </li>
-            <li className="animate-fade-in-up delay-500 group flex flex-col items-center justify-center gap-3 border-t border-l px-6 py-7 md:border-t-0 md:py-8">
-              <div className="marketing-icon-box transition-transform duration-300 group-hover:scale-110">
-                <Icon icon="solar:users-group-two-rounded-linear" />
+            <li className="animate-fade-in-up delay-500 group flex flex-col items-center justify-center gap-3 border-t border-l bg-card px-6 py-7 md:border-t-0 md:py-8">
+              <div className="text-primary">
+                <Icon
+                  icon="solar:users-group-two-rounded-bold-duotone"
+                  className="size-9 transition-transform duration-300 ease-out group-hover:scale-110"
+                />
               </div>
               <div className="text-center">
                 <p className="text-[0.9rem] font-semibold text-foreground/80">
@@ -91,9 +94,12 @@ const Hero = ({ className }: HeroProps) => {
                 </p>
               </div>
             </li>
-            <li className="animate-fade-in-up delay-600 group flex flex-col items-center justify-center gap-3 border-t border-l px-6 py-7 md:border-t-0 md:py-8">
-              <div className="marketing-icon-box transition-transform duration-300 group-hover:scale-110">
-                <Icon icon="solar:monitor-smartphone-linear" />
+            <li className="animate-fade-in-up delay-600 group flex flex-col items-center justify-center gap-3 border-t border-l bg-card px-6 py-7 md:border-t-0 md:py-8">
+              <div className="text-primary">
+                <Icon
+                  icon="solar:monitor-smartphone-bold-duotone"
+                  className="size-9 transition-transform duration-300 ease-out group-hover:scale-110"
+                />
               </div>
               <div className="text-center">
                 <p className="text-[0.9rem] font-semibold text-foreground/80">

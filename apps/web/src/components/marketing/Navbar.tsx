@@ -3,7 +3,6 @@
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
-
 import Logo from "@/components/layout/Logo";
 import { Button } from "@/components/ui/button";
 import {
@@ -32,16 +31,9 @@ interface NavbarProps {
 
 const Navbar = ({ className }: NavbarProps) => {
   const [activeItem, setActiveItem] = useState(NAV_ITEMS[0]?.name ?? "");
-  const [scrolled, setScrolled] = useState(false);
 
   const indicatorRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLUListElement>(null);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     const updateIndicator = () => {
@@ -66,10 +58,7 @@ const Navbar = ({ className }: NavbarProps) => {
   return (
     <section
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        scrolled
-          ? "border-b bg-background/80 backdrop-blur-xl"
-          : "bg-background",
+        "sticky top-0 z-50 w-full bg-card border-b transition-all duration-300",
         className,
       )}
     >
@@ -170,7 +159,7 @@ const MobileNav = ({
           align="end"
           className="relative top-4 -right-4 block w-[calc(100vw-32px)] overflow-hidden rounded-2xl border border-foreground/10 p-0 shadow-lg sm:top-auto sm:right-auto sm:w-80 lg:hidden"
         >
-          <ul className="w-full bg-background py-3 text-foreground">
+          <ul className="w-full bg-card py-3 text-foreground">
             {NAV_ITEMS.map((navItem, idx) => (
               <li key={idx}>
                 <Link
