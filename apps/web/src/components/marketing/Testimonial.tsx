@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { Icon } from "@iconify/react";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -7,7 +8,7 @@ const testimonials = [
   {
     company: "Northline Dental",
     quote:
-      "We stopped missing new-patient calls the moment we moved the number into Calio. The shared history makes handoffs between front desk staff much cleaner.",
+      "We used to miss new-patient calls all the time. Now they all go through Calio and the front desk can hand off without losing context.",
     author: {
       name: "Maya Thompson",
       role: "Office Manager",
@@ -18,7 +19,7 @@ const testimonials = [
   {
     company: "Atlas Property Group",
     quote:
-      "Our leasing team can answer from anywhere, but every call and text still lands in the same record. That alone removed a lot of operational chaos.",
+      "Our agents are always out showing properties. With Calio, they take business calls on their phone but everything stays in one shared inbox back at the office.",
     author: {
       name: "Jordan Lee",
       role: "Leasing Director",
@@ -29,7 +30,7 @@ const testimonials = [
   {
     company: "BrightPath Legal",
     quote:
-      "Recordings and conversation history mean nothing gets lost after intake. We have better context before every follow-up and fewer dropped leads.",
+      "Call recordings and conversation history mean nothing falls through the cracks after intake. We follow up faster and lose fewer leads.",
     author: {
       name: "Sonia Patel",
       role: "Client Services Lead",
@@ -47,33 +48,34 @@ const Testimonial = ({ className }: TestimonialProps) => {
   return (
     <section className={cn(className)}>
       <div className="border-b">
-        <div className="max-w-6xl mx-auto flex flex-col gap-3 border-x px-5 py-6 max-lg:border-x lg:px-8 lg:py-10">
+        <div className="max-w-6xl mx-auto flex flex-col gap-3 border-x px-5 py-6 lg:px-8 lg:py-10">
           <p className="marketing-section-kicker">Customer stories</p>
           <h2 className="marketing-section-heading">
-            Teams stay reachable with Calio
+            Businesses that answer every call
           </h2>
           <p className="marketing-section-desc">
-            Built for businesses that need every call, text, and follow-up to
-            stay visible.
+            Teams using Calio stop missing calls and start closing more deals.
           </p>
         </div>
       </div>
 
       <div className="border-b">
-        <div className="max-w-6xl mx-auto grid gap-6 border-x px-5 py-5 lg:grid-cols-3 lg:px-8 lg:py-8">
+        <div className="max-w-6xl mx-auto grid gap-5 border-x px-5 py-5 lg:grid-cols-3 lg:px-8 lg:py-8">
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="group flex flex-col gap-5 rounded-none border border-foreground/8 bg-background p-6 shadow-none transition-all duration-300 hover:shadow-md hover:border-foreground/12"
+              className="group flex flex-col gap-5 rounded-xl border border-foreground/6 bg-background p-6 shadow-none transition-all duration-300 hover:border-primary/20 hover:shadow-md hover:shadow-primary/5"
             >
-              <div className="flex items-center gap-2.5 text-foreground/45">
-                <div className="marketing-icon-box" />
-                <span className="text-[0.68rem] font-semibold uppercase tracking-[0.2em]">
+              <div className="flex items-center gap-2.5">
+                <div className="marketing-icon-box">
+                  <Icon icon="solar:buildings-linear" />
+                </div>
+                <span className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-foreground/45">
                   {testimonial.company}
                 </span>
               </div>
 
-              <blockquote className="text-[1rem] leading-relaxed text-foreground/60 italic">
+              <blockquote className="text-[1rem] leading-relaxed text-foreground/65">
                 &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
 
@@ -83,7 +85,7 @@ const Testimonial = ({ className }: TestimonialProps) => {
                   alt={`${testimonial.author.name}'s profile picture`}
                   width={40}
                   height={40}
-                  className="rounded-full object-cover ring-2 ring-foreground/5"
+                  className="rounded-full object-cover ring-2 ring-primary/20"
                 />
                 <div>
                   <p className="text-[0.9rem] font-medium tracking-[-0.01em]">

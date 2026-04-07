@@ -5,28 +5,40 @@ import { cn } from "@/lib/utils";
 
 const features = [
   {
-    title: "Virtual number, ready fast",
+    title: "3-minute setup",
     description:
-      "Claim a dedicated business line without the usual telecom setup delays, then start taking customer calls right away.",
-    icon: "solar:stars-minimalistic-linear",
+      "Sign up, pick a number, start calling. No hardware to ship, no IT to schedule, no waiting.",
+    icon: "solar:clock-circle-linear",
   },
   {
-    title: "Calls, texts, and context together",
+    title: "Smart call routing",
     description:
-      "Keep voice, SMS, notes, and recordings connected so every conversation stays in one timeline instead of scattered across tools.",
+      "Route calls by time zone, team, or availability. Every call reaches the right person.",
+    icon: "solar:routing-linear",
+  },
+  {
+    title: "Works everywhere",
+    description:
+      "Browser, desktop, iOS, Android. Take calls from anywhere on any device.",
+    icon: "solar:monitor-smartphone-linear",
+  },
+  {
+    title: "Call recording",
+    description:
+      "Every call recorded automatically. Replay, search, or use it to train your team.",
+    icon: "solar:microphone-linear",
+  },
+  {
+    title: "SMS from your number",
+    description:
+      "Send and receive texts from the same business number. Calls and texts, one place.",
     icon: "solar:chat-round-linear",
   },
   {
-    title: "Built for distributed teams",
+    title: "Shared inbox",
     description:
-      "Use Calio from desktop or mobile so your team can answer customers from the office, from home, or while traveling.",
-    icon: "solar:earth-linear",
-  },
-  {
-    title: "Recording and playback",
-    description:
-      "Capture important calls automatically so you can review conversations, train new team members, and never miss a detail.",
-    icon: "solar:microphone-linear",
+      "Your whole team sees the same calls, texts, and notes. Handoffs stop being painful.",
+    icon: "solar:users-group-two-rounded-linear",
   },
 ];
 
@@ -38,23 +50,32 @@ const Feature = ({ className }: FeatureProps) => {
   return (
     <section id="features" className={cn("w-full", className)}>
       <div className="border-b">
+        <div className="max-w-6xl mx-auto flex flex-col gap-3 border-x px-5 py-6 lg:px-8 lg:py-10">
+          <p className="marketing-section-kicker">Features</p>
+          <h2 className="marketing-section-heading">Powerful at every scale</h2>
+          <p className="marketing-section-desc">
+            From your first call to your ten-thousandth -- everything you need
+            is included.
+          </p>
+        </div>
+      </div>
+
+      <div className="border-b">
         <div className="max-w-6xl mx-auto w-full border-x lg:px-0!">
-          <div className="grid bg-border max-lg:divide-y lg:grid-cols-2 lg:gap-px">
+          <div className="grid bg-border max-lg:divide-y lg:grid-cols-3 lg:gap-px">
             {features.map((item, index) => (
               <div
                 key={index}
-                className="group relative isolate flex flex-col bg-background p-8 text-start transition-all duration-300 hover:bg-muted lg:p-10 lg:py-14"
+                className="group relative isolate flex flex-col bg-background p-8 text-start transition-all duration-300 hover:bg-primary/5 lg:p-8"
               >
                 <div className="flex-1">
-                  <Icon
-                    icon={item.icon}
-                    width={24}
-                    className="mb-5 text-foreground/65"
-                  />
+                  <div className="marketing-icon-box mb-5 transition-transform duration-300 group-hover:scale-110">
+                    <Icon icon={item.icon} />
+                  </div>
                   <h3 className="text-[1.05rem] font-semibold tracking-[-0.02em] text-foreground">
                     {item.title}
                   </h3>
-                  <p className="mt-2.5 max-w-md text-[0.92rem] leading-relaxed text-foreground/50">
+                  <p className="mt-2.5 max-w-xs text-[0.92rem] leading-relaxed text-foreground/50">
                     {item.description}
                   </p>
                 </div>
@@ -63,6 +84,7 @@ const Feature = ({ className }: FeatureProps) => {
           </div>
         </div>
       </div>
+
       <div className="h-8 w-full border-b md:h-12 lg:h-28">
         <div className="max-w-6xl mx-auto h-full w-full border-x"></div>
       </div>

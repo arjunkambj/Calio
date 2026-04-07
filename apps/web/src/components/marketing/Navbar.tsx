@@ -5,7 +5,6 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 import Logo from "@/components/layout/Logo";
-import { ThemeSwitch } from "@/components/layout/ThemeSwitch";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -33,9 +32,16 @@ interface NavbarProps {
 
 const Navbar = ({ className }: NavbarProps) => {
   const [activeItem, setActiveItem] = useState(NAV_ITEMS[0]?.name ?? "");
+  const [scrolled, setScrolled] = useState(false);
 
   const indicatorRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const updateIndicator = () => {
@@ -58,8 +64,16 @@ const Navbar = ({ className }: NavbarProps) => {
   }, [activeItem]);
 
   return (
-    <section className={cn(className)}>
-      <nav className="mx-auto border-x flex w-full items-center justify-between px-4 py-3 max-w-6xl lg:px-8">
+    <section
+      className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        scrolled
+          ? "border-b bg-background/80 backdrop-blur-xl"
+          : "bg-background",
+        className,
+      )}
+    >
+      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between border-x px-4 py-3 lg:px-8">
         <Link href="/" className="shrink-0">
           <Logo />
         </Link>
@@ -67,17 +81,17 @@ const Navbar = ({ className }: NavbarProps) => {
         <NavigationMenu className="hidden lg:block">
           <NavigationMenuList
             ref={menuRef}
-            className="relative flex items-center gap-4 rounded-full px-3 py-1.5"
+            className="relative flex items-center gap-12"
           >
             {NAV_ITEMS.map((item) => (
               <NavigationMenuItem key={item.name}>
                 <NavigationMenuLink
                   asChild
                   className={cn(
-                    "relative cursor-pointer rounded-full px-4 py-2 text-[0.82rem] font-medium transition-all duration-200 hover:bg-transparent focus:bg-transparent data-[active=true]:bg-transparent",
+                    "relative cursor-pointer px-0 py-1.5 text-[0.82rem] font-medium transition-colors duration-200 hover:bg-transparent focus:bg-transparent data-[active=true]:bg-transparent",
                     activeItem === item.name
                       ? "text-foreground"
-                      : "text-foreground/90 hover:text-foreground",
+                      : "text-foreground/45 hover:text-foreground",
                   )}
                 >
                   <Link
@@ -90,21 +104,18 @@ const Navbar = ({ className }: NavbarProps) => {
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
-            {/* Active Indicator */}
             <div
               ref={indicatorRef}
-              className="absolute bottom-0.5 flex h-1 items-center justify-center px-2 transition-all duration-300"
+              className="absolute bottom-0 flex h-[2px] items-center justify-center px-3 transition-all duration-300"
             >
-              <div className="w-full rounded-full bg-foreground/60 transition-all duration-300" />
+              <div className="w-full rounded-full bg-primary transition-all duration-300" />
             </div>
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Mobile Menu Popover */}
         <MobileNav activeItem={activeItem} setActiveItem={setActiveItem} />
 
-        <div className="hidden items-center gap-2 lg:flex">
-          <ThemeSwitch />
+        <div className="hidden items-center lg:flex">
           <Button asChild className="px-5">
             <Link href="/sign-in">Get started</Link>
           </Button>
@@ -170,7 +181,7 @@ const MobileNav = ({
                   }}
                   className={`flex items-center border-l-2 px-6 py-2.5 text-[0.9rem] font-medium transition-all duration-75 ${
                     activeItem === navItem.name
-                      ? "border-foreground text-foreground"
+                      ? "border-primary text-foreground"
                       : "border-transparent text-foreground/45 hover:text-foreground"
                   }`}
                 >

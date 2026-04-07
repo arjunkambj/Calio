@@ -5,33 +5,33 @@ export interface FAQItem {
 
 export const FAQ_ITEMS: FAQItem[] = [
   {
-    question: "How quickly can I get a virtual business number?",
+    question: "How fast can I get a number?",
     answer:
-      "You can get started in minutes. Calio is designed to make setup fast, so you can claim a business line and begin handling customer conversations without a long telecom onboarding process.",
+      "Under 5 minutes. Pick a number, and you can start calling and texting right away. No hardware, no contracts.",
   },
   {
-    question: "Can I make and receive calls from any device?",
+    question: "Can I use Calio on my phone and computer?",
     answer:
-      "Yes. Calio is built so you can manage business communication from desktop, laptop, or mobile, which makes it practical for remote teams and owners who are constantly moving.",
+      "Yes. Use it from any device -- your phone, laptop, or desktop. Your calls and messages sync everywhere.",
   },
   {
-    question: "Can I send business texts from the same number?",
+    question: "Can I text from my business number?",
     answer:
-      "Yes. You can send and receive texts from your business number so calls and SMS stay together in the same workflow instead of being split across separate tools or devices.",
+      "Yes. Send and receive SMS from the same number you use for calls. Everything stays in one place.",
   },
   {
-    question: "Can calls be recorded and reviewed later?",
+    question: "Are calls recorded?",
     answer:
-      "Yes. Calio lets you record conversations so you can revisit important details, review call quality, and make follow-ups with full context.",
+      "Yes. Calls are recorded automatically. Play them back anytime, share with your team, or use them for training.",
   },
   {
-    question: "Can my team share the same business number and history?",
+    question: "Can my whole team share one number?",
     answer:
-      "Yes. Calio helps teams track customer interactions in one place so handoffs are cleaner and everyone has access to the same conversation history.",
+      "Yes. Multiple people can answer from the same business number. Everyone sees the same call history and messages.",
   },
   {
-    question: "Is Calio useful for remote or global teams?",
+    question: "Do I need any special equipment?",
     answer:
-      "Yes. Because you are not tied to a single device or location, Calio works well for businesses that need to stay reachable across time zones, offices, and travel schedules.",
+      "No. Calio works through the app on devices you already own. No desk phones, no sim cards, no IT setup.",
   },
 ];

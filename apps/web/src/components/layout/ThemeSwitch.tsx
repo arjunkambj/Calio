@@ -3,7 +3,6 @@
 import { Icon } from "@iconify/react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 
 export function ThemeSwitch() {
   const { theme, setTheme } = useTheme();
@@ -18,17 +17,15 @@ export function ThemeSwitch() {
   }
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
+    <button
       aria-label="Toggle theme"
-      className="text-muted-foreground hover:text-foreground transition-colors rounded-xl bg-muted dark:bg-foreground/8"
+      className="flex size-8 items-center justify-center rounded-lg text-foreground/40 transition-colors duration-200 hover:text-foreground"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       <Icon
-        className="w-5 h-5"
+        className="size-[1.15rem]"
         icon={theme === "dark" ? "solar:sun-linear" : "solar:moon-linear"}
       />
-    </Button>
+    </button>
   );
 }

@@ -3,10 +3,10 @@ import {
   Faq,
   Footer,
   Hero,
-  Benefits,
   Navbar,
   Pricing,
   Testimonial,
+  WhoItsFor,
 } from "@/components/marketing";
 
 export default function Home() {
@@ -15,9 +15,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Feature />
-      <Benefits/>
-      <Pricing />
+      <WhoItsFor />
       <Testimonial />
+      <Pricing />
       <Faq />
       <Footer />
     </div>

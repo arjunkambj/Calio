@@ -1,12 +1,11 @@
-import { Icon } from "@iconify/react";
 import Link from "next/link";
 
+import Logo from "@/components/layout/Logo";
 import { cn } from "@/lib/utils";
 
 type NavLink = {
   name: string;
   href: string;
-  icon?: string;
 };
 
 type NavigationSection = {
@@ -18,36 +17,28 @@ const navigation: NavigationSection[] = [
   {
     title: "Product",
     links: [
-      { name: "Docs", href: "#docs" },
-      { name: "Pricing", href: "#pricing" },
       { name: "Features", href: "#features" },
-      { name: "Compare", href: "#compare" },
+      { name: "Pricing", href: "#pricing" },
       { name: "FAQ", href: "#faq" },
+      { name: "Docs", href: "#docs" },
     ],
   },
   {
-    title: "About",
+    title: "Company",
     links: [
+      { name: "About", href: "#about" },
       { name: "Blog", href: "#blog" },
-      { name: "Manifesto", href: "#manifesto" },
+      { name: "Contact", href: "mailto:support@calio.cc" },
     ],
   },
   {
-    title: "Support",
+    title: "Legal",
     links: [
-      {
-        name: "support@calio.cc",
-        href: "mailto:support@calio.cc",
-      },
+      { name: "Privacy Policy", href: "#privacy" },
+      { name: "Terms of Service", href: "#terms" },
+      { name: "Refund Policy", href: "#refund" },
     ],
   },
-];
-
-const legalLinks = [
-  { name: "Privacy Policy", href: "#privacy" },
-  { name: "Data Policy", href: "#data" },
-  { name: "Refund Policy", href: "#refund" },
-  { name: "Terms of Service", href: "#terms" },
 ];
 
 interface FooterProps {
@@ -57,21 +48,19 @@ interface FooterProps {
 const Footer = ({ className }: FooterProps) => {
   return (
     <section className={cn("bg-background", className)}>
-      {/* Footer Nav */}
       <div className="border-b">
         <div className="max-w-6xl mx-auto border-x px-5 py-10 lg:px-8 lg:py-12">
           <div className="grid gap-8 lg:grid-cols-4 lg:gap-6">
-            {/* Logo & Description */}
             <div className="lg:col-span-1">
-              <div className="mb-2 flex items-center gap-2">
-                <span className="text-xl font-bold tracking-tight">Calio</span>
+              <div className="mb-3">
+                <Logo />
               </div>
-              <p className="text-[0.8rem] leading-snug text-foreground/50 max-w-[200px]">
-                Privacy-first web analytics without compromising user data.
+              <p className="text-[0.8rem] leading-snug text-foreground/50 max-w-[220px]">
+                A business phone number that works on every device. No hardware
+                needed.
               </p>
             </div>
 
-            {/* Navigation columns */}
             <div className="col-span-3 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:gap-x-8 lg:gap-y-4">
               {navigation.map((section) => (
                 <div key={section.title}>
@@ -81,24 +70,12 @@ const Footer = ({ className }: FooterProps) => {
                   <ul className="space-y-2">
                     {section.links.map((link) => (
                       <li key={link.name}>
-                        {link.name === "Contact" ? (
-                          <span className="inline-flex items-center gap-2 text-[0.85rem] text-foreground/60">
-                            {link.icon && (
-                              <Icon icon={link.icon} className="h-4 w-4" />
-                            )}
-                            {link.name}
-                          </span>
-                        ) : (
-                          <Link
-                            href={link.href}
-                            className="inline-flex items-center gap-2 text-[0.85rem] text-foreground/60 transition-colors duration-150 hover:text-foreground"
-                          >
-                            {link.icon && (
-                              <Icon icon={link.icon} className="h-4 w-4" />
-                            )}
-                            {link.name}
-                          </Link>
-                        )}
+                        <Link
+                          href={link.href}
+                          className="inline-flex items-center gap-2 text-[0.85rem] text-foreground/60 transition-colors duration-150 hover:text-primary"
+                        >
+                          {link.name}
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -109,33 +86,14 @@ const Footer = ({ className }: FooterProps) => {
         </div>
       </div>
 
-      {/* Bottom Section */}
       <div>
         <div className="max-w-6xl mx-auto border-x px-5 py-8 lg:px-8">
-          {/* Legal Links */}
-          <div className="mb-6 flex flex-wrap items-center gap-x-2 gap-y-2 text-[0.82rem] text-foreground/50">
-            {legalLinks.map((link, index) => (
-              <span key={link.name} className="flex items-center">
-                <Link
-                  href={link.href}
-                  className="transition-colors duration-150 hover:text-foreground"
-                >
-                  {link.name}
-                </Link>
-                {index < legalLinks.length - 1 && (
-                  <span className="mx-2 text-foreground/30">•</span>
-                )}
-              </span>
-            ))}
-          </div>
-
-          {/* Copyright */}
-          <div className="flex flex-col items-start justify-between gap-2 pt-6 sm:flex-row">
+          <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
             <p className="text-[0.82rem] text-foreground/40">
               &copy; {new Date().getFullYear()} Calio
             </p>
             <p className="text-[0.82rem] text-foreground/40">
-              Privacy-first analytics
+              support@calio.cc
             </p>
           </div>
         </div>

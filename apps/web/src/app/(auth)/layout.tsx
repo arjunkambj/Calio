@@ -16,7 +16,9 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
           <div />
 
           <footer className="flex items-center justify-between border-t border-foreground/10 pt-6">
-            <p className="text-sm text-foreground/56">Always on</p>
+            <p className="text-sm text-foreground/56">
+              The Smarter Way to Handle Business Calls
+            </p>
             <div className="flex items-end gap-2 text-foreground/44"></div>
           </footer>
         </div>

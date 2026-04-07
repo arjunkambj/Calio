@@ -27,6 +27,7 @@
       "headers": {
         "Authorization": "Bearer ${SHADCNBLOCKS_API_KEY}"
       }
-    }
+    },
+    "@magicui": "https://magicui.design/r/{name}"
   }
 }
