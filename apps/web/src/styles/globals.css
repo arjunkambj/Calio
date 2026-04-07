@@ -89,7 +89,7 @@
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: oklch(0.45 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.58 0.22 27);
@@ -239,9 +239,11 @@
   }
   body {
     @apply bg-background text-foreground;
+    @apply overflow-x-hidden;
   }
   html {
     @apply font-sans;
+    @apply overflow-x-hidden;
   }
 }
 
@@ -264,7 +266,7 @@
   }
 
   .marketing-section-heading {
-    @apply max-w-4xl text-[2.4rem] leading-[1.08] tracking-[-0.035em] font-semibold md:text-[2.5rem] lg:text-[2.85rem];
+    @apply max-w-4xl text-[1.9rem] leading-[1.1] tracking-[-0.03em] font-semibold sm:text-[2.1rem] md:text-[2.5rem] lg:text-[2.85rem];
     letter-spacing: -0.035em;
   }
 

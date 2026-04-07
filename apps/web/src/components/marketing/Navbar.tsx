@@ -95,7 +95,7 @@ const Navbar = ({ className }: NavbarProps) => {
             ))}
             <div
               ref={indicatorRef}
-              className="absolute bottom-0 flex h-[2px] items-center justify-center px-3 transition-all duration-300"
+              className="absolute bottom-0 flex h-0.5 items-center justify-center px-3 transition-all duration-300"
             >
               <div className="w-full rounded-full bg-primary transition-all duration-300" />
             </div>
@@ -181,7 +181,7 @@ const MobileNav = ({
             <li className="flex flex-col px-5 py-2">
               <Button
                 asChild
-                className="h-10 rounded-xl text-[0.85rem] font-semibold"
+                className="rounded-xl text-[0.85rem] font-semibold"
               >
                 <Link href="/sign-in" onClick={() => setIsOpen(false)}>
                   Get started
