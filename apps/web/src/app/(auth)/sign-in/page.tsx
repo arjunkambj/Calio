@@ -12,7 +12,6 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { Separator } from "@/components/ui/separator";
-import { Spinner } from "@/components/ui/spinner";
 
 export default function SignInPage() {
   const app = useStackApp();
@@ -126,7 +125,9 @@ export default function SignInPage() {
           </div>
 
           <Button type="submit" className="w-full" disabled={isEmailLoading}>
-            {isEmailLoading ? <Spinner /> : null}
+            {isEmailLoading ? (
+              <Icon icon="svg-spinners:180-ring" width={18} />
+            ) : null}
             {isEmailLoading ? "Sending..." : "Continue with Email"}
           </Button>
         </form>
@@ -150,7 +151,7 @@ export default function SignInPage() {
           </InputOTP>
           {isVerifying ? (
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Spinner /> Verifying...
+              <Icon icon="svg-spinners:180-ring" width={16} /> Verifying...
             </div>
           ) : null}
           <div className="flex flex-col items-center gap-2 text-sm">
@@ -200,7 +201,7 @@ export default function SignInPage() {
         }}
       >
         {isGoogleLoading ? (
-          <Spinner />
+          <Icon icon="svg-spinners:180-ring" width={18} />
         ) : (
           <Icon icon="logos:google-icon" width={18} />
         )}
