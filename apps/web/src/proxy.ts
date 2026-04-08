@@ -15,7 +15,7 @@ export async function proxy(request: NextRequest) {
   }
   const user = await stackServerApp.getUser();
   if (isauthroute(request.nextUrl.pathname) && user) {
-    return NextResponse.redirect(new URL("/", request.url));
+    return NextResponse.redirect(new URL("/overview", request.url));
   }
   return response;
 }
