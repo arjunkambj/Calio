@@ -30,7 +30,7 @@ import { cn } from "@/lib/utils";
 import { sidebarData } from "@/constants/sidebar-menu";
 import Logo from "@/components/layout/Logo";
 import { OrganizationSwitcher } from "@/components/layout/OrganizationSwitcher";
-import { UserMenuWithTooltip } from "@/components/layout/UserMenu";
+import { UserMenu } from "@/components/layout/UserMenu";
 import type {
   NavItemConfig,
   NavModuleConfig,
@@ -827,7 +827,7 @@ export function ApplicationShell12({
             <OrganizationSwitcher />
           </div>
           <div className="ml-auto">
-            <UserMenuWithTooltip />
+            <UserMenu />
           </div>
         </header>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { useUser } from "@stackframe/stack";
 import { Icon } from "@iconify/react";
 
 import {
@@ -10,15 +11,22 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { sidebarData } from "@/constants/sidebar-menu";
 
 export function OrganizationSwitcher() {
+  const user = useUser();
+  const selectedTeam = user?.selectedTeam;
+  const teamName = selectedTeam?.displayName ?? "Personal";
+  const teamAvatar = selectedTeam?.profileImageUrl;
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className="flex min-w-0 flex-1 items-center gap-2 rounded-lg px-2 py-1.5 text-left hover:bg-accent">
+          {teamAvatar && (
+            <img src={teamAvatar} alt={teamName} className="size-5 rounded" />
+          )}
           <span className="flex-1 truncate text-sm font-medium text-foreground">
-            {sidebarData.organization.name}
+            {teamName}
           </span>
           <Icon
             icon="solar:alt-arrow-down-linear"
@@ -28,10 +36,6 @@ export function OrganizationSwitcher() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-56">
         <DropdownMenuLabel>Organizations</DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <span>{sidebarData.organization.name}</span>
-        </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <Icon icon="solar:add-circle-linear" className="mr-2 size-4" />

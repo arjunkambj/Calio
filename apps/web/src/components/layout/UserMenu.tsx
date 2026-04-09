@@ -1,8 +1,8 @@
 "use client";
 
-import * as React from "react";
+import { useUser } from "@stackframe/stack";
+import { Icon } from "@iconify/react";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,12 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { sidebarData } from "@/constants/sidebar-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 function getInitials(name: string) {
   return (
@@ -30,57 +25,53 @@ function getInitials(name: string) {
 }
 
 function UserMenu() {
+  const user = useUser();
+
+  const displayName = user?.displayName ?? "User";
+  const email = user?.primaryEmail ?? "";
+  const avatarUrl = user?.profileImageUrl ?? "";
+  const initials = getInitials(displayName);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button
-          className="flex size-11 items-center justify-center rounded-lg hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring active:bg-accent/80"
+          className="flex items-center justify-center rounded-full hover:bg-accent focus-visible:ring-2 focus-visible:ring-ring active:bg-accent/80"
           aria-label="Account"
         >
-          <Avatar className="size-7">
-            <AvatarImage
-              src={sidebarData.user.avatar}
-              alt={sidebarData.user.name}
-            />
-            <AvatarFallback className="text-xs">
-              {getInitials(sidebarData.user.name)}
-            </AvatarFallback>
+          <Avatar className="size-8">
+            {avatarUrl && <AvatarImage src={avatarUrl} alt={displayName} />}
+            <AvatarFallback className="text-xs">{initials}</AvatarFallback>
           </Avatar>
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" side="right" className="w-56">
+      <DropdownMenuContent align="end" className="w-56">
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium">{sidebarData.user.name}</p>
-            <p className="text-xs text-muted-foreground">
-              {sidebarData.user.email}
-            </p>
+            <p className="text-sm font-medium">{displayName}</p>
+            {email && <p className="text-xs text-muted-foreground">{email}</p>}
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Account</DropdownMenuItem>
-        <DropdownMenuItem>Billing</DropdownMenuItem>
-        <DropdownMenuItem>Notifications</DropdownMenuItem>
+        <DropdownMenuItem>
+          <Icon icon="solar:user-linear" className="mr-2 size-4" />
+          Account
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <Icon icon="solar:settings-linear" className="mr-2 size-4" />
+          Settings
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Log out</DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => user?.signOut()}
+          className="text-red-600 focus:text-red-600"
+        >
+          <Icon icon="solar:logout-2-linear" className="mr-2 size-4" />
+          Log out
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
 }
 
-function UserMenuWithTooltip() {
-  return (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <div className="flex size-11 items-center justify-center">
-          <UserMenu />
-        </div>
-      </TooltipTrigger>
-      <TooltipContent side="right" sideOffset={8}>
-        Account
-      </TooltipContent>
-    </Tooltip>
-  );
-}
-
-export { UserMenu, UserMenuWithTooltip };
+export { UserMenu, getInitials };
