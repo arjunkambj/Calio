@@ -2,6 +2,7 @@
 
 import { useUser } from "@stackframe/stack";
 import { Icon } from "@iconify/react";
+import Image from "next/image";
 
 import {
   DropdownMenu,
@@ -23,7 +24,13 @@ export function OrganizationSwitcher() {
       <DropdownMenuTrigger asChild>
         <button className="flex min-w-0 flex-1 items-center gap-2 rounded-lg px-2 py-1.5 text-left hover:bg-accent">
           {teamAvatar && (
-            <img src={teamAvatar} alt={teamName} className="size-5 rounded" />
+            <Image
+              src={teamAvatar}
+              alt={teamName}
+              width={20}
+              height={20}
+              className="size-5 rounded"
+            />
           )}
           <span className="flex-1 truncate text-sm font-medium text-foreground">
             {teamName}

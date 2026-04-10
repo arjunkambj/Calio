@@ -62,10 +62,7 @@ function UserMenu() {
           Settings
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem
-          onClick={() => user?.signOut()}
-          className="text-red-600 focus:text-red-600"
-        >
+        <DropdownMenuItem variant="destructive" onClick={() => user?.signOut()}>
           <Icon icon="solar:logout-2-linear" className="mr-2 size-4" />
           Log out
         </DropdownMenuItem>

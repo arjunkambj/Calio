@@ -2,7 +2,6 @@ import type {
   NavItemConfig,
   NavModuleConfig,
   RailIconConfig,
-  SidebarData,
 } from "@/types/sidebar";
 
 export const railIcons: RailIconConfig[] = [
@@ -16,12 +15,6 @@ export const railIcons: RailIconConfig[] = [
     moduleId: "phone",
     label: "Phone",
     icon: "solar:phone-linear",
-    defaultPath: "#",
-  },
-  {
-    moduleId: "messages",
-    label: "Messages",
-    icon: "solar:chat-round-dots-linear",
     defaultPath: "#",
   },
 ];
@@ -57,36 +50,6 @@ export const modules: NavModuleConfig[] = [
             icon: "solar:home-2-linear",
             path: "#",
           },
-          {
-            id: "documents",
-            label: "Documents",
-            icon: "solar:document-text-linear",
-            path: "#",
-          },
-          {
-            id: "messages",
-            label: "Messages",
-            icon: "solar:chat-round-dots-linear",
-            path: "#",
-          },
-        ],
-      },
-      {
-        id: "library",
-        label: "Library",
-        items: [
-          {
-            id: "guides",
-            label: "Guides",
-            icon: "solar:book-2-linear",
-            path: "#",
-          },
-          {
-            id: "resources",
-            label: "Resources",
-            icon: "solar:document-text-linear",
-            path: "#",
-          },
         ],
       },
     ],
@@ -107,46 +70,15 @@ export const modules: NavModuleConfig[] = [
             path: "#",
           },
           {
+            id: "messages",
+            label: "Messages",
+            icon: "solar:chat-round-dots-linear",
+            path: "#",
+          },
+          {
             id: "contacts",
             label: "Contacts",
             icon: "solar:user-linear",
-            path: "#",
-          },
-          {
-            id: "voicemail",
-            label: "Voicemail",
-            icon: "solar:voicemail-linear",
-            path: "#",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: "messages",
-    label: "Messages",
-    icon: "solar:chat-round-dots-linear",
-    defaultPath: "#",
-    sections: [
-      {
-        id: "main",
-        items: [
-          {
-            id: "inbox",
-            label: "Inbox",
-            icon: "solar:inbox-linear",
-            path: "#",
-          },
-          {
-            id: "starred",
-            label: "Starred",
-            icon: "solar:star-linear",
-            path: "#",
-          },
-          {
-            id: "archived",
-            label: "Archived",
-            icon: "solar:archive-linear",
             path: "#",
           },
         ],
@@ -168,12 +100,6 @@ export const modules: NavModuleConfig[] = [
             icon: "solar:users-group-rounded-linear",
             path: "#",
           },
-          {
-            id: "activity",
-            label: "Activity",
-            icon: "solar:chat-round-dots-linear",
-            path: "#",
-          },
         ],
       },
     ],
@@ -193,18 +119,6 @@ export const modules: NavModuleConfig[] = [
             icon: "solar:settings-linear",
             path: "#",
           },
-          {
-            id: "security",
-            label: "Security",
-            icon: "solar:shield-keyhole-linear",
-            path: "#",
-          },
-          {
-            id: "notifications",
-            label: "Notifications",
-            icon: "solar:bell-linear",
-            path: "#",
-          },
         ],
       },
     ],
@@ -213,16 +127,7 @@ export const modules: NavModuleConfig[] = [
 
 export const utilities: NavItemConfig[] = [];
 
-export const sidebarData: SidebarData = {
-  user: {
-    name: "Jordan Lee",
-    email: "jordan@example.com",
-    avatar:
-      "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar/avatar1.jpg",
-  },
-  organization: {
-    name: "Acme Inc",
-  },
+export const sidebarData = {
   railIcons,
   bottomRailIcons,
   modules,
