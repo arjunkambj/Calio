@@ -58,7 +58,7 @@ const Navbar = ({ className }: NavbarProps) => {
   return (
     <section
       className={cn(
-        "sticky top-0 z-50 w-full bg-card border-b transition-all duration-300",
+        "fixed top-0 z-50 w-full bg-card border-b transition-all duration-300",
         className,
       )}
     >
@@ -80,7 +80,7 @@ const Navbar = ({ className }: NavbarProps) => {
                     "relative cursor-pointer px-0 py-1.5 text-[0.82rem] font-medium transition-colors duration-200 hover:bg-transparent focus:bg-transparent data-[active=true]:bg-transparent",
                     activeItem === item.name
                       ? "text-foreground"
-                      : "text-foreground/45 hover:text-foreground",
+                      : "text-foreground/60 hover:text-foreground",
                   )}
                 >
                   <Link
@@ -171,7 +171,7 @@ const MobileNav = ({
                   className={`flex items-center border-l-2 px-6 py-2.5 text-[0.9rem] font-medium transition-all duration-75 ${
                     activeItem === navItem.name
                       ? "border-primary text-foreground"
-                      : "border-transparent text-foreground/45 hover:text-foreground"
+                      : "border-transparent text-foreground/60 hover:text-foreground"
                   }`}
                 >
                   {navItem.name}

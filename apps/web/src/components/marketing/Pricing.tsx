@@ -117,8 +117,8 @@ const Pricing = ({ className }: PricingProps) => {
 
   return (
     <section id="pricing" className={cn(className)}>
-      <div className="border-b">
-        <div className="max-w-7xl mx-auto border-x">
+      <div>
+        <div className="max-w-7xl mx-auto border-b border-x">
           <div className="flex flex-col gap-3 px-5 py-6 lg:px-8 lg:py-10">
             <p className="marketing-section-kicker">Pricing</p>
             <h2 className="marketing-section-heading">
@@ -222,8 +222,8 @@ const Pricing = ({ className }: PricingProps) => {
         </div>
       </div>
 
-      <div className="h-8 w-full border-b md:h-12 lg:h-28">
-        <div className="max-w-7xl mx-auto h-full w-full border-x"></div>
+      <div className="h-8 w-full md:h-12 lg:h-28">
+        <div className="max-w-7xl mx-auto h-full w-full border-b border-x"></div>
       </div>
     </section>
   );

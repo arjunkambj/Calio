@@ -77,7 +77,7 @@ interface TestimonialCardProps {
 const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   return (
     <Card className="w-[380px] shrink-0 rounded-xl border border-foreground/6 bg-card p-6 shadow-none transition-all duration-300 hover:border-primary/20 hover:shadow-md hover:shadow-primary/5">
-      <blockquote className="text-[0.95rem] leading-relaxed text-foreground/65">
+      <blockquote className="text-[0.95rem] leading-relaxed text-foreground/70">
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
 
@@ -109,8 +109,8 @@ interface TestimonialProps {
 const Testimonial = ({ className }: TestimonialProps) => {
   return (
     <section className={cn(className)}>
-      <div className="border-b">
-        <div className="max-w-7xl mx-auto flex flex-col gap-3 border-x px-5 py-6 lg:px-8 lg:py-10">
+      <div>
+        <div className="max-w-7xl mx-auto border-b border-x flex flex-col gap-3 px-5 py-6 lg:px-8 lg:py-10">
           <p className="marketing-section-kicker">Customer stories</p>
           <h2 className="marketing-section-heading">
             Always On, Always Answered
@@ -121,8 +121,8 @@ const Testimonial = ({ className }: TestimonialProps) => {
         </div>
       </div>
 
-      <div className="border-b">
-        <div className="max-w-7xl mx-auto border-x py-8 lg:py-12">
+      <div>
+        <div className="max-w-7xl mx-auto border-b border-x py-8 lg:py-12">
           <div className="flex flex-col gap-6">
             {/* Row 1 - moves left */}
             <Marquee
@@ -156,8 +156,8 @@ const Testimonial = ({ className }: TestimonialProps) => {
         </div>
       </div>
 
-      <div className="h-8 w-full border-b md:h-12 lg:h-28">
-        <div className="max-w-7xl mx-auto h-full w-full border-x"></div>
+      <div className="h-8 w-full md:h-12 lg:h-28">
+        <div className="max-w-7xl mx-auto h-full w-full border-b border-x"></div>
       </div>
     </section>
   );

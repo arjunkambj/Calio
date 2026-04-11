@@ -14,12 +14,12 @@ const Hero = ({ className }: HeroProps) => {
       id="home"
       className={cn("relative w-full overflow-hidden", className)}
     >
-      <div className="relative w-full border-b">
+      <div className="relative w-full">
         <div className="max-w-7xl mx-auto">
-          <div className="flex w-full flex-col items-center justify-center border-x px-5 py-14 md:py-20 lg:py-24 relative">
+          <div className="flex w-full flex-col items-center justify-center border-x border-b px-5 py-14 md:py-20 lg:py-24 relative">
             <div className="animate-fade-in-up inline-flex items-center gap-2.5 rounded-full bg-primary/8 px-4 py-1.5">
               <span className="inline-block size-1.5 rounded-full bg-primary animate-pulse-glow" />
-              <span className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-primary">
+              <span className="text-[0.75rem] font-semibold uppercase tracking-[0.22em] text-primary">
                 Ready in under 5 minutes
               </span>
             </div>
@@ -29,7 +29,7 @@ const Hero = ({ className }: HeroProps) => {
               <span className="text-primary">That Works Everywhere</span>
             </h1>
 
-            <p className="animate-fade-in-up delay-200 mt-5 max-w-xl text-center text-[1.05rem] leading-relaxed text-foreground/55 md:text-base">
+            <p className="animate-fade-in-up delay-200 mt-5 max-w-xl text-center text-[1.05rem] leading-relaxed text-foreground/55">
               Get a virtual number in 90+ countries. Make calls, send texts,
               record conversations. Your team answers from any device, anywhere.
             </p>
@@ -56,9 +56,9 @@ const Hero = ({ className }: HeroProps) => {
         </div>
       </div>
 
-      <div className="relative w-full border-b">
+      <div className="relative w-full">
         <div className="max-w-7xl mx-auto">
-          <ul className="grid w-full grid-cols-1 border-x md:grid-cols-3">
+          <ul className="grid w-full grid-cols-1 border-x border-b md:grid-cols-3">
             <li className="animate-fade-in-up delay-400 group flex flex-col items-center justify-center gap-3 bg-card px-6 py-7 md:py-8">
               <div className="text-primary">
                 <Icon

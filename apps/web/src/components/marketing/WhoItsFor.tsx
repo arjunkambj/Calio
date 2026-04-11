@@ -38,8 +38,8 @@ interface WhoItsForProps {
 const WhoItsFor = ({ className }: WhoItsForProps) => {
   return (
     <section className={cn(className)}>
-      <div className="border-b">
-        <div className="max-w-7xl mx-auto flex flex-col gap-3 border-x px-5 py-6 lg:px-8 lg:py-10">
+      <div>
+        <div className="max-w-7xl mx-auto border-b border-x flex flex-col gap-3 px-5 py-6 lg:px-8 lg:py-10">
           <p className="marketing-section-kicker">Who it&apos;s for</p>
           <h2 className="marketing-section-heading">Built For Your Stage</h2>
           <p className="marketing-section-desc">
@@ -49,13 +49,13 @@ const WhoItsFor = ({ className }: WhoItsForProps) => {
         </div>
       </div>
 
-      <div className="border-b">
-        <div className="max-w-7xl mx-auto w-full border-x lg:px-0!">
+      <div>
+        <div className="max-w-7xl mx-auto w-full border-b border-x lg:px-0!">
           <div className="grid bg-border max-lg:divide-y lg:grid-cols-3 lg:gap-px">
             {segments.map((segment, index) => (
               <div
                 key={index}
-                className="group relative isolate flex flex-col bg-card p-8 text-start transition-all duration-300 lg:p-10 lg:py-12"
+                className="group relative isolate flex flex-col bg-card p-8 text-start transition-all duration-300 hover:bg-primary/[0.02] lg:p-10 lg:py-12"
               >
                 <div className="mb-5 text-primary">
                   <Icon
@@ -85,8 +85,8 @@ const WhoItsFor = ({ className }: WhoItsForProps) => {
         </div>
       </div>
 
-      <div className="h-8 w-full border-b md:h-12 lg:h-28">
-        <div className="max-w-7xl mx-auto h-full w-full border-x"></div>
+      <div className="h-8 w-full md:h-12 lg:h-28">
+        <div className="max-w-7xl mx-auto h-full w-full border-b border-x"></div>
       </div>
     </section>
   );

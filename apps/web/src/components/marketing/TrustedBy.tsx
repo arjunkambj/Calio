@@ -22,8 +22,8 @@ interface TrustedByProps {
 const TrustedBy = ({ className }: TrustedByProps) => {
   return (
     <section className={cn("w-full", className)}>
-      <div className="border-b">
-        <div className="max-w-7xl mx-auto border-x">
+      <div>
+        <div className="max-w-7xl mx-auto border-b border-x">
           <div className="flex flex-col items-center py-8 lg:py-12">
             <div className="w-full overflow-hidden">
               <Marquee
@@ -34,7 +34,7 @@ const TrustedBy = ({ className }: TrustedByProps) => {
                 {companies.map((company, index) => (
                   <div
                     key={index}
-                    className="flex items-center gap-3 text-foreground/30 transition-all duration-300 hover:text-foreground/60 hover:scale-105"
+                    className="flex items-center gap-3 text-foreground/40 transition-all duration-300 hover:text-foreground/70 hover:scale-105"
                   >
                     <Image
                       src={company.logo}
