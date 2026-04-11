@@ -23,12 +23,8 @@ const TrustedBy = ({ className }: TrustedByProps) => {
   return (
     <section className={cn("w-full", className)}>
       <div className="border-b">
-        <div className="max-w-6xl mx-auto border-x">
-          <div className="flex flex-col items-center gap-6 py-8 lg:py-12">
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-foreground/40">
-              Trusted by teams at
-            </p>
-
+        <div className="max-w-7xl mx-auto border-x">
+          <div className="flex flex-col items-center py-8 lg:py-12">
             <div className="w-full overflow-hidden">
               <Marquee
                 className="[--gap:5rem] [--duration:30s]"

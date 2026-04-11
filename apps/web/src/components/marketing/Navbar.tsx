@@ -62,7 +62,7 @@ const Navbar = ({ className }: NavbarProps) => {
         className,
       )}
     >
-      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between border-x px-4 py-3 lg:px-8">
+      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between border-x px-4 py-3 lg:px-8">
         <Link href="/" className="shrink-0">
           <Logo />
         </Link>

@@ -39,7 +39,7 @@ const WhoItsFor = ({ className }: WhoItsForProps) => {
   return (
     <section className={cn(className)}>
       <div className="border-b">
-        <div className="max-w-6xl mx-auto flex flex-col gap-3 border-x px-5 py-6 lg:px-8 lg:py-10">
+        <div className="max-w-7xl mx-auto flex flex-col gap-3 border-x px-5 py-6 lg:px-8 lg:py-10">
           <p className="marketing-section-kicker">Who it&apos;s for</p>
           <h2 className="marketing-section-heading">Built For Your Stage</h2>
           <p className="marketing-section-desc">
@@ -50,7 +50,7 @@ const WhoItsFor = ({ className }: WhoItsForProps) => {
       </div>
 
       <div className="border-b">
-        <div className="max-w-6xl mx-auto w-full border-x lg:px-0!">
+        <div className="max-w-7xl mx-auto w-full border-x lg:px-0!">
           <div className="grid bg-border max-lg:divide-y lg:grid-cols-3 lg:gap-px">
             {segments.map((segment, index) => (
               <div
@@ -86,7 +86,7 @@ const WhoItsFor = ({ className }: WhoItsForProps) => {
       </div>
 
       <div className="h-8 w-full border-b md:h-12 lg:h-28">
-        <div className="max-w-6xl mx-auto h-full w-full border-x"></div>
+        <div className="max-w-7xl mx-auto h-full w-full border-x"></div>
       </div>
     </section>
   );

@@ -15,11 +15,8 @@ const Hero = ({ className }: HeroProps) => {
       className={cn("relative w-full overflow-hidden", className)}
     >
       <div className="relative w-full border-b">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex w-full flex-col items-center justify-center border-x px-5 py-20 md:py-28 lg:py-32 relative">
-            <div className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_60%_70%_at_50%_50%,black,transparent)]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle,currentColor_1px,transparent_1px)] [background-size:24px_24px] text-foreground/[0.12]" />
-            </div>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex w-full flex-col items-center justify-center border-x px-5 py-14 md:py-20 lg:py-24 relative">
             <div className="animate-fade-in-up inline-flex items-center gap-2.5 rounded-full bg-primary/8 px-4 py-1.5">
               <span className="inline-block size-1.5 rounded-full bg-primary animate-pulse-glow" />
               <span className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-primary">
@@ -60,7 +57,7 @@ const Hero = ({ className }: HeroProps) => {
       </div>
 
       <div className="relative w-full border-b">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <ul className="grid w-full grid-cols-1 border-x md:grid-cols-3">
             <li className="animate-fade-in-up delay-400 group flex flex-col items-center justify-center gap-3 bg-card px-6 py-7 md:py-8">
               <div className="text-primary">

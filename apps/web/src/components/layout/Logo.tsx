@@ -76,7 +76,7 @@ export default function Logo({
             wordmarkClassName,
           )}
         >
-          Ca<span className="text-primary">lio</span>
+          Calio
         </span>
       ) : null}
     </span>
