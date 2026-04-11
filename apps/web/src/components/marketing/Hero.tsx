@@ -16,7 +16,7 @@ const Hero = ({ className }: HeroProps) => {
     >
       <div className="relative w-full">
         <div className="max-w-7xl mx-auto">
-          <div className="flex w-full flex-col items-center justify-center border-x border-b px-5 py-14 md:py-20 lg:py-24 relative">
+          <div className="flex w-full flex-col items-center justify-center border-x border-b px-5 pt-20 pb-14 md:pt-24 md:pb-20 lg:pt-28 lg:pb-24 relative">
             <div className="animate-fade-in-up inline-flex items-center gap-2.5 rounded-full bg-primary/8 px-4 py-1.5">
               <span className="inline-block size-1.5 rounded-full bg-primary animate-pulse-glow" />
               <span className="text-[0.75rem] font-semibold uppercase tracking-[0.22em] text-primary">
