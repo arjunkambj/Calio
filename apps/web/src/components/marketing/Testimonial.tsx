@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/ui/marquee";
 
@@ -76,29 +75,29 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   return (
-    <Card className="w-[380px] shrink-0 rounded-xl border border-foreground/6 bg-card p-6 shadow-none transition-all duration-300 hover:border-primary/20 hover:shadow-md hover:shadow-primary/5">
+    <div className="w-[380px] shrink-0 border-r border-y border-foreground/8 bg-card p-6 transition-colors duration-300 hover:bg-primary/[0.02]">
       <blockquote className="text-[0.95rem] leading-relaxed text-foreground/70">
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
 
-      <div className="mt-5 flex items-center gap-3.5 border-t border-foreground/6 pt-5">
+      <div className="mt-5 flex items-center gap-3.5 border-t border-foreground/8 pt-5">
         <Image
           src={testimonial.author.image}
           alt={`${testimonial.author.name}'s profile picture`}
-          width={40}
-          height={40}
-          className="rounded-full object-cover ring-2 ring-primary/20"
+          width={36}
+          height={36}
+          className="rounded-full object-cover ring-1 ring-foreground/10"
         />
         <div>
-          <p className="text-[0.9rem] font-medium tracking-[-0.01em]">
+          <p className="text-[0.88rem] font-medium tracking-[-0.01em]">
             {testimonial.author.name}
           </p>
-          <p className="text-[0.8rem] text-foreground/40">
+          <p className="text-[0.78rem] text-foreground/45">
             {testimonial.author.role}, {testimonial.author.company}
           </p>
         </div>
       </div>
-    </Card>
+    </div>
   );
 };
 
@@ -124,11 +123,10 @@ const Testimonial = ({ className }: TestimonialProps) => {
       <div>
         <div className="max-w-7xl mx-auto border-b border-x py-8 lg:py-12">
           <div className="flex flex-col gap-6">
-            {/* Row 1 - moves left */}
             <Marquee
-              className="[--gap:1.5rem] [--duration:40s]"
+              className="[--gap:0rem] [--duration:30s]"
               pauseOnHover
-              repeat={4}
+              repeat={6}
             >
               {testimonialsRow1.map((testimonial, index) => (
                 <TestimonialCard
@@ -138,12 +136,11 @@ const Testimonial = ({ className }: TestimonialProps) => {
               ))}
             </Marquee>
 
-            {/* Row 2 - moves right (reverse) */}
             <Marquee
-              className="[--gap:1.5rem] [--duration:45s]"
+              className="[--gap:0rem] [--duration:35s]"
               pauseOnHover
               reverse
-              repeat={4}
+              repeat={6}
             >
               {testimonialsRow2.map((testimonial, index) => (
                 <TestimonialCard
