@@ -269,7 +269,7 @@ function SidebarPanel({ module, utilities }: SidebarPanelProps) {
 
   return (
     <div
-      className="relative flex h-screen flex-col overflow-hidden rounded-l-xl bg-[var(--shell-panel)]"
+      className="relative flex h-screen flex-col overflow-hidden rounded-xl bg-shell-panel"
       style={{ width: `${SIDEBAR_PANEL_WIDTH}px` }}
     >
       <div
@@ -530,24 +530,9 @@ function Area({
 }
 
 function ContentArea({ children }: { children: React.ReactNode }) {
-  const { isPanelOpen } = useSidebar();
-  const showCornerFills = isPanelOpen;
-
   return (
-    <div className="flex min-h-0 flex-1 flex-col bg-background md:bg-[var(--shell-chrome)] md:py-2 md:pr-2">
+    <div className="flex min-h-0 flex-1 flex-col bg-background md:bg-shell-rail md:py-2 md:pr-2">
       <div className="relative flex min-h-0 flex-1 flex-col">
-        <div
-          className={cn(
-            "absolute top-0 -left-2 z-0 hidden h-3 w-5 bg-[var(--shell-panel)] transition-opacity duration-300 md:block",
-            showCornerFills ? "opacity-100" : "opacity-0",
-          )}
-        />
-        <div
-          className={cn(
-            "absolute bottom-0 -left-2 z-0 hidden h-3 w-5 bg-[var(--shell-panel)] transition-opacity duration-300 md:block",
-            showCornerFills ? "opacity-100" : "opacity-0",
-          )}
-        />
         <main className="z-10 flex min-h-0 flex-1 flex-col overflow-hidden bg-background pb-20 md:rounded-xl md:pb-0">
           {children}
         </main>
@@ -795,17 +780,7 @@ export function ApplicationShell({ children }: { children: React.ReactNode }) {
 
   return (
     <SidebarProvider>
-      <div
-        className="flex h-screen flex-col overflow-hidden bg-[var(--shell-chrome)]"
-        style={
-          {
-            "--shell-panel":
-              "color-mix(in oklch, var(--background) 94%, var(--foreground))",
-            "--shell-chrome":
-              "color-mix(in oklch, var(--background) 88%, var(--foreground))",
-          } as React.CSSProperties
-        }
-      >
+      <div className="flex h-screen flex-col overflow-hidden bg-shell-rail">
         <header className="flex h-16 shrink-0 items-center gap-2 border-b bg-background px-4 md:hidden">
           <Link href="#" className="flex items-center gap-2">
             <Logo iconClassName="size-8" withWordmark={false} />
@@ -822,7 +797,7 @@ export function ApplicationShell({ children }: { children: React.ReactNode }) {
           </div>
         </header>
 
-        <div className="flex min-h-0 flex-1 md:grid md:grid-cols-[min-content_minmax(0,1fr)]">
+        <div className="flex min-h-0 flex-1 md:grid md:gap-3 md:grid-cols-[min-content_minmax(0,1fr)]">
           <DubSidebar
             railIcons={sidebarData.railIcons}
             bottomRailIcons={sidebarData.bottomRailIcons}
