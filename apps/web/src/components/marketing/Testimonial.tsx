@@ -75,12 +75,12 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   return (
-    <div className="w-[380px] shrink-0 border-r border-y border-foreground/8 bg-card p-6 transition-colors duration-300 hover:bg-primary/[0.02]">
-      <blockquote className="text-[0.95rem] leading-relaxed text-foreground/70">
+    <div className="w-[380px] shrink-0 border-r border-y border-foreground/8 bg-card px-6 transition-colors duration-300 hover:bg-primary/[0.02]">
+      <blockquote className="py-8 text-[1.05rem] leading-relaxed text-foreground/70">
         &ldquo;{testimonial.quote}&rdquo;
       </blockquote>
 
-      <div className="mt-5 flex items-center gap-3.5 border-t border-foreground/8 pt-5">
+      <div className="-mx-6 flex items-center gap-3.5 border-t border-foreground/8 px-6 py-4">
         <Image
           src={testimonial.author.image}
           alt={`${testimonial.author.name}'s profile picture`}
@@ -89,10 +89,10 @@ const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
           className="rounded-full object-cover ring-1 ring-foreground/10"
         />
         <div>
-          <p className="text-[0.88rem] font-medium tracking-[-0.01em]">
+          <p className="text-[0.92rem] font-medium tracking-[-0.01em]">
             {testimonial.author.name}
           </p>
-          <p className="text-[0.78rem] text-foreground/45">
+          <p className="text-[0.82rem] text-foreground/45">
             {testimonial.author.role}, {testimonial.author.company}
           </p>
         </div>

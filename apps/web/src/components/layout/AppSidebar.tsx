@@ -189,7 +189,7 @@ function SidebarRail({
               className={cn(
                 "group flex flex-col items-center justify-center gap-0.5 rounded-xl px-3 py-1.5 text-[10px] leading-none outline-none transition-all duration-150",
                 isActive
-                  ? "text-foreground"
+                  ? "font-semibold text-primary"
                   : "text-muted-foreground/70 hover:text-muted-foreground",
               )}
             >
@@ -221,7 +221,7 @@ function SidebarRail({
               className={cn(
                 "group flex flex-col items-center justify-center gap-0.5 rounded-xl px-3 py-1.5 text-[10px] leading-none outline-none transition-all duration-150",
                 isActive
-                  ? "text-foreground"
+                  ? "font-semibold text-primary"
                   : "text-muted-foreground/70 hover:text-muted-foreground",
               )}
             >
