@@ -117,7 +117,10 @@ const SidebarTrigger = React.forwardRef<
       ref={ref}
       variant="ghost"
       size="icon"
-      className={cn("size-8", className)}
+      className={cn(
+        "size-8 !bg-transparent hover:!bg-transparent active:!bg-transparent",
+        className,
+      )}
       onClick={(event) => {
         onClick?.(event);
         togglePanel();
@@ -126,14 +129,7 @@ const SidebarTrigger = React.forwardRef<
       aria-expanded={isPanelOpen}
       {...props}
     >
-      <Icon
-        icon={
-          isPanelOpen
-            ? "solar:sidebar-minimalistic-linear"
-            : "solar:sidebar-linear"
-        }
-        className="size-4"
-      />
+      <Icon icon="solar:sidebar-minimalistic-linear" className="size-4" />
     </Button>
   );
 
@@ -169,9 +165,9 @@ function SidebarRail({
   onModuleChange,
 }: SidebarRailProps) {
   return (
-    <div className="flex h-full w-[72px] flex-col items-center justify-between">
-      <div className="flex flex-col items-center gap-3 p-2">
-        <div className="pt-2 pb-1">
+    <div className="flex h-full w-[72px] flex-col items-center justify-between py-2">
+      <div className="flex flex-col items-center gap-1">
+        <div className="pt-1 pb-2">
           <Link
             href="#"
             className="flex items-center justify-center rounded-lg transition-opacity outline-none hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring"
@@ -180,35 +176,40 @@ function SidebarRail({
           </Link>
         </div>
 
-        <div className="flex flex-col items-center gap-1">
-          {railIcons.map((item) => {
-            const isActive = item.moduleId === activeModuleId;
-            return (
-              <button
-                key={item.moduleId}
-                type="button"
-                onClick={() => onModuleChange(item.moduleId)}
-                aria-label={item.label}
-                className="flex flex-col items-center justify-center gap-0.5 rounded-lg bg-transparent px-2 py-1.5 text-[10px] leading-none text-muted-foreground outline-none transition-colors duration-150 hover:bg-transparent focus-visible:ring-2 focus-visible:ring-ring active:bg-transparent"
+        <Separator className="my-1 w-8" />
+
+        {railIcons.map((item) => {
+          const isActive = item.moduleId === activeModuleId;
+          return (
+            <button
+              key={item.moduleId}
+              type="button"
+              onClick={() => onModuleChange(item.moduleId)}
+              aria-label={item.label}
+              className={cn(
+                "group flex flex-col items-center justify-center gap-0.5 rounded-xl px-3 py-1.5 text-[10px] leading-none outline-none transition-all duration-150",
+                isActive
+                  ? "text-foreground"
+                  : "text-muted-foreground/70 hover:text-muted-foreground",
+              )}
+            >
+              <span
+                className={cn(
+                  "flex size-10 items-center justify-center rounded-lg transition-all duration-150",
+                  isActive
+                    ? "bg-shell-panel text-foreground shadow-xs"
+                    : "text-muted-foreground group-hover:bg-accent/60 group-active:bg-accent",
+                )}
               >
-                <span
-                  className={cn(
-                    "flex size-8 items-center justify-center rounded-lg transition-colors duration-150",
-                    isActive
-                      ? "bg-background text-foreground"
-                      : "text-muted-foreground hover:bg-accent active:bg-accent/80",
-                  )}
-                >
-                  <Icon icon={item.icon} className="size-5" />
-                </span>
-                <span>{item.label}</span>
-              </button>
-            );
-          })}
-        </div>
+                <Icon icon={item.icon} className="size-5" />
+              </span>
+              <span>{item.label}</span>
+            </button>
+          );
+        })}
       </div>
 
-      <div className="flex flex-col items-center gap-1 pb-3">
+      <div className="flex flex-col items-center gap-1 pb-2">
         {bottomRailIcons.map((item) => {
           const isActive = item.moduleId === activeModuleId;
           return (
@@ -217,14 +218,19 @@ function SidebarRail({
               type="button"
               onClick={() => onModuleChange(item.moduleId)}
               aria-label={item.label}
-              className="flex flex-col items-center justify-center gap-0.5 rounded-lg bg-transparent px-2 py-1.5 text-[10px] leading-none text-muted-foreground outline-none transition-colors duration-150 hover:bg-transparent focus-visible:ring-2 focus-visible:ring-ring active:bg-transparent"
+              className={cn(
+                "group flex flex-col items-center justify-center gap-0.5 rounded-xl px-3 py-1.5 text-[10px] leading-none outline-none transition-all duration-150",
+                isActive
+                  ? "text-foreground"
+                  : "text-muted-foreground/70 hover:text-muted-foreground",
+              )}
             >
               <span
                 className={cn(
-                  "flex size-8 items-center justify-center rounded-lg transition-colors duration-150",
+                  "flex size-10 items-center justify-center rounded-lg transition-all duration-150",
                   isActive
-                    ? "bg-background text-foreground"
-                    : "text-muted-foreground hover:bg-accent active:bg-accent/80",
+                    ? "bg-shell-panel text-foreground shadow-xs"
+                    : "text-muted-foreground group-hover:bg-accent/60 group-active:bg-accent",
                 )}
               >
                 <Icon icon={item.icon} className="size-5" />
@@ -276,18 +282,16 @@ function SidebarPanel({ module, utilities }: SidebarPanelProps) {
         key={module.id}
         className="relative flex min-h-0 flex-1 animate-in flex-col text-muted-foreground duration-200 fade-in slide-in-from-right-2"
       >
-        <div className="shrink-0 p-3">
-          <div className="mb-2 flex items-center gap-2">
-            <OrganizationSwitcher />
-          </div>
+        <div className="shrink-0 px-3 pt-3 pb-1">
+          <OrganizationSwitcher />
         </div>
 
         <ScrollArea className="min-h-0 flex-1">
-          <div className="flex flex-col gap-5 px-3 pb-3">
+          <div className="flex flex-col gap-4 px-3 pt-1 pb-3">
             {primarySections.map((section) => (
               <div key={section.id}>
                 {section.label && (
-                  <div className="mb-2 pl-3 text-sm text-muted-foreground">
+                  <div className="mb-1.5 px-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground/70">
                     {section.label}
                   </div>
                 )}
@@ -315,18 +319,15 @@ function SidebarPanel({ module, utilities }: SidebarPanelProps) {
                 className="group/setup"
               >
                 <div
-                  className={cn(
-                    "rounded-lg p-2",
-                    setupOpen && "bg-background/20",
-                  )}
+                  className={cn("rounded-lg p-2", setupOpen && "bg-accent/40")}
                 >
                   <CollapsibleTrigger
                     className={cn(
-                      "flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors",
+                      "flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-[13px] transition-colors",
                       setupOpen && "hidden",
                       isSetupActive
                         ? "bg-primary/10 font-medium text-primary"
-                        : "text-muted-foreground hover:bg-accent/50",
+                        : "text-foreground/80 hover:bg-accent/60 hover:text-foreground",
                     )}
                   >
                     <Icon
@@ -441,7 +442,7 @@ function SidebarPanel({ module, utilities }: SidebarPanelProps) {
             )}
 
             {utilities.length > 0 && (
-              <div className="mt-3 border-t border-border pt-3">
+              <div className="mt-2 border-t border-border/60 pt-2">
                 <nav className="flex flex-col gap-0.5">
                   {utilities.map((item) => (
                     <NavItem
@@ -475,17 +476,17 @@ function NavItem({
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
       className={cn(
-        "group flex h-8 items-center justify-between rounded-lg p-2 text-sm leading-none transition-[background-color,color,font-weight] duration-75",
+        "group relative flex h-8 items-center justify-between rounded-lg px-2 text-[13px] leading-none transition-all duration-150",
         isActive
-          ? "bg-primary/10 font-medium text-primary hover:bg-primary/15 active:bg-primary/20"
-          : "text-foreground hover:bg-accent active:bg-accent/80",
+          ? "bg-primary/10 font-medium text-primary"
+          : "text-foreground/80 hover:bg-accent/60 hover:text-foreground active:bg-accent",
       )}
     >
       <span className="flex min-w-0 items-center gap-2.5">
         <Icon
           icon={item.icon}
           className={cn(
-            "size-4 shrink-0",
+            "size-4 shrink-0 transition-colors duration-150",
             isActive ? "text-primary" : "text-muted-foreground",
           )}
         />
@@ -494,7 +495,7 @@ function NavItem({
       {isExternal && (
         <Icon
           icon="solar:arrow-right-up-linear"
-          className="size-3.5 text-muted-foreground transition-transform duration-75 group-hover:translate-x-px group-hover:-translate-y-px"
+          className="size-3.5 text-muted-foreground opacity-0 transition-opacity duration-150 group-hover:opacity-100"
         />
       )}
     </a>
@@ -797,7 +798,7 @@ export function ApplicationShell({ children }: { children: React.ReactNode }) {
           </div>
         </header>
 
-        <div className="flex min-h-0 flex-1 md:grid md:gap-3 md:grid-cols-[min-content_minmax(0,1fr)]">
+        <div className="flex min-h-0 flex-1 md:grid md:gap-2 md:grid-cols-[min-content_minmax(0,1fr)]">
           <DubSidebar
             railIcons={sidebarData.railIcons}
             bottomRailIcons={sidebarData.bottomRailIcons}
