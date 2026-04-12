@@ -3,6 +3,7 @@
 import { Icon } from "@iconify/react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import * as React from "react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -171,12 +172,12 @@ function SidebarRail({
     <div className="flex h-full w-[72px] flex-col items-center justify-between">
       <div className="flex flex-col items-center gap-3 p-2">
         <div className="pt-2 pb-1">
-          <a
+          <Link
             href="#"
             className="flex items-center justify-center rounded-lg transition-opacity outline-none hover:opacity-80 focus-visible:ring-2 focus-visible:ring-ring"
           >
             <Logo iconClassName="size-7" withWordmark={false} />
-          </a>
+          </Link>
         </div>
 
         <div className="flex flex-col items-center gap-1">
@@ -781,11 +782,7 @@ function MobileNavItem({
 
 export { SidebarProvider, SidebarTrigger, useSidebar };
 
-export function ApplicationShell12({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export function ApplicationShell({ children }: { children: React.ReactNode }) {
   const [isMobilePanelOpen, setIsMobilePanelOpen] = React.useState(false);
   const [activeModuleId, setActiveModuleId] = React.useState("home");
 
@@ -810,9 +807,9 @@ export function ApplicationShell12({
         }
       >
         <header className="flex h-16 shrink-0 items-center gap-2 border-b bg-background px-4 md:hidden">
-          <a href="#" className="flex items-center gap-2">
+          <Link href="#" className="flex items-center gap-2">
             <Logo iconClassName="size-8" withWordmark={false} />
-          </a>
+          </Link>
           <Separator
             orientation="vertical"
             className="data-[orientation=vertical]:h-4"

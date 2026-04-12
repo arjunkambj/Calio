@@ -1,4 +1,4 @@
-import { ApplicationShell12 } from "@/components/layout/AppSidebar";
+import { ApplicationShell } from "@/components/layout/AppSidebar";
 import { DashboardHeader } from "@/components/layout/DashboardHeader";
 
 export default function DashboardLayout({
@@ -7,9 +7,9 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ApplicationShell12>
+    <ApplicationShell>
       <DashboardHeader />
       {children}
-    </ApplicationShell12>
+    </ApplicationShell>
   );
 }
