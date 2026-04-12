@@ -126,7 +126,7 @@ export default function SignInPage() {
 
           <Button type="submit" className="w-full" disabled={isEmailLoading}>
             {isEmailLoading ? (
-              <Icon icon="svg-spinners:180-ring" width={18} />
+              <Icon icon="svg-spinners:180-ring-with-bg" width={18} />
             ) : null}
             {isEmailLoading ? "Sending..." : "Continue with Email"}
           </Button>
@@ -151,7 +151,8 @@ export default function SignInPage() {
           </InputOTP>
           {isVerifying ? (
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Icon icon="svg-spinners:180-ring" width={16} /> Verifying...
+              <Icon icon="svg-spinners:180-ring-with-bg" width={16} />{" "}
+              Verifying...
             </div>
           ) : null}
           <div className="flex flex-col items-center gap-2 text-sm">
@@ -201,7 +202,7 @@ export default function SignInPage() {
         }}
       >
         {isGoogleLoading ? (
-          <Icon icon="svg-spinners:180-ring" width={18} />
+          <Icon icon="svg-spinners:180-ring-with-bg" width={18} />
         ) : (
           <Icon icon="logos:google-icon" width={18} />
         )}
