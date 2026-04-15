@@ -109,7 +109,7 @@ const Testimonial = ({ className }: TestimonialProps) => {
   return (
     <section className={cn(className)}>
       <div>
-        <div className="max-w-7xl mx-auto border-b border-x flex flex-col gap-3 px-5 py-6 lg:px-8 lg:py-10">
+        <div className="max-w-7xl mx-auto border-b border-x bg-background flex flex-col gap-3 px-5 py-6 lg:px-8 lg:py-10">
           <p className="marketing-section-kicker">Customer stories</p>
           <h2 className="marketing-section-heading">
             Always On, Always Answered
@@ -121,7 +121,7 @@ const Testimonial = ({ className }: TestimonialProps) => {
       </div>
 
       <div>
-        <div className="max-w-7xl mx-auto border-b border-x py-8 lg:py-12">
+        <div className="max-w-7xl mx-auto border-b border-x bg-background py-8 lg:py-12">
           <div className="flex flex-col gap-6">
             <Marquee
               className="[--gap:0rem] [--duration:30s]"
@@ -154,7 +154,7 @@ const Testimonial = ({ className }: TestimonialProps) => {
       </div>
 
       <div className="h-8 w-full md:h-12 lg:h-28">
-        <div className="max-w-7xl mx-auto h-full w-full border-b border-x"></div>
+        <div className="max-w-7xl mx-auto h-full w-full border-b border-x bg-background"></div>
       </div>
     </section>
   );

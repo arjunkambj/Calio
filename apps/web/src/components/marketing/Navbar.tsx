@@ -58,11 +58,11 @@ const Navbar = ({ className }: NavbarProps) => {
   return (
     <section
       className={cn(
-        "fixed top-0 z-50 w-full bg-card border-b transition-all duration-300",
+        "fixed top-0 z-50 w-full bg-background border-b transition-all duration-300",
         className,
       )}
     >
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between border-x px-4 py-3 lg:px-8">
+      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between border-x bg-background px-4 py-3 lg:px-8">
         <Link href="/" className="shrink-0">
           <Logo />
         </Link>

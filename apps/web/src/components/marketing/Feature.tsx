@@ -50,7 +50,7 @@ const Feature = ({ className }: FeatureProps) => {
   return (
     <section id="features" className={cn("w-full", className)}>
       <div>
-        <div className="max-w-7xl mx-auto border-b border-x flex flex-col gap-3 px-5 py-6 lg:px-8 lg:py-10">
+        <div className="max-w-7xl mx-auto border-b border-x bg-background flex flex-col gap-3 px-5 py-6 lg:px-8 lg:py-10">
           <p className="marketing-section-kicker">Features</p>
           <h2 className="marketing-section-heading">Powerful At Every Scale</h2>
           <p className="marketing-section-desc">
@@ -61,12 +61,12 @@ const Feature = ({ className }: FeatureProps) => {
       </div>
 
       <div>
-        <div className="max-w-7xl mx-auto w-full border-b border-x lg:px-0!">
+        <div className="max-w-7xl mx-auto w-full border-b border-x bg-background lg:px-0!">
           <div className="grid bg-border max-lg:divide-y lg:grid-cols-3 lg:gap-px">
             {features.map((item, index) => (
               <div
                 key={index}
-                className="group relative isolate flex flex-col bg-card p-8 text-start transition-all duration-300 hover:bg-primary/[0.02] lg:p-8"
+                className="group relative isolate flex flex-col bg-card p-8 text-start transition-all duration-300 hover:bg-[#FDFDFC] lg:p-8"
               >
                 <div className="flex-1">
                   <div className="mb-5 text-primary">
@@ -89,7 +89,7 @@ const Feature = ({ className }: FeatureProps) => {
       </div>
 
       <div className="h-8 w-full md:h-12 lg:h-28">
-        <div className="max-w-7xl mx-auto h-full w-full border-b border-x"></div>
+        <div className="max-w-7xl mx-auto h-full w-full border-b border-x bg-background"></div>
       </div>
     </section>
   );

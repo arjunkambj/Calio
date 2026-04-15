@@ -47,9 +47,9 @@ interface FooterProps {
 
 const Footer = ({ className }: FooterProps) => {
   return (
-    <section className={cn("bg-background", className)}>
+    <section className={cn(className)}>
       <div>
-        <div className="max-w-7xl mx-auto border-b border-x bg-card px-5 py-16 lg:px-8 lg:py-20">
+        <div className="max-w-7xl mx-auto border-b border-x bg-background px-5 py-16 lg:px-8 lg:py-20">
           <div className="grid gap-8 lg:grid-cols-4 lg:gap-6">
             <div className="lg:col-span-1">
               <div className="mb-3">
@@ -87,7 +87,7 @@ const Footer = ({ className }: FooterProps) => {
       </div>
 
       <div>
-        <div className="max-w-7xl mx-auto border-b border-x bg-card px-5 py-10 lg:px-8">
+        <div className="max-w-7xl mx-auto border-b border-x bg-background px-5 py-10 lg:px-8">
           <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
             <p className="text-[0.82rem] text-foreground/40">
               &copy; {new Date().getFullYear()} Calio
