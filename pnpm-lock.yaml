@@ -48,6 +48,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@databuddy/sdk':
+        specifier: ^2.4.0
+        version: 2.4.0(msw@2.12.10(@types/node@22.15.3)(typescript@5.9.2))(react@19.2.0)
       '@hugeicons/core-free-icons':
         specifier: ^4.1.1
         version: 4.1.1
@@ -506,6 +509,20 @@ packages:
   '@babel/types@7.29.0':
     resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
+
+  '@databuddy/sdk@2.4.0':
+    resolution: {integrity: sha512-s+G8q/xX+p1gijkOrX9s19GSrjYs9GIoi8t9ktcgkmCnLftipKjMbXnLDAB59vH1KZZdJ59GDttWbFBnuu4uTA==}
+    peerDependencies:
+      msw: ^2.11.5
+      react: '>=18'
+      vue: '>=3'
+    peerDependenciesMeta:
+      msw:
+        optional: true
+      react:
+        optional: true
+      vue:
+        optional: true
 
   '@date-fns/tz@1.4.1':
     resolution: {integrity: sha512-P5LUNhtbj6YfI3iJjw5EL9eUAG6OitD0W3fWQcpQjDRc/QIsL0tRNuO1PcDvPccWL1fSTXXdE1ds+l95DV/OFA==}
@@ -5792,6 +5809,11 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
+
+  '@databuddy/sdk@2.4.0(msw@2.12.10(@types/node@22.15.3)(typescript@5.9.2))(react@19.2.0)':
+    optionalDependencies:
+      msw: 2.12.10(@types/node@22.15.3)(typescript@5.9.2)
+      react: 19.2.0
 
   '@date-fns/tz@1.4.1': {}
 

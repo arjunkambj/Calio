@@ -5,6 +5,7 @@ import { StackProvider, StackTheme } from "@stackframe/stack";
 import { stackServerApp } from "@/stack/server";
 import { Inter, Noto_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Databuddy } from "@databuddy/sdk/react";
 
 const notoSans = Noto_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -51,6 +52,7 @@ export default function RootLayout({
             <Providers>{children}</Providers>
           </StackTheme>
         </StackProvider>
+        <Databuddy clientId="89353fd5-c2c5-4dc2-8510-1360af7170dd" />
       </body>
     </html>
   );
