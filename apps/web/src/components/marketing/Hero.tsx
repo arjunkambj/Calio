@@ -35,10 +35,17 @@ const Hero = ({ className }: HeroProps) => {
             </p>
 
             <div className="animate-fade-in-up delay-300 mt-8 flex flex-col items-center gap-3 sm:flex-row sm:gap-3">
-              <Button asChild className="px-5">
-                <Link href="#pricing">Get started</Link>
+              <Button
+                asChild
+                className="px-8 h-12 text-base shadow-lg shadow-primary/25 hover:shadow-primary/30 transition-all duration-300"
+              >
+                <Link href="#pricing">Get started free</Link>
               </Button>
-              <Button asChild variant="secondary" className="px-5">
+              <Button
+                asChild
+                variant="secondary"
+                className="px-8 h-12 text-base"
+              >
                 <Link href="#features" className="flex items-center gap-2">
                   See how it works
                   <Icon icon="solar:arrow-down-linear" className="size-4" />
