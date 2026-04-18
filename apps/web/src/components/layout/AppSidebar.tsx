@@ -129,7 +129,7 @@ const SidebarTrigger = React.forwardRef<
       aria-expanded={isPanelOpen}
       {...props}
     >
-      <Icon icon="solar:sidebar-minimalistic-linear" className="size-4" />
+      <Icon icon="ph:sidebar-simple" className="size-4" />
     </Button>
   );
 
@@ -331,7 +331,7 @@ function SidebarPanel({ module, utilities }: SidebarPanelProps) {
                     )}
                   >
                     <Icon
-                      icon="solar:settings-linear"
+                      icon="ph:gear"
                       className={cn(
                         "size-4",
                         isSetupActive
@@ -341,7 +341,7 @@ function SidebarPanel({ module, utilities }: SidebarPanelProps) {
                     />
                     <span className="font-medium">Configuration</span>
                     <Icon
-                      icon="solar:arrow-right-linear"
+                      icon="ph:arrow-right"
                       className={cn(
                         "ml-auto size-4",
                         isSetupActive
@@ -400,7 +400,7 @@ function SidebarPanel({ module, utilities }: SidebarPanelProps) {
                           aria-label="Collapse configuration"
                         >
                           <Icon
-                            icon="solar:alt-arrow-down-linear"
+                            icon="ph:caret-down"
                             className="size-4"
                           />
                         </CollapsibleTrigger>
@@ -494,7 +494,7 @@ function NavItem({
       </span>
       {isExternal && (
         <Icon
-          icon="solar:arrow-right-up-linear"
+          icon="ph:arrow-up-right"
           className="size-3.5 text-muted-foreground opacity-0 transition-opacity duration-150 group-hover:opacity-100"
         />
       )}
@@ -758,7 +758,7 @@ function MobileNavItem({
       </span>
       {isExternal && (
         <Icon
-          icon="solar:arrow-right-up-linear"
+          icon="ph:arrow-up-right"
           className="size-3.5 text-muted-foreground transition-transform duration-75 group-hover:translate-x-px group-hover:-translate-y-px"
         />
       )}

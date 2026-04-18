@@ -8,13 +8,13 @@ export const railIcons: RailIconConfig[] = [
   {
     moduleId: "home",
     label: "Home",
-    icon: "solar:home-2-linear",
+    icon: "ph:house",
     defaultPath: "#",
   },
   {
     moduleId: "phone",
     label: "Phone",
-    icon: "solar:phone-linear",
+    icon: "ph:phone",
     defaultPath: "#",
   },
 ];
@@ -23,13 +23,13 @@ export const bottomRailIcons: RailIconConfig[] = [
   {
     moduleId: "team",
     label: "Teams",
-    icon: "solar:users-group-rounded-linear",
+    icon: "ph:users",
     defaultPath: "#",
   },
   {
     moduleId: "settings",
     label: "Settings",
-    icon: "solar:settings-linear",
+    icon: "ph:gear",
     defaultPath: "#",
   },
 ];
@@ -38,7 +38,7 @@ export const modules: NavModuleConfig[] = [
   {
     id: "home",
     label: "Home",
-    icon: "solar:home-2-linear",
+    icon: "ph:house",
     defaultPath: "#",
     sections: [
       {
@@ -47,7 +47,7 @@ export const modules: NavModuleConfig[] = [
           {
             id: "overview",
             label: "Overview",
-            icon: "solar:home-2-linear",
+icon: "ph:house",
             path: "#",
           },
         ],
@@ -57,7 +57,7 @@ export const modules: NavModuleConfig[] = [
   {
     id: "phone",
     label: "Phone",
-    icon: "solar:phone-linear",
+    icon: "ph:phone",
     defaultPath: "#",
     sections: [
       {
@@ -66,19 +66,19 @@ export const modules: NavModuleConfig[] = [
           {
             id: "calls",
             label: "Calls",
-            icon: "solar:phone-linear",
+            icon: "ph:phone",
             path: "#",
           },
           {
             id: "messages",
             label: "Messages",
-            icon: "solar:chat-round-dots-linear",
+            icon: "ph:chat-circle",
             path: "#",
           },
           {
             id: "contacts",
             label: "Contacts",
-            icon: "solar:user-linear",
+            icon: "ph:user",
             path: "#",
           },
         ],
@@ -88,7 +88,7 @@ export const modules: NavModuleConfig[] = [
   {
     id: "team",
     label: "Teams",
-    icon: "solar:users-group-rounded-linear",
+    icon: "ph:users",
     defaultPath: "#",
     sections: [
       {
@@ -97,7 +97,7 @@ export const modules: NavModuleConfig[] = [
           {
             id: "members",
             label: "Members",
-            icon: "solar:users-group-rounded-linear",
+            icon: "ph:users",
             path: "#",
           },
         ],
@@ -107,7 +107,7 @@ export const modules: NavModuleConfig[] = [
   {
     id: "settings",
     label: "Settings",
-    icon: "solar:settings-linear",
+    icon: "ph:gear",
     defaultPath: "#",
     sections: [
       {
@@ -116,7 +116,7 @@ export const modules: NavModuleConfig[] = [
           {
             id: "general",
             label: "General",
-            icon: "solar:settings-linear",
+            icon: "ph:gear",
             path: "#",
           },
         ],

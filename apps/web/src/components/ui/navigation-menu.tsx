@@ -75,7 +75,7 @@ function NavigationMenuTrigger({
     >
       {children}{" "}
       <Icon
-        icon="solar:alt-arrow-down-linear"
+        icon="ph:caret-down"
         className="relative top-px ml-1 size-3 transition duration-300 group-data-popup-open/navigation-menu-trigger:rotate-180 group-data-open/navigation-menu-trigger:rotate-180"
         aria-hidden="true"
       />

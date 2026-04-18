@@ -8,37 +8,37 @@ const features = [
     title: "3-minute setup",
     description:
       "Sign up, pick a number, start calling. No hardware to ship, no IT to schedule, no waiting.",
-    icon: "solar:stopwatch-bold-duotone",
+    icon: "ph:timer",
   },
   {
     title: "Smart call routing",
     description:
       "Route calls by time zone, team, or availability. Every call reaches the right person.",
-    icon: "solar:routing-2-bold-duotone",
+    icon: "ph:signpost",
   },
   {
     title: "Works everywhere",
     description:
       "Browser, desktop, iOS, Android. Take calls from anywhere on any device.",
-    icon: "solar:monitor-smartphone-bold-duotone",
+    icon: "ph:devices",
   },
   {
     title: "Call recording",
     description:
       "Every call recorded automatically. Replay, search, or use it to train your team.",
-    icon: "solar:record-circle-bold-duotone",
+    icon: "ph:microphone",
   },
   {
     title: "SMS from your number",
     description:
       "Send and receive texts from the same business number. Calls and texts, one place.",
-    icon: "solar:chat-round-dots-bold-duotone",
+    icon: "ph:chat-circle",
   },
   {
     title: "Shared inbox",
     description:
       "Your whole team sees the same calls, texts, and notes. Handoffs stop being painful.",
-    icon: "solar:inbox-bold-duotone",
+    icon: "ph:chats",
   },
 ];
 

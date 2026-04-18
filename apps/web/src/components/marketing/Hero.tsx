@@ -48,7 +48,7 @@ const Hero = ({ className }: HeroProps) => {
               >
                 <Link href="#features" className="flex items-center gap-2">
                   See how it works
-                  <Icon icon="solar:arrow-down-linear" className="size-4" />
+                  <Icon icon="ph:arrow-down" className="size-4" />
                 </Link>
               </Button>
             </div>
@@ -62,7 +62,7 @@ const Hero = ({ className }: HeroProps) => {
             <li className="animate-fade-in-up delay-400 group flex flex-col items-center justify-center gap-3 bg-card px-6 py-7 md:py-8">
               <div className="text-primary">
                 <Icon
-                  icon="solar:phone-calling-bold-duotone"
+                  icon="ph:phone"
                   className="size-9 transition-transform duration-300 ease-out group-hover:scale-110"
                 />
               </div>
@@ -78,7 +78,7 @@ const Hero = ({ className }: HeroProps) => {
             <li className="animate-fade-in-up delay-500 group flex flex-col items-center justify-center gap-3 border-t border-l bg-card px-6 py-7 md:border-t-0 md:py-8">
               <div className="text-primary">
                 <Icon
-                  icon="solar:users-group-two-rounded-bold-duotone"
+                  icon="ph:users"
                   className="size-9 transition-transform duration-300 ease-out group-hover:scale-110"
                 />
               </div>
@@ -94,7 +94,7 @@ const Hero = ({ className }: HeroProps) => {
             <li className="animate-fade-in-up delay-600 group flex flex-col items-center justify-center gap-3 border-t border-l bg-card px-6 py-7 md:border-t-0 md:py-8">
               <div className="text-primary">
                 <Icon
-                  icon="solar:monitor-smartphone-bold-duotone"
+                  icon="ph:devices"
                   className="size-9 transition-transform duration-300 ease-out group-hover:scale-110"
                 />
               </div>

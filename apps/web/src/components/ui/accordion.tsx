@@ -55,12 +55,12 @@ function AccordionTrigger({
       >
         {children}
         <Icon
-          icon="solar:alt-arrow-down-linear"
+          icon="ph:caret-down"
           data-slot="accordion-trigger-icon"
           className="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden"
         />
         <Icon
-          icon="solar:alt-arrow-up-linear"
+          icon="ph:caret-up"
           data-slot="accordion-trigger-icon"
           className="pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline"
         />

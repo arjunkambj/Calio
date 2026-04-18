@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const pricingPlans = [
   {
-    icon: "solar:phone-calling-bold-duotone",
+    icon: "ph:phone",
     name: "Starter",
     price: {
       monthly: 5,
@@ -24,7 +24,7 @@ const pricingPlans = [
     ],
   },
   {
-    icon: "solar:bolt-bold-duotone",
+    icon: "ph:lightning",
     name: "Growth",
     featured: true,
     price: {
@@ -40,7 +40,7 @@ const pricingPlans = [
     ],
   },
   {
-    icon: "solar:users-group-two-rounded-bold-duotone",
+    icon: "ph:users",
     name: "Team",
     price: {
       monthly: 29,
@@ -192,7 +192,7 @@ const Pricing = ({ className }: PricingProps) => {
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <Icon
-                          icon="lucide:check"
+                          icon="ph:check"
                           width={18}
                           className={cn(
                             "mt-0.5",

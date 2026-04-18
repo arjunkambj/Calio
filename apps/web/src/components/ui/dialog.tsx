@@ -74,7 +74,7 @@ function DialogContent({
               className="absolute top-4 right-4 bg-secondary"
               size="icon-sm"
             >
-              <Icon icon="solar:close-circle-linear" className="size-4" />
+              <Icon icon="ph:x-circle" className="size-4" />
               <span className="sr-only">Close</span>
             </Button>
           </DialogPrimitive.Close>

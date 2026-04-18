@@ -24,7 +24,7 @@ export function ThemeSwitch() {
     >
       <Icon
         className="size-[1.15rem]"
-        icon={theme === "dark" ? "solar:sun-linear" : "solar:moon-linear"}
+        icon={theme === "dark" ? "ph:sun" : "ph:moon"}
       />
     </button>
   );

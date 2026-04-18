@@ -121,13 +121,13 @@ const AnimatedHamburger = ({ isOpen }: { isOpen: boolean }) => {
     <div className="group relative size-full">
       <div className="absolute flex size-full items-center justify-center">
         <Icon
-          icon="solar:hamburger-menu-linear"
+          icon="ph:list"
           className={`absolute size-5 text-foreground/50 transition-all duration-300 group-hover:text-foreground ${
             isOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
           }`}
         />
         <Icon
-          icon="solar:close-circle-linear"
+          icon="ph:x-circle"
           className={`absolute size-5 text-foreground/50 transition-all duration-300 group-hover:text-foreground ${
             isOpen ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"
           }`}

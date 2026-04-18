@@ -36,7 +36,7 @@ export function OrganizationSwitcher() {
             {teamName}
           </span>
           <Icon
-            icon="solar:alt-arrow-down-linear"
+            icon="ph:caret-down"
             className="size-4 text-muted-foreground"
           />
         </button>
@@ -45,7 +45,7 @@ export function OrganizationSwitcher() {
         <DropdownMenuLabel>Organizations</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Icon icon="solar:add-circle-linear" className="mr-2 size-4" />
+          <Icon icon="ph:plus-circle" className="mr-2 size-4" />
           Create organization
         </DropdownMenuItem>
       </DropdownMenuContent>

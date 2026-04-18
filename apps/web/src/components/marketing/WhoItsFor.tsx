@@ -3,29 +3,38 @@ import { cn } from "@/lib/utils";
 
 const segments = [
   {
-    icon: "solar:chat-round-bold-duotone",
-    title: "Small Business",
-    size: "1 – 50 employees",
+    icon: "ph:user",
+    title: "Solo & Freelance",
+    size: "1 user",
     description:
-      "Get a professional phone system in minutes. No IT, no hardware, no contracts. Just pick a number and start.",
+      "Your business, your number. Professional calling from day one with zero overhead.",
     cta: "Start free trial",
     href: "#pricing",
   },
   {
-    icon: "solar:layers-bold-duotone",
-    title: "Mid-Market",
-    size: "50 – 500 employees",
+    icon: "ph:chat-circle",
+    title: "Small Business",
+    size: "2 – 50 employees",
     description:
-      "Smart routing, shared inboxes, and call analytics for teams that need more than a single line.",
+      "A full phone system without the IT headache. Shared lines, call routing, and a local presence.",
     cta: "See plans",
     href: "#pricing",
   },
   {
-    icon: "solar:global-bold-duotone",
+    icon: "ph:stack",
+    title: "Growing Teams",
+    size: "50 – 500 employees",
+    description:
+      "Multi-department routing, analytics, and integrations that keep up with your pace.",
+    cta: "See plans",
+    href: "#pricing",
+  },
+  {
+    icon: "ph:globe",
     title: "Enterprise",
     size: "500+ employees",
     description:
-      "Custom deployments, dedicated support, compliance, and global coverage. Built for large teams across many locations.",
+      "Global coverage, compliance-ready, and built for complex orgs that need reliability at scale.",
     cta: "Talk to sales",
     href: "mailto:support@calio.cc",
   },
@@ -41,17 +50,17 @@ const WhoItsFor = ({ className }: WhoItsForProps) => {
       <div>
         <div className="max-w-7xl mx-auto border-b border-x bg-background flex flex-col gap-3 px-5 py-6 lg:px-8 lg:py-10">
           <p className="marketing-section-kicker">Who it&apos;s for</p>
-          <h2 className="marketing-section-heading">Built For Your Stage</h2>
+          <h2 className="marketing-section-heading">Right-Sized for Every Team</h2>
           <p className="marketing-section-desc">
-            Whether you&apos;re a 5-person startup or a 5,000-person company,
-            Calio fits how your team works.
+            Calio grows with you — start small, scale infinitely, never switch
+            platforms again.
           </p>
         </div>
       </div>
 
       <div>
         <div className="max-w-7xl mx-auto w-full border-b border-x bg-background lg:px-0!">
-          <div className="grid bg-border max-lg:divide-y lg:grid-cols-3 lg:gap-px">
+          <div className="grid bg-border max-lg:divide-y lg:grid-cols-2 lg:gap-px">
             {segments.map((segment, index) => (
               <div
                 key={index}
@@ -77,7 +86,7 @@ const WhoItsFor = ({ className }: WhoItsForProps) => {
                   className="mt-6 inline-flex items-center gap-1.5 text-[0.85rem] font-semibold text-primary transition-all duration-200 hover:gap-2.5"
                 >
                   {segment.cta}
-                  <Icon icon="solar:arrow-right-linear" className="size-3.5" />
+                  <Icon icon="ph:arrow-right" className="size-3.5" />
                 </a>
               </div>
             ))}

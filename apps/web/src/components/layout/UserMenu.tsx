@@ -54,16 +54,16 @@ function UserMenu() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Icon icon="solar:user-linear" className="mr-2 size-4" />
+          <Icon icon="ph:user" className="mr-2 size-4" />
           Account
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Icon icon="solar:settings-linear" className="mr-2 size-4" />
+          <Icon icon="ph:gear" className="mr-2 size-4" />
           Settings
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem variant="destructive" onClick={() => user?.signOut()}>
-          <Icon icon="solar:logout-2-linear" className="mr-2 size-4" />
+          <Icon icon="ph:sign-out" className="mr-2 size-4" />
           Log out
         </DropdownMenuItem>
       </DropdownMenuContent>
