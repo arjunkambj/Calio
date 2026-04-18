@@ -6,4 +6,4 @@ export { Navbar } from "./Navbar";
 export { Pricing } from "./Pricing";
 export { Testimonial } from "./Testimonial";
 export { TrustedBy } from "./TrustedBy";
-export { WhoItsFor } from "./WhoItsFor";
+export { AISuite } from "./AISuite";

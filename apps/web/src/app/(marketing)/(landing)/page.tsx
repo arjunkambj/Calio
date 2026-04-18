@@ -7,7 +7,7 @@ import {
   Pricing,
   Testimonial,
   TrustedBy,
-  WhoItsFor,
+  AISuite,
 } from "@/components/marketing";
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
       <Hero />
       <TrustedBy />
       <Feature />
-      <WhoItsFor />
+      <AISuite />
       <Testimonial />
       <Pricing />
       <Faq />
