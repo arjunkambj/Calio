@@ -234,10 +234,7 @@ const Pricing = ({ className }: PricingProps) => {
                   <Button
                     asChild
                     variant={plan.featured ? "default" : "outline"}
-                    className={cn(
-                      "w-full h-10 rounded-sm text-[0.875rem] font-semibold",
-                      !plan.featured && "border-foreground/20 hover:border-foreground/40",
-                    )}
+                    className="w-full"
                   >
                     <a href="/get-started">Get started</a>
                   </Button>

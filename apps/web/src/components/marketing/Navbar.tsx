@@ -105,7 +105,7 @@ const Navbar = ({ className }: NavbarProps) => {
         <MobileNav activeItem={activeItem} setActiveItem={setActiveItem} />
 
         <div className="hidden items-center lg:flex">
-          <Button asChild className="px-5 h-9 text-[0.875rem] rounded-sm font-semibold">
+          <Button asChild size="sm">
             <Link href="/sign-in">Get started</Link>
           </Button>
         </div>
@@ -179,10 +179,7 @@ const MobileNav = ({
               </li>
             ))}
             <li className="flex flex-col px-5 py-2">
-              <Button
-                asChild
-                className="rounded-xl text-[0.85rem] font-semibold"
-              >
+              <Button asChild>
                 <Link href="/sign-in" onClick={() => setIsOpen(false)}>
                   Get started
                 </Link>

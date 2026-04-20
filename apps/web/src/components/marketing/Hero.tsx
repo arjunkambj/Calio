@@ -48,17 +48,10 @@ const Hero = ({ className }: HeroProps) => {
 
             {/* CTAs */}
             <div className="animate-fade-in-up delay-300 mt-9 flex flex-col items-center gap-3 sm:flex-row sm:gap-3">
-              <Button
-                asChild
-                className="px-8 h-12 text-[0.9rem] font-semibold rounded-sm"
-              >
+              <Button asChild size="lg">
                 <Link href="#pricing">Get started free</Link>
               </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="px-8 h-12 text-[0.9rem] rounded-sm border-foreground/20 hover:border-foreground/40"
-              >
+              <Button asChild variant="outline" size="lg">
                 <Link href="#features" className="flex items-center gap-2">
                   See how it works
                   <Icon icon="ph:arrow-down" className="size-4" />
