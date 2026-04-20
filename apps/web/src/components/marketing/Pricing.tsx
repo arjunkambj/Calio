@@ -130,23 +130,6 @@ const Pricing = ({ className }: PricingProps) => {
               anytime.
             </p>
           </div>
-
-          {/* Billing toggle — placed in header area */}
-          <div className="flex items-center gap-3 px-5 pb-8 lg:px-8">
-            <Switch
-              checked={isYearly}
-              onCheckedChange={setIsYearly}
-              size="sm"
-            />
-            <span className="text-[0.82rem] text-foreground/50">
-              Billed yearly
-            </span>
-            {isYearly && (
-              <span className="border border-primary/30 bg-primary/8 px-2 py-0.5 text-[0.65rem] font-semibold tracking-[0.08em] uppercase text-primary rounded-sm">
-                Save up to 37%
-              </span>
-            )}
-          </div>
         </div>
       </div>
 
@@ -196,11 +179,22 @@ const Pricing = ({ className }: PricingProps) => {
                     </span>
                   </div>
 
-                  {isYearly && (
-                    <p className="mt-1.5 text-[0.75rem] text-foreground/35">
-                      Billed ${plan.price.yearly * 12}/yr · Save {getSavePercent(plan.price.monthly, plan.price.yearly)}%
-                    </p>
-                  )}
+                  <div className="flex items-center gap-2.5 mt-3">
+                    <Switch
+                      checked={isYearly}
+                      onCheckedChange={setIsYearly}
+                      size="sm"
+                    />
+                    <span className="text-[0.78rem] text-foreground/45">
+                      Billed yearly
+                    </span>
+                    {isYearly && (
+                      <span className="border border-primary/30 bg-primary/8 px-2 py-0.5 text-[0.65rem] font-semibold tracking-[0.08em] uppercase text-primary rounded-sm">
+                        Save{" "}
+                        {getSavePercent(plan.price.monthly, plan.price.yearly)}%
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 {/* Features */}
