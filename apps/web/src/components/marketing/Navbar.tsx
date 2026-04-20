@@ -95,9 +95,9 @@ const Navbar = ({ className }: NavbarProps) => {
             ))}
             <div
               ref={indicatorRef}
-              className="absolute bottom-0 flex h-0.5 items-center justify-center px-3 transition-all duration-300"
+              className="absolute -bottom-px flex h-[2px] items-center justify-center transition-all duration-300"
             >
-              <div className="w-full rounded-full bg-primary transition-all duration-300" />
+              <div className="w-full bg-primary transition-all duration-300" />
             </div>
           </NavigationMenuList>
         </NavigationMenu>
@@ -105,7 +105,7 @@ const Navbar = ({ className }: NavbarProps) => {
         <MobileNav activeItem={activeItem} setActiveItem={setActiveItem} />
 
         <div className="hidden items-center lg:flex">
-          <Button asChild className="px-5">
+          <Button asChild className="px-5 h-9 text-[0.875rem] rounded-sm font-semibold">
             <Link href="/sign-in">Get started</Link>
           </Button>
         </div>

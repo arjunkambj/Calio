@@ -24,33 +24,39 @@ const TrustedBy = ({ className }: TrustedByProps) => {
     <section className={cn("w-full", className)}>
       <div>
         <div className="max-w-7xl mx-auto border-b border-x bg-background">
-          <div className="flex flex-col items-center py-8 lg:py-12">
-            <div className="w-full overflow-hidden">
-              <Marquee
-                className="[--gap:5rem] [--duration:30s]"
-                pauseOnHover
-                repeat={6}
-              >
-                {companies.map((company, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-3 text-foreground/40 transition-all duration-300 hover:text-foreground/70 hover:scale-105"
-                  >
-                    <Image
-                      src={company.logo}
-                      alt={company.name}
-                      width={28}
-                      height={28}
-                      className="dark:invert"
-                      unoptimized
-                    />
-                    <span className="text-[0.95rem] font-medium tracking-tight whitespace-nowrap">
-                      {company.name}
-                    </span>
-                  </div>
-                ))}
-              </Marquee>
-            </div>
+          {/* Label */}
+          <div className="flex items-center justify-center px-5 pt-7 pb-5">
+            <p className="text-[0.65rem] font-bold tracking-[0.22em] uppercase text-foreground/30">
+              Trusted by teams at
+            </p>
+          </div>
+
+          {/* Marquee */}
+          <div className="w-full overflow-hidden pb-7">
+            <Marquee
+              className="[--gap:5rem] [--duration:30s]"
+              pauseOnHover
+              repeat={6}
+            >
+              {companies.map((company, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2.5 text-foreground/35 transition-all duration-200 hover:text-foreground/60"
+                >
+                  <Image
+                    src={company.logo}
+                    alt={company.name}
+                    width={22}
+                    height={22}
+                    className="dark:invert opacity-60"
+                    unoptimized
+                  />
+                  <span className="text-[0.875rem] font-semibold tracking-tight whitespace-nowrap">
+                    {company.name}
+                  </span>
+                </div>
+              ))}
+            </Marquee>
           </div>
         </div>
       </div>

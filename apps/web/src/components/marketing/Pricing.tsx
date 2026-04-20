@@ -117,9 +117,10 @@ const Pricing = ({ className }: PricingProps) => {
 
   return (
     <section id="pricing" className={cn(className)}>
+      {/* Header */}
       <div>
         <div className="max-w-7xl mx-auto border-b border-x bg-background">
-          <div className="flex flex-col gap-3 px-5 py-6 lg:px-8 lg:py-10">
+          <div className="flex flex-col gap-4 px-5 py-8 lg:px-8 lg:py-12">
             <p className="marketing-section-kicker">Pricing</p>
             <h2 className="marketing-section-heading">
               Simple Pricing, No Surprises
@@ -130,78 +131,97 @@ const Pricing = ({ className }: PricingProps) => {
             </p>
           </div>
 
-          <section className="grid border-t max-lg:divide-y lg:grid-cols-3 lg:divide-x">
+          {/* Billing toggle — placed in header area */}
+          <div className="flex items-center gap-3 px-5 pb-8 lg:px-8">
+            <Switch
+              checked={isYearly}
+              onCheckedChange={setIsYearly}
+              size="sm"
+            />
+            <span className="text-[0.82rem] text-foreground/50">
+              Billed yearly
+            </span>
+            {isYearly && (
+              <span className="border border-primary/30 bg-primary/8 px-2 py-0.5 text-[0.65rem] font-semibold tracking-[0.08em] uppercase text-primary rounded-sm">
+                Save up to 37%
+              </span>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Plans grid */}
+      <div>
+        <div className="max-w-7xl mx-auto border-b border-x bg-background">
+          <section className="grid border-t divide-y lg:grid-cols-3 lg:divide-y-0 lg:divide-x divide-border">
             {pricingPlans.map((plan, index) => (
               <div
                 key={index}
                 className={cn(
-                  "flex flex-col justify-between bg-card transition-colors duration-200",
-                  plan.featured && "bg-primary/5",
+                  "relative flex flex-col justify-between bg-card",
+                  plan.featured && "bg-primary/[0.04]",
                 )}
               >
-                <div className="space-y-2.5 border-b px-6 pt-5 pb-12">
-                  <div className="flex items-center gap-2.5">
-                    <Icon icon={plan.icon} className="size-6 text-primary" />
-                    <h3 className="text-[1.05rem] font-semibold tracking-[-0.02em]">
+                {/* Featured top border */}
+                {plan.featured && (
+                  <span className="absolute top-0 left-0 right-0 h-[2px] bg-primary" />
+                )}
+
+                {/* Plan header */}
+                <div className="border-b px-6 pt-7 pb-8">
+                  <div className="flex items-center gap-2 mb-5">
+                    <div className="p-1.5 bg-primary/10 rounded-sm text-primary">
+                      <Icon icon={plan.icon} className="size-4" />
+                    </div>
+                    <h3 className="text-[0.95rem] font-semibold tracking-[-0.01em]">
                       {plan.name}
                     </h3>
                     {plan.featured && (
-                      <span className="ml-auto rounded-full bg-primary/10 px-2.5 py-0.5 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-primary">
+                      <span className="ml-auto border border-primary/30 bg-primary/8 px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-[0.14em] text-primary rounded-sm">
                         Popular
                       </span>
                     )}
                   </div>
 
-                  <div className="flex items-baseline font-medium">
-                    <span className="text-[3rem] leading-[1.1] font-semibold tracking-[-0.04em]">
-                      $
+                  {/* Price */}
+                  <div className="flex items-baseline">
+                    <span className="text-[0.95rem] font-medium text-foreground/50 mr-0.5">$</span>
+                    <span className="text-[3.2rem] leading-none font-bold tracking-[-0.05em]">
                       <TickerPrice
-                        value={
-                          isYearly ? plan.price.yearly : plan.price.monthly
-                        }
+                        value={isYearly ? plan.price.yearly : plan.price.monthly}
                       />
                     </span>
-                    <span className="ml-1 text-[1rem] text-foreground/40">
+                    <span className="ml-1.5 text-[0.85rem] text-foreground/40">
                       /mo
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2.5 pt-1">
-                    <Switch
-                      checked={isYearly}
-                      onCheckedChange={setIsYearly}
-                      size="sm"
-                    />
-                    <span className="text-[0.78rem] text-foreground/45">
-                      Billed yearly
-                    </span>
-                    {isYearly && (
-                      <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
-                        Save{" "}
-                        {getSavePercent(plan.price.monthly, plan.price.yearly)}%
-                      </span>
-                    )}
-                  </div>
+                  {isYearly && (
+                    <p className="mt-1.5 text-[0.75rem] text-foreground/35">
+                      Billed ${plan.price.yearly * 12}/yr · Save {getSavePercent(plan.price.monthly, plan.price.yearly)}%
+                    </p>
+                  )}
                 </div>
 
-                <div className="px-6 pb-6 pt-4">
-                  <h4 className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-foreground/40">
+                {/* Features */}
+                <div className="px-6 pb-5 pt-5 flex-1">
+                  <h4 className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-foreground/35 mb-4">
                     What you get
                   </h4>
-                  <ul className="mt-4 space-y-3.5">
+                  <ul className="space-y-3">
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
                         <Icon
                           icon="ph:check"
-                          width={18}
+                          width={16}
                           className={cn(
-                            "mt-0.5",
+                            "mt-0.5 shrink-0",
                             plan.featured
                               ? "text-primary"
-                              : "text-foreground/60",
+                              : "text-foreground/50",
                           )}
                         />
-                        <span className="text-[0.9rem] leading-snug text-foreground/55">
+                        <span className="text-[0.875rem] leading-snug text-foreground/60">
                           {feature}
                         </span>
                       </li>
@@ -209,13 +229,19 @@ const Pricing = ({ className }: PricingProps) => {
                   </ul>
                 </div>
 
-                <Button
-                  asChild
-                  variant={plan.featured ? "default" : "secondary"}
-                  className="mt-auto mb-6 mx-6 h-11 rounded-xl text-[0.88rem]"
-                >
-                  <a href="/get-started">Get started</a>
-                </Button>
+                {/* CTA */}
+                <div className="px-6 pb-7">
+                  <Button
+                    asChild
+                    variant={plan.featured ? "default" : "outline"}
+                    className={cn(
+                      "w-full h-10 rounded-sm text-[0.875rem] font-semibold",
+                      !plan.featured && "border-foreground/20 hover:border-foreground/40",
+                    )}
+                  >
+                    <a href="/get-started">Get started</a>
+                  </Button>
+                </div>
               </div>
             ))}
           </section>

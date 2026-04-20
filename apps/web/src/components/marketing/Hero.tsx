@@ -15,36 +15,49 @@ const Hero = ({ className }: HeroProps) => {
       id="home"
       className={cn("relative w-full overflow-hidden", className)}
     >
+      {/* Main hero content */}
       <div className="relative w-full">
         <div className="max-w-7xl mx-auto">
-          <div className="flex w-full flex-col items-center justify-center border-x border-b bg-background px-5 pt-20 pb-14 md:pt-24 md:pb-20 lg:pt-28 lg:pb-24 relative">
-            <div className="animate-fade-in-up inline-flex items-center gap-2.5 rounded-full bg-foreground/8 px-4 py-1.5">
-              <span className="text-[0.75rem] font-medium tracking-wide text-foreground">
+          <div className="flex w-full flex-col items-center justify-center border-x border-b bg-background px-5 pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-36 lg:pb-28 relative">
+
+            {/* Badge */}
+            <div className="animate-fade-in-up inline-flex items-center gap-2 border border-primary/30 bg-primary/6 px-3.5 py-1 rounded-sm">
+              <span className="size-1.5 rounded-full bg-primary block" />
+              <span className="text-[0.7rem] font-semibold tracking-[0.18em] uppercase text-primary">
                 Ready in under 5 minutes
               </span>
             </div>
 
-            <h1 className="animate-fade-in-up delay-100 mt-7 max-w-2xl text-center text-[2.75rem] font-semibold tracking-tight leading-[1.07] md:text-5xl lg:text-[4.2rem]">
-              A Business Phone Number{" "}
-              <span className="text-foreground">That Works Everywhere</span>
+            {/* Headline */}
+            <h1 className="animate-fade-in-up delay-100 mt-8 max-w-3xl text-center text-[3rem] font-bold tracking-[-0.04em] leading-[0.97] md:text-[3.8rem] lg:text-[5rem]">
+              A Business Phone Number That Works{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10">Everywhere</span>
+                <span
+                  className="absolute bottom-1 left-0 right-0 h-[3px] bg-primary"
+                  aria-hidden="true"
+                />
+              </span>
             </h1>
 
-            <p className="animate-fade-in-up delay-200 mt-5 max-w-xl text-center text-[1.05rem] leading-relaxed text-foreground/55">
+            {/* Subtext */}
+            <p className="animate-fade-in-up delay-200 mt-6 max-w-lg text-center text-[1rem] leading-[1.7] text-foreground/50">
               Get a virtual number in 90+ countries. Make calls, send texts,
               record conversations. Your team answers from any device, anywhere.
             </p>
 
-            <div className="animate-fade-in-up delay-300 mt-8 flex flex-col items-center gap-3 sm:flex-row sm:gap-3">
+            {/* CTAs */}
+            <div className="animate-fade-in-up delay-300 mt-9 flex flex-col items-center gap-3 sm:flex-row sm:gap-3">
               <Button
                 asChild
-                className="px-8 h-12 text-base shadow-lg shadow-primary/25 hover:shadow-primary/30 transition-all duration-300"
+                className="px-8 h-12 text-[0.9rem] font-semibold rounded-sm"
               >
                 <Link href="#pricing">Get started free</Link>
               </Button>
               <Button
                 asChild
-                variant="secondary"
-                className="px-8 h-12 text-base"
+                variant="outline"
+                className="px-8 h-12 text-[0.9rem] rounded-sm border-foreground/20 hover:border-foreground/40"
               >
                 <Link href="#features" className="flex items-center gap-2">
                   See how it works
@@ -52,60 +65,66 @@ const Hero = ({ className }: HeroProps) => {
                 </Link>
               </Button>
             </div>
+
+            {/* Trust signal */}
+            <p className="animate-fade-in-up delay-400 mt-6 text-[0.78rem] text-foreground/35 tracking-wide">
+              No credit card required · Cancel anytime
+            </p>
           </div>
         </div>
       </div>
 
+      {/* Stats row */}
       <div className="relative w-full">
         <div className="max-w-7xl mx-auto">
-          <ul className="grid w-full grid-cols-1 border-x border-b bg-background md:grid-cols-3">
-            <li className="animate-fade-in-up delay-400 group flex flex-col items-center justify-center gap-3 bg-card px-6 py-7 md:py-8">
-              <div className="text-primary">
-                <Icon
-                  icon="ph:phone"
-                  className="size-9 transition-transform duration-300 ease-out group-hover:scale-110"
-                />
-              </div>
-              <div className="text-center">
-                <p className="text-[0.9rem] font-semibold text-foreground/80">
+          <ul className="grid w-full grid-cols-1 border-x border-b bg-background md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-border">
+            <li className="animate-fade-in-up delay-400 group flex flex-col gap-1.5 bg-card px-8 py-8 md:py-10">
+              <div className="flex items-center gap-2.5">
+                <div className="p-1.5 bg-primary/10 rounded-sm text-primary">
+                  <Icon icon="ph:phone" className="size-4" />
+                </div>
+                <p className="text-[0.78rem] font-semibold tracking-[0.12em] uppercase text-foreground/40">
                   Call and text
                 </p>
-                <p className="mt-0.5 text-[0.8rem] text-foreground/40">
-                  From one business number
-                </p>
               </div>
+              <p className="text-[1.5rem] font-bold tracking-[-0.03em] text-foreground">
+                One number
+              </p>
+              <p className="text-[0.83rem] text-foreground/40 leading-snug">
+                Calls and texts from a single business number
+              </p>
             </li>
-            <li className="animate-fade-in-up delay-500 group flex flex-col items-center justify-center gap-3 border-t border-l bg-card px-6 py-7 md:border-t-0 md:py-8">
-              <div className="text-primary">
-                <Icon
-                  icon="ph:users"
-                  className="size-9 transition-transform duration-300 ease-out group-hover:scale-110"
-                />
-              </div>
-              <div className="text-center">
-                <p className="text-[0.9rem] font-semibold text-foreground/80">
-                  Shared with your team
-                </p>
-                <p className="mt-0.5 text-[0.8rem] text-foreground/40">
-                  Everyone sees the same history
+            <li className="animate-fade-in-up delay-500 group flex flex-col gap-1.5 bg-card px-8 py-8 md:py-10">
+              <div className="flex items-center gap-2.5">
+                <div className="p-1.5 bg-primary/10 rounded-sm text-primary">
+                  <Icon icon="ph:users" className="size-4" />
+                </div>
+                <p className="text-[0.78rem] font-semibold tracking-[0.12em] uppercase text-foreground/40">
+                  Shared team
                 </p>
               </div>
+              <p className="text-[1.5rem] font-bold tracking-[-0.03em] text-foreground">
+                90+ countries
+              </p>
+              <p className="text-[0.83rem] text-foreground/40 leading-snug">
+                Virtual numbers available worldwide
+              </p>
             </li>
-            <li className="animate-fade-in-up delay-600 group flex flex-col items-center justify-center gap-3 border-t border-l bg-card px-6 py-7 md:border-t-0 md:py-8">
-              <div className="text-primary">
-                <Icon
-                  icon="ph:devices"
-                  className="size-9 transition-transform duration-300 ease-out group-hover:scale-110"
-                />
-              </div>
-              <div className="text-center">
-                <p className="text-[0.9rem] font-semibold text-foreground/80">
-                  Works on any device
-                </p>
-                <p className="mt-0.5 text-[0.8rem] text-foreground/40">
-                  Phone, laptop, desktop
+            <li className="animate-fade-in-up delay-600 group flex flex-col gap-1.5 bg-card px-8 py-8 md:py-10">
+              <div className="flex items-center gap-2.5">
+                <div className="p-1.5 bg-primary/10 rounded-sm text-primary">
+                  <Icon icon="ph:devices" className="size-4" />
+                </div>
+                <p className="text-[0.78rem] font-semibold tracking-[0.12em] uppercase text-foreground/40">
+                  Cross-platform
                 </p>
               </div>
+              <p className="text-[1.5rem] font-bold tracking-[-0.03em] text-foreground">
+                Any device
+              </p>
+              <p className="text-[0.83rem] text-foreground/40 leading-snug">
+                Phone, laptop, desktop — take calls anywhere
+              </p>
             </li>
           </ul>
         </div>

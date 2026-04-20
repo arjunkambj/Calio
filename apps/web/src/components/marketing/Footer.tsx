@@ -48,31 +48,34 @@ interface FooterProps {
 const Footer = ({ className }: FooterProps) => {
   return (
     <section className={cn(className)}>
+      {/* Main footer content */}
       <div>
-        <div className="max-w-7xl mx-auto border-b border-x bg-background px-5 py-16 lg:px-8 lg:py-20">
-          <div className="grid gap-8 lg:grid-cols-4 lg:gap-6">
+        <div className="max-w-7xl mx-auto border-b border-x bg-background px-5 py-12 lg:px-8 lg:py-16">
+          <div className="grid gap-10 lg:grid-cols-4 lg:gap-8">
+            {/* Brand column */}
             <div className="lg:col-span-1">
-              <div className="mb-3">
+              <div className="mb-4">
                 <Logo />
               </div>
-              <p className="text-[0.85rem] leading-snug text-foreground/50 max-w-[240px]">
+              <p className="text-[0.83rem] leading-relaxed text-foreground/45 max-w-[220px]">
                 A business phone number that works on every device. No hardware
                 needed.
               </p>
             </div>
 
-            <div className="col-span-3 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 lg:gap-x-8 lg:gap-y-4">
+            {/* Navigation columns */}
+            <div className="col-span-3 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
               {navigation.map((section) => (
                 <div key={section.title}>
-                  <h4 className="mb-2.5 text-[0.78rem] font-semibold text-foreground">
+                  <h4 className="mb-4 text-[0.68rem] font-bold tracking-[0.2em] uppercase text-foreground/35">
                     {section.title}
                   </h4>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2.5">
                     {section.links.map((link) => (
                       <li key={link.name}>
                         <Link
                           href={link.href}
-                          className="inline-flex items-center gap-2 text-[0.85rem] text-foreground/60 transition-colors duration-150 hover:text-primary"
+                          className="text-[0.85rem] text-foreground/55 transition-colors duration-150 hover:text-primary"
                         >
                           {link.name}
                         </Link>
@@ -86,15 +89,19 @@ const Footer = ({ className }: FooterProps) => {
         </div>
       </div>
 
+      {/* Bottom bar */}
       <div>
-        <div className="max-w-7xl mx-auto border-b border-x bg-background px-5 py-10 lg:px-8">
-          <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
-            <p className="text-[0.82rem] text-foreground/40">
-              &copy; {new Date().getFullYear()} Calio
+        <div className="max-w-7xl mx-auto border-b border-x bg-background px-5 py-5 lg:px-8">
+          <div className="flex flex-col items-start justify-between gap-2 sm:flex-row sm:items-center">
+            <p className="text-[0.78rem] text-foreground/35">
+              &copy; {new Date().getFullYear()} Calio. All rights reserved.
             </p>
-            <p className="text-[0.82rem] text-foreground/40">
+            <a
+              href="mailto:support@calio.cc"
+              className="text-[0.78rem] text-foreground/35 hover:text-primary transition-colors duration-150"
+            >
               support@calio.cc
-            </p>
+            </a>
           </div>
         </div>
       </div>

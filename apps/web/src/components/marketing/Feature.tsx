@@ -49,39 +49,50 @@ interface FeatureProps {
 const Feature = ({ className }: FeatureProps) => {
   return (
     <section id="features" className={cn("w-full", className)}>
+      {/* Section header */}
       <div>
-        <div className="max-w-7xl mx-auto border-b border-x bg-background flex flex-col gap-3 px-5 py-6 lg:px-8 lg:py-10">
+        <div className="max-w-7xl mx-auto border-b border-x bg-background flex flex-col gap-4 px-5 py-8 lg:px-8 lg:py-12">
           <p className="marketing-section-kicker">Features</p>
           <h2 className="marketing-section-heading">Powerful At Every Scale</h2>
           <p className="marketing-section-desc">
-            From your first call to your ten-thousandth -- everything you need
+            From your first call to your ten-thousandth — everything you need
             is included.
           </p>
         </div>
       </div>
 
+      {/* Feature grid */}
       <div>
-        <div className="max-w-7xl mx-auto w-full border-b border-x bg-background lg:px-0!">
-          <div className="grid bg-border max-lg:divide-y lg:grid-cols-3 lg:gap-px">
+        <div className="max-w-7xl mx-auto w-full border-b border-x bg-background">
+          <div className="grid divide-y lg:grid-cols-3 lg:divide-y-0 lg:divide-x divide-border">
             {features.map((item, index) => (
               <div
                 key={index}
-                className="group relative isolate flex flex-col bg-card p-8 text-start transition-all duration-300 hover:bg-[#FDFDFC] lg:p-8"
+                className={cn(
+                  "group relative isolate flex flex-col bg-card p-8 text-start transition-colors duration-200 hover:bg-primary/[0.03] lg:p-8",
+                  index < 3 && "lg:border-b lg:border-border"
+                )}
               >
-                <div className="flex-1">
-                  <div className="mb-5 text-primary">
-                    <Icon
-                      icon={item.icon}
-                      className="size-9 transition-transform duration-300 ease-out group-hover:scale-110"
-                    />
-                  </div>
-                  <h3 className="text-[1.05rem] font-semibold tracking-[-0.02em] text-foreground">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2.5 max-w-xs text-[0.92rem] leading-relaxed text-foreground/50">
-                    {item.description}
-                  </p>
+                {/* Index number */}
+                <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-foreground/20 mb-5 block">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <div className="mb-4 text-primary">
+                  <Icon
+                    icon={item.icon}
+                    className="size-7 transition-transform duration-300 ease-out group-hover:scale-110"
+                  />
                 </div>
+                <h3 className="text-[0.98rem] font-semibold tracking-[-0.02em] text-foreground">
+                  {item.title}
+                </h3>
+                <p className="mt-2 max-w-xs text-[0.875rem] leading-relaxed text-foreground/50">
+                  {item.description}
+                </p>
+
+                {/* Bottom accent line that appears on hover */}
+                <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full" />
               </div>
             ))}
           </div>

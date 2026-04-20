@@ -75,25 +75,31 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   return (
-    <div className="w-[380px] shrink-0 border-r border-y border-foreground/8 bg-card px-6 transition-colors duration-300 hover:bg-primary/[0.02]">
-      <blockquote className="py-8 text-[1.05rem] leading-relaxed text-foreground/70">
-        &ldquo;{testimonial.quote}&rdquo;
-      </blockquote>
+    <div className="w-[360px] shrink-0 border-r border-y border-foreground/8 bg-card px-6 transition-colors duration-200 hover:bg-primary/[0.03]">
+      {/* Quote mark */}
+      <div className="pt-7 pb-5">
+        <span className="text-[2rem] leading-none text-primary font-bold select-none">
+          &ldquo;
+        </span>
+        <blockquote className="mt-1 text-[0.92rem] leading-relaxed text-foreground/65">
+          {testimonial.quote}
+        </blockquote>
+      </div>
 
-      <div className="-mx-6 flex items-center gap-3.5 border-t border-foreground/8 px-6 py-4">
+      <div className="-mx-6 flex items-center gap-3 border-t border-foreground/8 px-6 py-4">
         <Image
           src={testimonial.author.image}
           alt={`${testimonial.author.name}'s profile picture`}
-          width={36}
-          height={36}
+          width={34}
+          height={34}
           className="rounded-full object-cover ring-1 ring-foreground/10"
         />
         <div>
-          <p className="text-[0.92rem] font-medium tracking-[-0.01em]">
+          <p className="text-[0.875rem] font-semibold tracking-[-0.01em]">
             {testimonial.author.name}
           </p>
-          <p className="text-[0.82rem] text-foreground/45">
-            {testimonial.author.role}, {testimonial.author.company}
+          <p className="text-[0.78rem] text-foreground/40">
+            {testimonial.author.role} · {testimonial.author.company}
           </p>
         </div>
       </div>
@@ -108,8 +114,9 @@ interface TestimonialProps {
 const Testimonial = ({ className }: TestimonialProps) => {
   return (
     <section className={cn(className)}>
+      {/* Header */}
       <div>
-        <div className="max-w-7xl mx-auto border-b border-x bg-background flex flex-col gap-3 px-5 py-6 lg:px-8 lg:py-10">
+        <div className="max-w-7xl mx-auto border-b border-x bg-background flex flex-col gap-4 px-5 py-8 lg:px-8 lg:py-12">
           <p className="marketing-section-kicker">Customer stories</p>
           <h2 className="marketing-section-heading">
             Always On, Always Answered
@@ -120,9 +127,10 @@ const Testimonial = ({ className }: TestimonialProps) => {
         </div>
       </div>
 
+      {/* Marquee rows */}
       <div>
-        <div className="max-w-7xl mx-auto border-b border-x bg-background py-8 lg:py-12">
-          <div className="flex flex-col gap-6">
+        <div className="max-w-7xl mx-auto border-b border-x bg-background py-8 lg:py-12 overflow-hidden">
+          <div className="flex flex-col gap-5">
             <Marquee
               className="[--gap:0rem] [--duration:30s]"
               pauseOnHover
